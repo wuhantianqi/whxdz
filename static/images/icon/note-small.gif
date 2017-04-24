@@ -1,0 +1,396 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>江湖装企营销系统</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" type="text/css" href="http://x.95zhuang.cn/themes/default/css/public.css">
+<link rel="stylesheet" type="text/css" href="http://x.95zhuang.cn/themes/default/css/style.css">
+<link rel="stylesheet" type="text/css" href="http://x.95zhuang.cn/static/style/kt.widget.css">
+<link rel="stylesheet" type="text/css" href="http://x.95zhuang.cn/static/ui/j.ui.css">
+<script type="text/javascript"  src="http://x.95zhuang.cn/static/script/kt.j.js"></script>
+<script type="text/javascript"  src="http://x.95zhuang.cn/static/script/kt.js"></script>
+<script type="text/javascript"  src="http://x.95zhuang.cn/static/ui/j.ui.js"></script>
+<script type="text/javascript"  src="http://x.95zhuang.cn/static/script/widget.msgbox.js"></script>
+<script type="text/javascript"  src="http://x.95zhuang.cn/static/script/widget.login.js"></script>
+<script type="text/javascript" src="http://x.95zhuang.cn/themes/default/js/menu.js"></script>
+<script type="text/javascript" src="http://x.95zhuang.cn/themes/default/js/scroll.js"></script>
+<link rel="stylesheet" type="text/css" href="/themes/leaf/css/append.css">
+</head>
+
+    <body>
+        <iframe id="miniframe" name="miniframe" style="display:none;"></iframe>
+        <div class="top">
+            <div class="mainwd">
+                <div class="lt">
+                    <span>欢迎访问江湖装企营销系统！</span>
+                </div>
+                <div class="rt hoverno">
+                    <a href="http://x.95zhuang.cn/tools-items.html" ><span  class="ico js_ico"></span>装修计算器</a>
+                    <a href="http://x.95zhuang.cn/bao.html" ><span  class="ico bz_ico"></span>装修保障</a>
+                    <a href="http://x.95zhuang.cn/tender.html" ><span  class="ico yy_ico"></span>预约设计</a>
+                    <a href="http://x.95zhuang.cn/tender.html" ><span  class="ico bj_ico"></span>在线报价</a>
+                    <a href="http://x.95zhuang.cn/mobile/index.html"  class="top_phone">
+                        <span  class="ico sj_ico"></span>手机版
+                        <div class="top_wx">
+                            <img src="http://x.95zhuang.cn/./attachs/photo/201405/20140514_A47B977B86FDB8318CAAB03A9F0F6350.png" />
+                            <p>扫一扫，下载安装</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="cl"></div>
+            </div>
+        </div>
+        <div class="mainwd logo_cont">
+            <div class="lt logo">
+                <a href="http://x.95zhuang.cn/index.html" ><img src="http://x.95zhuang.cn/./attachs/photo/201501/20150124_8FB615969A46FB3881561EF95C8E300B.png" /></a>
+            </div>
+            <div class="lt search">
+                <form method="post" action="http://x.95zhuang.cn/tuan.html" id="top-search">
+                    <div class="search_cont hoverno lt">
+                        <a href="javascript:void(0);" id="top-select"  class="lt">团装小区<span class="search_ico ico"></span></a>
+                        <div class="search_cont_list none">
+                            <a href="javascript:void(0);" rel="http://x.95zhuang.cn/case.html">效果图</a>
+                            <a href="javascript:void(0);" rel="http://x.95zhuang.cn/article.html">文章</a>
+                            <a href="javascript:void(0);" rel="http://x.95zhuang.cn/designer.html">设计师</a>
+                            <a href="javascript:void(0);" rel="http://x.95zhuang.cn/site.html">在建工地</a>
+                            <a href="javascript:void(0);" rel="http://x.95zhuang.cn/product.html">找产品</a>
+                        </div>
+                    </div>
+                    <input name="s" type="text" class="text lt" placeholder="请输入你要搜索的关键字" value="" />
+                    <input type="submit" class="btn rt ico" value=""/>
+                </form>
+            </div>
+            <div class="rt logo_cont_tel">
+                <span class="ico lt lg_tel_ico"></span>
+                <div class="lt">
+                    <p>全国客服热线</p>
+                    <b class="fontcl1">0551-64278115</b>
+                </div>
+            </div>
+            <div class="cl"></div>
+        </div>
+        <div class="nav hoverno">
+            <div class="mainwd">
+                <ul>
+                    <li ><a href="http://x.95zhuang.cn/index.html" > 首页 <small>Home</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/taocan.html" > 家装套系<small>Series</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/tender.html" > 我要装修 <small>Tenders</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/tuan.html" > 团装小区<small>Assembly</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/activity.html" > 优惠活动<small>Activity</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/case.html" > 装修案例<small>Case</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/designer.html" > 设计师<small>Designer</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/manager.html" > 施工团队<small>Manager</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/site.html" > 在建工地<small>Site</small></a></li>
+                    <li ><a href="http://x.95zhuang.cn/product.html" > 平价材料<small>Material</small></a></li>
+                </ul>
+                <div class="cl"></div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(document).ready(function() {
+				//绿色导航
+				$(".nav ul li").not(".current").find("a").mouseover(function(){
+					$(this).find('small').css('color','#999');
+					$(this).stop(true, true).animate({top:'-5px'},"fast");
+				}).mouseleave(function(){
+					$(this).find('small').css('color','#01ba42');
+					$(this).stop(true, true).animate({top:'0px'},"fast");
+				});
+				
+                $(".search .search_cont_list a").click(function(){
+                    $(".search #top-select").html($(this).text());
+                    $(".search form").attr('action',$(this).attr('rel'));
+                    $(".search .search_cont_list").hide();
+                }); 
+            });
+        </script>
+
+<div class="mainwd">
+	<div class="error_box">
+		<div class="error_cont hoverno">
+			<h1>404!</h1>
+			<p>对不起，您所访问的页面出现错误！</p>
+			<a href="http://x.95zhuang.cn/index.html" class="btn">返回首页</a><a href="javascript:windows.history.back();" class="btn">返回上一页</a>
+		</div>
+	</div>
+</div>
+<div class="footer">
+	<div class="mainwd">
+		<div class="footer_top">
+			<div class="lt ">
+				<h2>联系我们 <font class="graycl">Contact US</font></h2>
+				<div class="footer_one">
+					<p><span class="ico add_ico"></span>地址：安徽省合肥市站北文化广场</p>
+					<p><span class="ico dh_ico"></span>电话：0551-64278115</p>
+					<p><span class="ico tel_ico"></span>手机：&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;24 Hours 服务</p>
+					<p><span class="ico eml_ico"></span>邮箱：ijianghu@qq.com</p>
+				</div>
+			</div>
+			<div class="lt">
+				<h2>快捷入口 <font class="graycl">Quick Entry</font></h2>
+				<div class="footer_two">
+					<ul>
+        <li class="menu_li">
+        <ul>            
+                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        <li class="title">新手指南</li>
+                                                <li><a href="http://x.95zhuang.cn/help-qianyue.html" target="_blank" >签约流程</a></li>
+                                                                <li><a href="http://x.95zhuang.cn/help-hetong.html" target="_blank" >合同范本</a></li>
+                                                                                                                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        <li class="title">装修指南</li>
+                                                                                                                <li><a href="http://x.95zhuang.cn/help-yusuan.html" target="_blank" >装修预算</a></li>
+                                                                <li><a href="http://x.95zhuang.cn/help-zb.html" target="_blank" >装修准备</a></li>
+                                                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        <li class="title">合作方案</li>
+                                                                                                                                                                        
+        </ul>
+    </li>
+        <li class="menu_li">
+        <ul>            
+                        <li class="title">本站服务</li>
+                                                                                                                                                                        
+        </ul>
+    </li>
+    </ul>
+					<div class="cl"></div>
+				</div>
+			</div>
+			<div class="rt ">
+				<h2>微信 <font class="graycl">Wechat</font></h2>
+				<div class="footer_three">
+					<img src="http://x.95zhuang.cn/./attachs/photo/201509/20150916_899104F1D3CEB46CBB875954C4BAC607.jpg">
+					<p>微信扫一扫</p>
+				</div>
+			</div>
+			<div class="cl"></div>
+		</div>
+		<div class="rightNav">
+    <ul>
+        <li>
+            <div class="show">
+                <span class="ico icoQq"></span>
+                <p>在线客服</p>
+            </div>
+            <div kefu='qq' class="hidden">
+                <div class="hidden_cont hiddenQq">
+                    <span class="span_ab"></span>
+                    <p class="title">在线咨询</p>
+                    <a target="_blank" href="http://wpa.qq.com/msgrd?v=3&uin=800070067&site=&menu=yes" title="江湖装企营销系统" class="ico_list qq_ico"></a>                    <p>服务时间：</p>
+                    <p>9:00--18:00</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="show">
+                <span class="ico icoWx"></span>
+                <p>官方微信</p>
+            </div>
+            <div kefu='wx' class="hidden">
+                <div class="hidden_cont hiddenWx">
+                    <span class="span_ab"></span>
+                    <img src="http://x.95zhuang.cn/./attachs/photo/201509/20150916_899104F1D3CEB46CBB875954C4BAC607.jpg" width="86" height="86"/>
+                    <p class="title">微信扫一扫</p>
+                </div>
+            </div>
+        </li>
+        <li>
+            <div class="show">
+                <span class="ico icoTel"></span>
+                <p>联系电话</p>
+            </div>
+            <div kefu='tel' class="hidden">
+                <div class="hidden_cont hiddenTel">
+                    <span class="span_ab"></span>
+                    <p><b class="fontcl2">0551-64278115</b></p>
+                </div>
+            </div>
+        </li>
+        <li class="re_top">
+            <div class="show">
+                <span class="ico icoTop"></span>
+                <p>返回顶部</p>
+            </div>
+        </li>
+    </ul>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".rightNav ul li").mouseenter(function(){
+        $(this).find(".show").addClass('current');
+        $(this).find("[kefu]").stop(true,true).fadeIn();
+    }).mouseleave(function(){
+        $(this).find(".show").removeClass('current');
+        $(this).find("[kefu]").stop(true,true).fadeOut();
+    });
+    $(".rightNav ul li [kefu]").mouseenter(function(){
+        $(this).show();
+        $(this).prev("li").addClass("current");
+    }).mouseleave(function(){
+        $(this).stop(true).fadeOut();
+        $(this).prev("li").removeClass("current");
+    });     
+    $('.rightNav li.re_top').click(function(event) {
+        $('html,body').animate({
+            scrollTop: 0
+        }, 200);
+        return false;
+    }); 
+});
+</script>
+		<div class="footer_bottom">
+			<p>
+                					<a target="_blank" title="关于我们" href="http://x.95zhuang.cn/about-about.html">关于我们</a>
+                					|<a target="_blank" title="荣誉资质" href="http://x.95zhuang.cn/about-ry.html">荣誉资质</a>
+                					|<a target="_blank" title="企业文化" href="http://x.95zhuang.cn/about-wh.html">企业文化</a>
+                					|<a target="_blank" title="人才招聘" href="http://x.95zhuang.cn/about-jobs.html">人才招聘</a>
+                					|<a target="_blank" title="企业历程" href="http://x.95zhuang.cn/about-lc.html">企业历程</a>
+                					|<a target="_blank" title="联系我们" href="http://x.95zhuang.cn/about-contact.html">联系我们</a>
+                    
+            </p>
+			<p>Copyright 2012-2112 江湖装企营销系统 All Rights Reserved 皖ICP备13010842号 技术支持：ijh.cc</p>
+			<img src="http://x.95zhuang.cn/themes/default/images/footer-bz.png">
+		</div>
+	</div>
+</div>
+<style>
+.showbox{ position:fixed; left:0px; top:100px;box-shadow:0px 1px 3px #999; }
+.show_btn{ width:20px; background:#333; border:2px solid #333; color:#fff; border-left:0px; padding:8px 5px 8px 2px; cursor:pointer; font-size:14px; line-height:20px;}
+.show_cont{ position:absolute; left:34px; top:-50px; background:#f3f3f3; width:180px;box-shadow:0px 1px 3px #999; border:2px solid #333; overflow:hidden;}
+.show_cont h2{ font-size:18px; font-weight:bold; background:#339933; color:#fff; padding-left:5px; line-height:35px; border:1px solid #f8f8f8;}
+.show_menu{ padding:5px 8px;;}
+.show_menu dt{ font-size:16px; font-weight:bold; color:#333; }
+.show_menu dl{ border-bottom:1px dashed #bbb;margin-bottom:5px; padding-bottom:5px;}
+.show_menu dd a{ color:#006699;}
+.show_menu dt span{ font-size:12px; font-weight:normal;}
+</style>
+	<div class="showbox">
+		<div class="show_btn">
+			收起演示
+		</div>
+		<div class="show_cont">
+			<h2>演示站入口</h2>
+			<div class="show_menu">
+				<dl>
+				<dd><a href="http://x.95zhuang.cn/admin" target="_blank">登录后台</a></dd>
+				 <dd>后台帐号：zhuangqi</dd>
+				 <dd>后台密码：zhuangqi</dd>
+				</dl>
+				<dl>
+				<dt>模板展示</dt>
+				<dd><a href="http://x.95zhuang.cn/theme-default.html">默认模版</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-hill.html">山清水秀</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-autumn.html">秋风红叶</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-lake.html">蓝色湖畔</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-vertical.html">立体导航</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-weird.html">个性标题</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-noble.html">高贵紫色</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-golden.html">黄金时代</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-tree.html">绿叶成阴</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-grass.html">绿草如茵</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-dz_red.html">定制红色</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-leaf.html">青枝绿叶</a></dd>
+				<dd><a href="http://x.95zhuang.cn/theme-vary.html">一橙不变</a></dd>
+				</dl>
+				<dl>
+				<dt>家居门户系统演示站</dt>
+				<dd><a href="http://fz.jhcms.cn" target="_blank">家居门户至尊版</a></dd>
+				<dd><a href="http://zx.95zhuang.cn" target="_blank">家居门户标准版</a></dd>
+				<dd><a href="http://gz.95zhuang.cn" target="_blank">家居门户工长版</a></dd>
+				<dd><a href="http://zb.95zhuang.cn" target="_blank">家居门户招标版</a></dd>
+				</dl>
+				<dl>
+				<dt>婚庆门户系统演示站</dt>
+				<dd><a href="http://hunfz.ijh.cc" target="_blank">婚庆门户至尊版</a></dd>
+				<dd><a href="http://v3.ijh.cc" target="_blank">婚庆门户标准版</a></dd>
+				</dl>
+				<dl>
+				<dt>微装修官网</dt>
+				<dd><a href="http://www.weizx.me" target="_blank">微装修官网</a></dd>
+				</dl>
+			</div>
+		</div>
+	</div>
+	<script>
+		$(document).ready(function(){
+			$(".show_btn").click(function(){
+			if($(".show_cont").is(":hidden")){
+			  $(".show_cont").show();
+			  $(".show_btn").html("收起演示");
+			  }else{
+			  $(".show_cont").hide();
+			  $(".show_btn").html("展开演示");
+			}
+			});		
+		});
+	</script>
+
+
+<script type="text/javascript"  src="http://x.95zhuang.cn/static/script/jquery.kinMaxShow.js"></script>
+<script type="text/javascript">
+(function(K, $){
+$("[kinBox]").each(function(){
+    var params = $.parseJSON($(this).attr("kinBox") || "{}") || {};
+    if(!$(this).attr("id")){$(this).attr("id") = K.GGUID();}
+    $("#"+$(this).attr('id')).kinMaxShow($.extend({intervalTime:4}, params));
+});
+$(document).ready(function(){$(".jq_pic_opacity img").mouseover(function(){ $(this).stop().animate({'opacity':'0.5'}, {duration: 100});}).mouseout(function(){$(this).stop().animate({'opacity':'1'}, {duration: 100});});});
+})(window.KT, window.jQuery);
+</script>
+<p class="none"><script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?cfa07e47d06e9d5667d8d9e65cf0ba77";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<!-- WPA Button Begin -->
+<script charset="utf-8" type="text/javascript" src="http://wpa.b.qq.com/cgi/wpa.php?key=XzgwMDA3MDA2N18yMTM0MTRfODAwMDcwMDY3Xw"></script>
+<!-- WPA Button End --></p>
+</body>
+</html>

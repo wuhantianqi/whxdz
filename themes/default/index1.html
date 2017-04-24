@@ -1,0 +1,421 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+        <div id="xiankyb" kinBox='{"height":400,"easing":"linear"}'><{widget id="adv" name="首页banner广告" limit="3"}></div>
+        <div class="mainwd">
+            <div class="top_ensure hoverno">
+                <a href="javascript:void(0)">
+                    <dl>
+                        <dt>
+                        <span class="ico ensure_ico1"></span>
+                        </dt>
+                        <dd>
+                            <p>保证设计符合专业规范</p>
+                            <p>保证合同预算严谨透明</p>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="javascript:void(0)">
+                    <dl>
+                        <dt>
+                        <span class="ico ensure_ico2"></span>
+                        </dt>
+                        <dd>
+                            <p>保证施工工期按时完成</p>
+                            <p>保证售后24小时内回复</p>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="javascript:void(0)">
+                    <dl>
+                        <dt>
+                        <span class="ico ensure_ico3"></span>
+                        </dt>
+                        <dd>
+                            <p>保证环保达到国家标准</p>
+                            <p>保证施工严守行业标准</p>
+                        </dd>
+                    </dl>
+                </a>
+                <a href="javascript:void(0)">
+                    <dl>
+                        <dt>
+                        <span class="ico ensure_ico4"></span>
+                        </dt>
+                        <dd>
+                            <p>保证水电项目质保7年</p>
+                            <p>保证材料按质按量配送</p>
+                        </dd>
+                    </dl>
+                </a>
+            </div>
+            <div class="index_topthree">
+                <div class="index_series opacity_chose lt">
+                    <h2>家装套系</h2>
+                    <{widget id=adv name="首页家装套系广告位" limit=3}>
+                </div>
+                <div class="index_order lt">
+                    <h2><font class="lt">最新服务客户</font><a href="<{link ctl='tender'}>" target="_blank"  class="rt">我也要发布</a>
+                        <p class="cl"></p>
+                    </h2>
+                    <p class="title"><span >时间</span>
+                        <span>业主</span>
+                        <span>装修方式</span>
+                        <span>户型</span>
+                        <span>类型</span></p>
+                    <div class="scroll_order">
+                        <ul>
+                            <{calldata mdl='tenders/tenders' limit=20}>
+                            <li>
+                                <span ><{$item.dateline|format:'Y-m-d'}></span>
+                                <span><{$item.name|cutstr:3:'**'}></span>
+                                <span><{$item.way_title}></span>
+                                <span><{$item.house_type_title}></span>
+                                <span><{$item.budget_title}></span>
+                            </li> 
+                            <{/calldata}>                          
+                        </ul>
+                    </div>
+                </div>
+                <div class="index_tenders rt">
+                    <h2 style="line-height:18px"><font>申请免费设计</font></h2>
+                    <form action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1" class="lt">
+                        <table class="tenders_bable">
+                            <tr>
+                                <td class="title"> 您的称呼 </td>
+                                <td>
+                                    <input name="data[name]" type="text" class="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title"> 您的电话 </td>
+                                <td>
+                                    <input name="data[mobile]" type="text" class="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title"> 装修方式 </td>
+                                <td>
+                                    <select name="data[way_id]" class="text">
+                                        <option value="0">请选择</option>
+                                        <{foreach from=$setting[$type['way']] item=item key=key}>
+                                             <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                        <{/foreach}>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title"> 装修面积 </td>
+                                <td>
+                                    <input name="data[area]" type="text" class="text area">
+                                    m² </td>
+                            </tr>
+                            <tr>
+                                <td class="title"> 所在地址 </td>
+                                <td>
+                                    <input name="data[addr]" type="text" class="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="title"> 您的户型 </td>
+                                <td>
+                                    <select class="text" name="data[house_type_id]">
+                                        <option value="0">请选择</option>
+                                        <{foreach from=$setting[$type['house_type']] item=item key=key}>
+                                             <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                        <{/foreach}>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="submit" class="btn btn_sub_apply" value="立即申请">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+                <div class="cl"></div>
+            </div>
+            <div class="index_box">
+                <h2 class="index_title"><font class="lt">精品案例/<font class="fontcl1">Cases</font></font><a href="<{link ctl='case'}>" target="_blank" class="more rt">MORE</a>
+                    <p class="cl"></p>
+                </h2>
+                <ul class="index_case">
+                    <{calldata mdl='case/case' limit=6}>
+                    <li <{if $index==0}>class="first"<{elseif $index==5}>class="last"<{/if}>>
+                        <div class="box opacity_img">
+                            <a href="<{link ctl='case:detail' arg0=$item.case_id}>" target="_blank" >
+                                <img src="<{$pager.img}>/<{$item.photo}>" >
+                                <p class="bg"></p>
+                                <p class="text"><{$item.title}></p>
+                            </a>
+                            <div class="yuyue_btn">
+                                <a href="<{link ctl='designer:yuyue' arg0=$item.designer_id}>" mini-load="预约设计" class="lt">预约设计</a>
+                                <a href="<{link ctl='case:like' arg0=$item.case_id}>" mini-act="case-like" class="rt"><span class="ico like_ico"></span>喜欢</a>
+                            </div>
+                        </div>
+                    </li>
+                    <{/calldata}>                  
+                </ul>
+                <div class="cl"></div>
+            </div>
+            <div class="index_box">
+                <h2 class="index_title"><font class="lt">优惠活动/<font class="fontcl1">Activity</font></font><a href="<{link ctl='activity'}>" target="_blank" class="more rt">MORE</a>
+                    <p class="cl"></p>
+                </h2>
+                <ul class="index_activity">
+                    <{calldata mdl='activity/activity' limit=4}>
+                    <li>
+                        <div class="opacity_img">
+                            <a href="<{link ctl='activity:detail' arg0=$item.activity_id}>" target="_blank" >
+                                <img src="<{$pager.img}>/<{$item.thumb}>" >
+                                <p class="bg"></p>
+                                <p class="text">
+                                    <span><{$item.title}></span>
+                                    <span>活动日期：<{$item.bg_time|format:'Y-m-d'}></span>
+                                </p>
+                            </a>
+                        </div>
+                    </li>
+                    <{/calldata}>                    
+                </ul>
+                <div class="cl"></div>
+            </div>
+            <div class="index_mid_ad">
+                <{widget id=adv name="首页优惠活动下通栏广告" limit=1}>
+            </div>
+            <div class="index_box">
+                <h2 class="index_title"><font class="lt">设计师/<font class="fontcl1">Designer</font></font><a href="<{link ctl='designer'}>" target="_blank" class="more rt">MORE</a>
+                    <p class="cl"></p>
+                </h2>
+                <div class="index_design_cont">
+                    <a  href="javascript:void(0)" class="prev design_btn lt"></a>
+                    <div class="index_de_box lt">
+                        <ul class="index_designer">
+                            <{calldata mdl='designer/designer' limit=9}>
+                            <li>
+                                <div class="designer_list">
+                                    <div class="opacity_img lt">
+                                        <a href="<{link ctl='designer:detail' arg0=$item.designer_id}>" target="_blank" >
+                                            <img src="<{$pager.img}>/<{$item.face_pic}>" >
+                                        </a>
+                                        <div class="opacity_yuyue">
+                                            <p class="bg"></p>
+                                            <p class="text"><a href="<{link ctl='designer:yuyue' arg0=$item.designer_id}>" mini-load="预约设计师">立即预约</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="lt designer_text">
+                                        <div class="hd">
+                                            <h3><a href="<{link ctl='designer:detail' arg0=$item.designer_id}>" target="_blank"  class="fontcl2"><{$item.name}></a></h3>
+                                            <p><b class="title">头衔：</b><{$item.cate.cate_name}></p>
+                                            <p><b class="title">设计理念：</b><{$item.concept}></p>
+                                        </div>
+                                        <p><b class="title">代表作：</b><{$item.model_case}></p>
+                                    </div>
+                                    <div class="cl"></div>
+                                </div>
+                            </li>
+                            <{/calldata}>
+                        </ul>
+                    </div>
+                    <a  href="javascript:void(0)" class="next design_btn rt" ></a>
+                    <div class="cl"></div>
+                </div>
+            </div>
+            <div class="index_box">
+                <h2 class="index_title"><font class="lt">热门团装/<font class="fontcl1">Assembly</font></font><a href="<{link ctl='tuan'}>" target="_blank" class="more rt">MORE</a>
+                    <p class="cl"></p>
+                </h2>
+                <ul class="index_assembly">
+                    <{widget id='home/index' limit=4}>                  
+                </ul>
+                <div class="cl"></div>
+            </div>
+            <div class="index_mid_ad">
+                <{widget id=adv name="首页团装小区下通栏广告" limit=1}>
+            </div>
+            <div class="index_box">
+                <div class="lt index_manager_part">
+                    <h2 class="index_title"><font class="lt">施工员/<font class="fontcl1">Manager</font></font><a href="<{link ctl='manager'}>" target="_blank" class="more rt">MORE</a>
+                        <p class="cl"></p>
+                    </h2>
+                    <ul class="index_manager">
+                        <{calldata mdl='manager/manager' limit=4}>
+                        <li>
+                            <div class="opacity_img">
+                                <a href="<{link ctl='manager:detail' arg0=$item.manager_id}>" target="_blank" >
+                                    <img src="<{$pager.img}>/<{$item.face_pic}>" >
+                                </a>
+                                <div class="opacity_yuyue">
+                                    <p class="bg"></p>
+                                    <p class="text"><a href="<{link ctl='manager:yuyue' arg0=$item.manager_id}>" mini-load="预约项目经理">立即预约</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="title">
+                                <a href="<{link ctl='manager:detail' arg0=$item.manager_id}>" target="_blank" class="lt"><{$item.name}></a>
+                                <span class="rt"><{$item.cate.cate_name}></span>
+                            </p>
+                            <p class="cl"></p>
+                        </li>     
+                        <{/calldata}>                  
+                    </ul>
+                    <div class="cl"></div>
+                </div>
+                <div class="rt index_comment_part">
+                    <h2 class="index_title"><font class="lt">业主心声/<font class="fontcl1">Comment</font></font>
+					<a href="<{link ctl='case:dianping'}>" target="_blank" class="more rt">MORE</a>
+                        <p class="cl"></p>
+                    </h2>
+                    <ul class="index_comment">
+                        <{calldata mdl='case/comment' limit=3}>
+                        <li>
+                            <p><b class="lt title"><{$item.nickname}></b><span class="graycl rt"><{$item.dateline|format:'Y-m-d'}></span></p>
+                            <p class="cl"></p>
+                            <p class="text"><{$item.content}></p>
+                        </li>
+                        <{/calldata}>
+                    </ul>
+                </div>
+                <div class="cl"></div>
+            </div>
+            <div class="index_box">
+                <h2 class="index_title"><font class="lt">在建工地/<font class="fontcl1">Site</font></font><a href="<{link ctl='site'}>" target="_blank" class="more rt">MORE</a>
+                    <p class="cl"></p>
+                </h2>
+                <ul class="index_site">
+                    <{calldata mdl='site/site' limit=4}>
+                    <li>
+                        <div class="opacity_img">
+                            <a href="<{link ctl='site:detail' arg0=$item.site_id}>" target="_blank" >
+                                <img src="<{$pager.img}>/<{$item.face_pic}>" >
+                            </a>
+                            <div class="opacity_yuyue">
+                                <p class="bg"></p>
+                                <p class="text"><a href="<{link ctl='site:yuyue' arg0=$item.site_id}>" mini-load="预约参观工地">预约参观</a>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="title">
+                            <a href="<{link ctl='site:detail' arg0=$item.site_id}>" target="_blank" class="lt"><{$item.title}></a>
+                            <span class="rt"><{$item.status_title}></span>
+                        </p>
+                        <p class="cl"></p>
+                        <div class="list">
+                            <{widget id="attr/form" from="zx:case" value=$item.attr  tpl='simple2.html'}>
+                            <font><{$item.manager.name}></font>
+                        </div>
+                    </li>
+                    <{/calldata}>                    
+                </ul>
+                <div class="cl"></div>
+            </div>
+            <div class="index_box">
+                <div class="lt index_material_part">
+                    <h2 class="index_title"><font class="lt">平价材料/<font class="fontcl1">Material</font></font><a href="<{link ctl='product'}>" target="_blank" class="more rt">MORE</a>
+                        <p class="cl"></p>
+                    </h2>
+                    <ul class="index_material">
+                        <{calldata mdl='product/product' limit=3}>
+                         <li>
+                            <div class="opacity_img">
+                                <a href="<{link ctl='product:detail' arg0=$item.product_id}>" target="_blank" >
+                                    <img src="<{$pager.img}>/<{$item.face_pic}>" >
+                                </a>
+                                <div class="opacity_yuyue">
+                                    <p class="bg"></p>
+                                    <p class="text"><a href="<{link ctl='product:yuyue' arg0=$item.product_id}>" mini-load="预约优惠">预约优惠</a>
+                                    </p>
+                                </div>
+                            </div>
+                            <p class="title">
+                               <a href="<{link ctl='product:detail' arg0=$item.product_id}>"><{$item.product_name}></a>
+                            </p>
+							<p class="price">
+								<span class="lt fontcl2">￥<{$item.my_price}></span>
+								<span class="rt graycl"><a href="<{link ctl='product:yuyue' arg0=$item.product_id}>" mini-load="预约优惠">马上预约</a></span></p>
+                            <p class="cl"></p>
+                        </li>
+                        <{/calldata}>                    
+                    </ul>
+                    <div class="cl"></div>
+                </div>
+                <div class="rt index_news_part">
+                    <h2 class="index_title"><font class="lt">新闻资讯/<font class="fontcl1">News</font></font><a href="<{link ctl='article'}>" target="_blank" class="more rt">MORE</a>
+                        <p class="cl"></p>
+                    </h2>
+                    <ul class="index_news">
+                        <{calldata mdl='article/handler' from='article' limit=8}>
+                        <li>
+							<a href="<{link ctl='article:detail' arg0=$item.article_id}>" title="<{$item.title}>"><{$item.title|cutstr:40:''}></a>
+						</li>
+                        <{/calldata}>
+                    </ul>
+                </div>
+                <div class="cl"></div>
+            </div>
+			<div class="index_tool">
+				<ul>
+					<li>
+						<a href="<{link ctl='tools:items'}>">
+							<span class="tool_ico tool_ico1"></span>
+							<p>涂料计算器</p>
+						</a>
+					</li>
+					<li>
+						<a href="<{link ctl='tools:diban'}>">
+							<span class="tool_ico tool_ico2"></span>
+							<p>地板计算器</p>
+						</a>
+					</li>
+					<li>
+						<a href="<{link ctl='tools:bizhi'}>">
+							<span class="tool_ico tool_ico3"></span>
+							<p>壁纸计算器</p>
+						</a>
+					</li>
+					<li>
+						<a href="<{link ctl='tools:qiangzhuan'}>">
+							<span class="tool_ico tool_ico4"></span>
+							<p>墙砖计算器</p>
+						</a>
+					</li>
+					<li>
+						<a href="<{link ctl='tools:chuanlian'}>">
+							<span class="tool_ico tool_ico5"></span>
+							<p>窗帘计算器</p>
+						</a>
+					</li>
+					<li>
+						<a href="<{link ctl='tools:dizhuan'}>">
+							<span class="tool_ico tool_ico6"></span>
+							<p>地砖计算器</p>
+						</a>
+					</li>
+				</ul>
+				<div class="cl"></div>
+			</div>
+            <div class="index_link">
+                <h2 class="index_title"><font class="lt">友情链接/<font class="fontcl1">Links</font></font>
+                    <p class="cl"></p>
+                </h2>
+                <ul>
+					<li><a href="http://www.eecn.cc">优优美家</a></li>
+                    <{calldata mdl='market/links' city_id=$request.city_id limit="10"}>
+                    <li><a href="<{$item.link}>"><{$item.title}></a></li>
+                    <{/calldata}>
+                </ul>
+            <div class="cl"></div>
+        </div>
+        </div>
+<script type="text/javascript">
+(function(K, $){
+$("[kinBox]").each(function(){
+    var params = $.parseJSON($(this).attr("kinBox") || "{}") || {};
+    if(!$(this).attr("id")){$(this).attr("id") = K.GGUID();}
+    $("#"+$(this).attr('id')).kinMaxShow($.extend({intervalTime:4}, params));
+});
+})(window.KT, window.jQuery);
+</script>
+<{include file="block/footer.html"}>

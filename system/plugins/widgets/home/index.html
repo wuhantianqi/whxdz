@@ -1,0 +1,59 @@
+<{foreach from=$data.tuan item=item}>
+<li>
+    <div class="opacity_img">
+        <a href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>" target="_blank" >
+            <img src="<{$pager.img}>/<{$item.face_pic}>" >
+            <p class="bg"></p>
+            <p class="text jq_endtime" value='<{$item.end_time}>'><span class="ico time_ico"></span>剩余时间倒计时</p>
+        </a>
+        <div class="opacity_yuyue">
+            <p class="bg"></p>
+            <p class="text"><a href="<{link ctl='tuan:yuyue' arg0=$item.tuan_id}>" mini-load="报名团装活动">立即报名</a>
+            </p>
+        </div>
+    </div>
+    <a href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>" target="_blank" class="title"> [<{$item.home_name}>]<{$item.title}></a>
+    <div class="price">
+        <small class="lt">参团立省</small>
+        <b class="fontcl2 lt">￥<{$item.youhui}></b>
+        <span class="rt"><font class="fontcl2"><{$item.sign_num}></font>人参团</span>
+    </div>
+</li>
+<{/foreach}>
+
+<script>
+    $(document).ready(function() {
+        $(".tuanzhuang_show").mouseover(function() {
+            $(this).find(".tuanzhuang_time").addClass("currentred");
+        })
+        .mouseout(function() {
+            $(this).find(".tuanzhuang_time").removeClass("currentred");
+        });
+        var dateTime = new Date();
+                var difference = dateTime.getTime() ;
+                setInterval(function() {
+                    $(".jq_endtime").each(function() {
+                        var obj = $(this);
+                        var endTime = new Date(parseInt(obj.attr('value')) * 1000);
+                        var nowTime = new Date();
+                        var nMS = endTime.getTime() - nowTime.getTime() + difference;
+                        var myD = Math.floor(nMS / (1000 * 60 * 60 * 24));
+                        var myH = Math.floor(nMS / (1000 * 60 * 60)) % 24;
+                        var myM = Math.floor(nMS / (1000 * 60)) % 60;
+                        var myS = Math.floor(nMS / 1000) % 60;
+                        if (myD >= 0) {
+                            if(myS % 3 == 0){
+                                obj.parent().parent().find(".tuanzhuang_time").addClass("currentred");
+                            }else{
+                                obj.parent().parent().find(".tuanzhuang_time").removeClass("currentred");
+                            }
+                            var str = myD + "天" + myH + "小时" + myM + "分" + myS + "秒";
+                        } else {
+                            var str = "已结束！";
+                        }
+                        obj.html(str);
+                    });
+                }, 1000);
+        
+    });
+</script>   

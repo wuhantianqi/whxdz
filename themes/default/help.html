@@ -1,0 +1,39 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+<div class="bread_nav">
+	<div class="mainwd">
+		您当前的位置：<a href="<{link ctl='index'}>">首页</a> &gt; 帮助中心
+	</div>
+</div>
+<div class="mainwd">
+	<div class="h20"></div>
+	<div class="help_left  lt">
+		<h2 class="help_top"><b class="lt">帮助中心</b><span class="rt ico help_ico1"></span></h2>
+		<div class="sub_box">
+			<ul class="help_list">
+				<{foreach from=$cate item=item}>
+                <{if $item.from=='help' && $item.parent_id!=0}>
+				<li>
+					<p class="title"><span class="ico help_ico2"></span><{$item.title}></p>
+					<{foreach from=$items item=it}>
+                    <{if $it.cat_id == $item.cat_id}>					
+					<a href="<{link ctl='help' arg0=$it.page}>" <{if $it.article_id == $detail.article_id}> class="on" <{/if}> title="$it.title"><{$it.title}></a>
+					<{/if}>
+					<{/foreach}>
+				</li>
+				<{/if}>
+                <{/foreach}>
+			</ul>
+		</div>
+	</div>
+	<div class="help_right sub_box rt">
+		<div class="help_intro">
+			<h2><{$detail.title}></h2>
+			<div class="article">
+				<{$detail.content}>
+			</div>
+		</div>
+	</div>
+	<div class="cl"></div>
+</div>
+<{include file="block/footer.html"}>

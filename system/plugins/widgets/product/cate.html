@@ -1,0 +1,11 @@
+<{foreach from=$data.cate item=item}>
+<{if $item.parent_id == 0}>
+
+<option value="<{$item.cat_id}>" <{if $data.selected == $item.cat_id}>selected="selected" <{/if}> ><b><{$item.cat_name}></b></option>
+<{foreach from=$data.cate item=item2}>
+<{if $item2.parent_id == $item.cat_id}>
+<option value="<{$item2.cat_id}>" <{if $data.selected == $item2.cat_id}>selected="selected" <{/if}> >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<{$item2.cat_name}></option>
+<{/if}>
+<{/foreach}>
+<{/if}>
+<{/foreach}>

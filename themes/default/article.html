@@ -1,0 +1,62 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+    <!--<div class="crumbs">
+        <ul class="margin">
+            <li>您当前的位置:</li>
+            <li><a href="<{link ctl='index'}>" >首页</a></li>
+            <li>>装饰关条</li>
+            <li><{if $cate}>  &gt; <a title="<{$cate.title}>" href="<{link ctl='article:items' arg0=$cate.cat_id}>"><{$cate.title}></a><{/if}></li>
+        </ul>
+    </div>-->
+    <div class="clear"></div>
+    <div class="site-banner" style="background:url(%THEME%/images/banner-tt.jpg) no-repeat center;"></div>
+    <div class="site-content margin">
+        <div class="site-content-right">
+            <div class="site-form">
+                <h2>在这里踏上您的省心装修之旅</h2>
+                <img src="%THEME%/images/youce-tt.png" alt="">
+                <form action="/index.php?tender-save.html" method="post" mini-form="tender1" id="form">
+                    <p><i></i><input type="text" name="data[name]" placeholder="请输入您的称呼"></p>
+                    <p><i></i><input type="text" name="data[mobile]" placeholder="请输入您的联系方式"></p>
+                    <p class="submit-i">立即预约</p>
+                </form>
+            </div>
+            <div class="clear"></div>
+            <div class="designer-manager knowledge-list">
+                <h2>装饰知识</h2>
+                <ul>
+                    <{calldata mdl='article/handler' order='hot' limit=8}>
+                    <li><b><{$iteration}></b><a href="<{link ctl='article:detail' arg0=$item.article_id}>"><{$item.title|cutstr:35}></a></li>
+                    <{/calldata}>
+                </ul>
+            </div>
+            <div class="site-advertisement"><img src="%THEME%/images/youce-tt1.png" alt=""></div>
+        </div>
+        <div class="article-content-left">
+        	<div class="article-ment">  
+                <{foreach $leftcats as $item}>
+                <a class="<{if $item.cat_id==$cat_id }>cures<{/if}>" href="<{link ctl='article:lists' arg0=$item.cat_id}>"><{$item.title}></a>
+                <{/foreach}>  
+        	</div>
+            <div class="article-case-list">
+                <ul>
+                    <{foreach $items as $item}>
+                    <li>
+                        <div class="article-list-img">
+                            <a href="<{link ctl='article:detail' arg0=$item.article_id}>"><img src="http://192.168.0.101/attachs/<{$item.thumb}>" alt=""></a>
+                        </div>
+                        <div class="article-list-wenzi">
+                            <h2><a href="<{link ctl='article:detail' arg0=$item.article_id}>"><{$item.title}></a></h2>
+                            <p><a href="<{link ctl='article:detail' arg0=$item.article_id}>"><{$item.desc}></a></p>
+                            <p><{$item.dateline|format:'m月d日 H:i:s'}></p>
+                        </div>
+                    </li>
+                    <{/foreach}>
+                </ul>
+            </div>
+            <div class="site-page page">
+                <{$pager.pagebar}>
+            </div>
+        </div>
+    </div>
+<{include file="block/footer.html"}>

@@ -1,0 +1,31 @@
+<{include file='block/sheader.html'}>
+<{include file='block/header.html'}>
+<div class="app_bg1">
+	<div class="mainwd app_banner">
+		<p><a href="<{$CONFIG.site.android}>"></a><a href="<{$CONFIG.site.ios}>"></a></p>
+	</div>
+</div>
+<div class="app_bg2">
+	<div class="mainwd">
+		<img src="%THEME%/images/appBg2.jpg" />
+	</div>
+</div>
+<div class="app_bg3">
+	<div class="mainwd">
+		<img src="%THEME%/images/appBg3.jpg" />
+	</div>
+</div>
+<div class="app_bg4">
+	<div class="mainwd">
+		<img src="%THEME%/images/appBg4.jpg" />
+	</div>
+</div>
+<script type="text/javascript"  src="<{$pager.res}>/script/jquery.kinMaxShow.js"></script>
+<script> $(document).ready(function() {
+        var kin_d = 'none';
+        if($("#kinMaxShow div").length > 1){
+            kin_d = '';
+        }
+        $("#kinMaxShow").kinMaxShow({height: 420, easing: 'swing', intervalTime: 5, button: {normal: {right: '48%',display:kin_d}}});
+    });</script>    
+<{include file='block/footer.html'}>    

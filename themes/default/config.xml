@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?><config>
+<adv name="手机版首页广告位" from="lunzhuan" width="" height=""></adv>
+<adv name="活动列表头部banner" from="photo" width="" height=""></adv>
+<adv name="手机下载页面的banner" from="lunzhuan" width="" height=""></adv>
+<adv name="文章右侧广告位" from="photo" width="240" height="320"></adv>
+<adv name="平价材料头部广告位" from="lunzhuan" width="" height=""></adv>
+<adv name="首页轮播广告位" from="lunzhuan" width="" height=""></adv>
+<adv name="首页装修套餐广告位" from="photo" width="325" height="120"></adv>
+<adv name="首页装修工具下面广告" from="lunzhuan" width="240" height="120"></adv>
+</config>

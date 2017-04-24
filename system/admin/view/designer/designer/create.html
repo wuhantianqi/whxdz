@@ -1,0 +1,43 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+        <th><{$MOD.title}></th>
+        <td align="right"><{link ctl="designer/designer:index" priv="hidden" class="button"}></td>
+        <td width="15"></td>
+      </tr>
+    </table>
+</div>
+<div class="page-data"><form action="?designer/designer-create.html" mini-form="designer-form" method="post" ENCTYPE="multipart/form-data">
+<table width="100%" border="0" cellspacing="0" class="table-data form">
+<tr><th><span class="red">*</span>名称：</th><td><input type="text" name="data[name]" value="<{$detail.name|default:''}>" class="input w-300"/></td></tr>
+<tr>
+    <th>头衔：</th>
+	<td>
+		 <select name="data[cate_id]"><{widget id="cate/indexlist" from='designer' selected=$detail.cate_id}></select>
+	</td>    
+</tr>
+<tr>
+    <th>团队：</th>
+	<td>
+		 <select name="data[team_id]"><{widget id="cate/indexlist" from='team' selected=$detail.team_id}></select>
+	</td>    
+</tr>
+<tr><th><span class="red">*</span>头像：</th><td><input type="text" name="data[face_pic]" value="<{$detail.face_pic}>" <{if $detail.face_pic}>photo="<{$pager.img}>/<{$detail.face_pic}>"<{/if}> class="input w-300" />&nbsp;&nbsp;&nbsp;<input type="file" name="data[face_pic]" class="input w-100" /></td></tr>
+<tr><th><span class="red">*</span>毕业院校：</th><td><input type="text" name="data[school]" value="<{$detail.school|default:''}>" class="input w-300"/></td></tr>
+<{widget id="attr/form" from="zx:designer" value=$attr}>
+<tr><th><span class="red">*</span>代表作：</th><td><textarea name="data[model_case]" class="textarea"><{$detail.model_case}></textarea><br /></td></tr>
+<tr><th><span class="red">*</span>设计理念：</th><td><textarea name="data[concept]" class="textarea"><{$detail.concept}></textarea><br /></td></tr>
+<tr><th>个人简介：</th><td><textarea name="data[intro]" kindeditor="full" style="width:800px;height:350px;"><{$detail.intro}></textarea><br /></td></tr>
+<tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>
+</form></div>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript">
+(function(K, $){
+$("#page-data").tabs();
+var editor = KindEditor.create('textarea[kindeditor]', {uploadJson : '?magic/upload-editor.html', extraFileUploadParams:{OATOKEN:"<{$OATOKEN}>"}});
+})(window.KT, window.jQuery);
+</script> 
+<{include file="admin:common/footer.html"}>

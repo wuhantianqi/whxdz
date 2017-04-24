@@ -1,0 +1,49 @@
+<!--预测费用开始-->
+<div class="costs">
+    <p class="title"><span class="left"><font>30秒</font>预测家装费用</span><span class="right">已有<font><{$data.count|default:'100'}></font>家业主成功获得预测</span></p>
+    <form id='tenders_frm' method="post" action="">
+        <table>
+            <tr>
+                <td><span><font class="red">*</font>我的称呼</span><input type="text" name="data[name]" value="" ></td>
+                <td><span>装修方式</span>
+                     <select name="data[way_id]">
+                        <option value="0">请选择</option>
+                        <{foreach from=$data.setting[$data.type['way']] item=item key=key}>
+                        <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                        <{/foreach}>
+                     </select>
+                </td>
+                <td>
+                    <span>预算范围</span>
+                   <select name="data[budget_id]">
+                        <option value="0">请选择</option>
+                        <{foreach from=$data.setting[$data.type['budget']] item=item key=key}>
+                             <option <{if $detail.budget_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                         <{/foreach}>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><span><font class="red">*</font>联系电话</span><input  name="data[mobile]"  type="text" value="" ></td>
+                <td><span>装修面积</span>
+                    <input type="text"  name="data[area]"  class="short" ><font class="area">m²</font></td>
+                <td>
+                    <span>您的户型</span>
+                    <select name="data[house_type_id]">
+                        <option value="0">请选择</option>
+                        <{foreach from=$data.setting[$data.type['house_type']] item=item key=key}>
+                        <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                        <{/foreach}>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td><span>所在地址</span><input type="text" name="data[addr]" value="" ></td>
+                <td colspan="2"><span>备注信息</span>
+                    <input type="text"  name="data[demand]" class="long" ></td>
+            </tr>
+        </table>	
+        <p class="bottom"><input type="submit"  mini-submit='#tenders_frm' action="<{link ctl='tender:save'}>" class="public_bt"><b>*为了你的利益及我们的口碑，你的隐私将被严格保密。</b></p>		
+    </form>
+</div>
+<!--预测费用结束-->

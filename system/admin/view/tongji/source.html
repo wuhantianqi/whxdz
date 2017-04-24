@@ -1,0 +1,138 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+        <tr>
+            <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+            <th><{$MOD.title}></th>
+            <td align="right"></td>
+            <td width="15"></td>
+        </tr>
+    </table>
+</div>
+<div class="page-data">
+    <h4 class="tip-notice">other代表非搜索引擎，可能通过网址直接传播带来的！via这个要注意了！在站外发软文的时候建议url带一个via=***这个***可以用拼音或者其他的！只统计在网站留下姓名及电话的数据！</h4>
+<form action="?tongji/tongji-source.html" id="SO-form" method="post">
+    <table width="100%" border="0" cellspacing="0" class="table-data form">
+        <tr>
+            <th>时间：</th>
+            <td>
+                <input type="text" name="SO[bg_time]" value="<{$SO.bg_time|default:''}>" class="input w-100" date="bg_time" readonly/>~
+                <input type="text" name="SO[end_time]" value="<{$SO.end_time|default:''}>" class="input w-100" date="end_time" readonly/>
+            </td>
+        </tr> 
+        <tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="搜 索" /></td></tr>
+    </table>
+</form>
+</div>
+<script src="<{$pager.res}>/highcharts/highcharts.js"></script>
+<script src="<{$pager.res}>/highcharts/modules/exporting.js"></script>
+<div id="container1"></div>
+<script type="text/javascript">
+$(function () {
+    var chart;
+    
+    $(document).ready(function () {
+    	
+    	// Build the chart
+        $('#container1').highcharts({
+            chart: {
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+            },
+            title: {
+                text: '<{$SO.bg_time}>至<{$SO.end_time}>来源百分比统计'
+            },
+            credits:{
+                text:'技术支持:jh.cc',
+                href:'http://www.ijh.cc'
+            },
+            tooltip: {
+        	    pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: false
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: '百分比',
+                data: [
+                    <{$show}>
+                ]
+            }]
+        });
+    });
+    
+});
+</script>
+
+<div id="container2"></div>
+
+		<script type="text/javascript">
+$(function () {
+        $('#container2').highcharts({
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '<{$SO.bg_time}>至<{$SO.end_time}>预约数统计'
+            },
+   
+           
+            xAxis: {
+                type: 'category',
+                labels: {
+                    rotation: -45,
+                    align: 'right',
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif'
+                    }
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '次数'
+                }
+            },
+            legend: {
+                enabled: false
+            },
+            tooltip: {
+                pointFormat: '预约: <b>{point.y} 次</b>',
+            },
+            series: [{
+                name: 'Population',
+                data: [
+                 <{$show2}>
+                ],
+                dataLabels: {
+                    enabled: true,
+                    rotation: -90,
+                    color: '#FFFFFF',
+                    align: 'right',
+                    x: 4,
+                    y: 10,
+                    style: {
+                        fontSize: '13px',
+                        fontFamily: 'Verdana, sans-serif',
+                        textShadow: '0 0 3px black'
+                    }
+                }
+            }]
+        });
+    });
+    
+
+		</script>
+
+
+<{include file="admin:common/footer.html"}>

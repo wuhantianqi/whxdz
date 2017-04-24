@@ -1,0 +1,66 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+<div class="bread_nav">
+	<div class="mainwd">
+		您当前的位置：<a href="<{link ctl='index'}>" >首页</a> &gt;  优惠活动
+	</div>
+</div>
+<div class="mainwd">
+	<div class="h20"></div>
+	<div class="sub_left">
+		<div class="sub_box">
+			<ul class="sub_activity opacity_chose">
+				<{foreach $items as $item}>
+				<li>
+					<div class="pic lt">
+						<a href="<{link ctl='activity:detail' arg0=$item.activity_id}>"><img src="<{$pager.img}>/<{$item.thumb}>" alt="<{$item.title}>" /></a>
+					</div>
+					<div class="sub_activity_list lt">
+						<div class="tp">
+						<h2><a href="<{link ctl='activity:detail' arg0=$item.activity_id}>"><{$item.title}></a></h2>
+						<p>活动时间：<{$item.bg_time|format:'Y年m月d日'}>—<{$item.end_time|format:'Y年m月d日'}></p>
+						<p>活动地址：<{$item.addr}></p>
+						</div>
+						<p>活动详情：</p>
+						<p><span><{$item.intro|cutstr:200}></span></p>
+
+					</div>
+					<div class="cl"></div>
+				</li>
+				<{/foreach}>
+			</ul>
+			<div class="cl"></div>
+				<div class="page hoverno">
+					<{$pager.pagebar}>
+				</div>
+		</div>
+	</div>
+	<div class="sub_right">
+		<div class="sub_tenders">
+			<h2>快速发布招标</h2>
+			<p class="graycl">三套设计方案供您选择</p>
+			<form action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1">
+				<input name="data[name]" type="text" class="text"  placeholder="您的称呼">
+				<input name="data[mobile]" class="text"  placeholder="您的电话">
+				<input name="data[addr]" class="text"  placeholder="您所在的小区">
+				<div class="cl"></div>
+				<input type="submit" class="btn_sub_apply btn" value="立即申请 "> 
+			</form>
+		</div>
+		<div class="sub_box">
+			<h2 class="sub_title">
+			服务特色
+			</h2>
+			<div class="sub_series opacity_chose">
+				<{calldata mdl='decorate/package' limit=3}><a href="<{link ctl='taocan' arg0=$item.package_id}>" target="_blank" ><img src="<{$pager.img}>/<{$item.face_pic}>"></a><{/calldata}>
+			</div>
+		</div>
+		<div class="sub_box">
+			<div class="sub_ad opacity_chose">
+				<{widget id=adv name='全站列表页右侧边栏广告' limit=1}>
+			</div>
+		</div>
+	</div>
+	<div class="cl"></div>
+</div>
+<{include file="block/footer.html"}>

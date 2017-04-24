@@ -1,0 +1,100 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+<div class="bread_nav">
+	<div class="mainwd">
+		您当前的位置：<a href="<{link ctl='index'}>" >首页</a> &gt; <a href="<{link ctl='tuan'}>" >小区团装</a>&gt; <{$detail.home_name}>
+	</div>
+</div>
+<div class="mainwd">
+	<div class="h20"></div>
+	<div class="sub_left">
+		<div class="sub_box">
+			<div class="tuan_detail">
+				<h1><{$detail.home_name}></h1>
+				<div class="lt">
+					<div class="pic">
+						<img src="<{$pager.img}>/<{$detail.face_pic}>">
+					</div>
+				</div>
+				<div class="tuan_detail_text lt">
+					<p>楼盘地址：<{$detail.home_addr}></p>
+					<p>开发商： <{$detail.home_kfs}></p>
+					<ul>
+						<li>
+							<p>参团立省</p>
+							<p class="fontcl2"><b>￥<{$detail.youhui}></b></p>
+						</li>
+						<li>
+							<p>已参团</p>
+							<p class="fontcl2"><b><{$detail.sign_num}>户</b></p>
+						</li>
+					</ul>
+					<p class="cl"></p>
+                    <p class="time"><span class="ico co_time_ico"></span><span class="jq_endtime" value='<{$detail.endtime}>'>剩余时间倒计时</span></p>
+					<p class="time none"><span class="ico over_time_ico"></span>团装已结束</p>
+					<a mini-load="报名<{$it.home_name}>团装活动" href="<{link ctl='tuan:yuyue' arg0=$detail.tuan_id}>" class="btn btn_main">立即参团</a>
+				</div>
+				<div class="cl"></div>
+				
+			</div>
+			<div class="sub_detail">
+				<h2 class="sub_intro_tit">团装详情</h2>	
+				<div class="article">
+					<{$detail.contents}>
+				</div>	
+			</div>
+		</div>
+	</div>
+	<div class="sub_right">
+		<div class="sub_tenders">
+			<h2>快速发布招标</h2>
+			<p class="graycl">三套设计方案供您选择</p>
+			<form action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1">
+				<input name="data[name]" type="text" class="text"  placeholder="您的称呼">
+				<input name="data[mobile]" class="text"  placeholder="您的电话">
+				<input name="data[addr]" class="text"  placeholder="您所在的小区">
+				<div class="cl"></div>
+				<input type="submit" class="btn_sub_apply btn" value="立即申请 "> 
+			</form>
+		</div>
+		<div class="sub_box">
+			<h2 class="sub_title">
+			家装套系
+			</h2>
+			<div class="sub_series opacity_chose">
+				<{calldata mdl='decorate/package' limit=3}><a href="<{link ctl='taocan' arg0=$item.package_id}>" target="_blank" ><img src="<{$pager.img}>/<{$item.face_pic}>"></a><{/calldata}>
+			</div>
+		</div>
+		<div class="sub_box">
+			<div class="sub_ad opacity_chose">
+				<{widget id=adv name='团装小区详情页右侧边栏广告' limit=1}>
+			</div>
+		</div>
+	</div>
+	<div class="cl"></div>
+</div>
+<script>
+    $(document).ready(function(){
+            var dateTime = new Date();
+            var difference = dateTime.getTime() ;
+            setInterval(function() {
+                $(".jq_endtime").each(function() {
+                    var obj = $(this);
+                    var endTime = new Date(parseInt(obj.attr('value')) * 1000);
+                    var nowTime = new Date();
+                    var nMS = endTime.getTime() - nowTime.getTime() + difference;
+                    var myD = Math.floor(nMS / (1000 * 60 * 60 * 24));
+                    var myH = Math.floor(nMS / (1000 * 60 * 60)) % 24;
+                    var myM = Math.floor(nMS / (1000 * 60)) % 60;
+                    var myS = Math.floor(nMS / 1000) % 60;
+                    if (myD >= 0) {
+                        var str = myD + "天" + myH + "小时" + myM + "分" + myS + "秒";
+                    } else {
+                        var str = "已结束！";
+                    }
+                    obj.html(str);
+                });
+            }, 1000);
+    });
+</script>
+<{include file="block/footer.html"}>

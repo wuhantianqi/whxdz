@@ -1,0 +1,143 @@
+<!-- 底部缩放表单 -->
+<script type="text/javascript"  src="<{$pager.theme}>/default/js/jquery-3.1.1.js"></script>
+<script type="text/javascript"  src="<{$pager.theme}>/default/js/layer-v3.0.3/layer.js"></script>
+<style>
+	*{
+		margin: 0px;
+		padding: 0px;
+	}
+	ul,li{
+		list-style: none;
+	}
+	.form-content{
+		width: 980px;
+		height: 370px;
+		margin: 0 auto;
+		background-image: url(%THEME%/images/di-d2.png);	
+		background-color: #fff;
+		position: relative;
+	}
+	.form-content ul{
+		position: absolute;
+	    left: 177px;
+	    top: 79px;
+	}
+	.form-content ul li{
+		margin-top: 11px;
+	}
+	.form-content ul li:last-child{
+		margin-top: 0px;
+	}
+	.form-content ul li:nth-child(3){
+		margin-top: 10px;
+	}
+	.form-content ul li:nth-child(4){
+		margin-top: 11px;
+	}
+	.form-content ul li:nth-child(5){
+		margin-top: 10px;
+	}
+	.form-content ul li input{
+		width: 186px;
+    	height: 32px;
+		text-indent:5px;
+	}
+	.form-content ul li:last-child i{
+		position: absolute;
+	    bottom: 5px;
+	    left: 159px;
+	    font-style: normal;
+	}
+	.form-content ul li select{
+		width: 188px;
+	    height: 32px;
+	}
+	.form-content ul p{
+		width: 100%;
+		height: 32px;
+		font-size: 12px;
+		color: #ff0000;
+		line-height: 32px;
+	}
+	.form-circular:hover {
+	    background-image: url(%THEME%/images/di-d30.png);
+	    background-repeat: no-repeat;
+	}
+	.form-circular {
+	    width: 101px;
+	    height: 101px;
+	    position: absolute;
+	    top: 135px;
+	    left: 425px;
+	    cursor: pointer;
+	    background-image: url(%THEME%/images/di-d3.png);
+	    background-repeat: no-repeat;
+	    font-size: 16px;
+	    text-align: center;
+	    line-height: 22px;
+	    padding-top: 25px;
+	    color: #fff;
+	}
+</style>
+<div class="form-content">
+	<form  action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1">
+		<ul>
+			<li><input name="data[name]" type="text"></li>
+			<li><input name="data[mobile]" type="text"></li>
+			<li>
+				<select name="data[house_type_id]" class="text">
+					<option value="0">请选择</option>
+                     <{foreach from=$setting[$type['house_type']] item=item key=key}>
+                         <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                     <{/foreach}>
+				</select>
+			</li>
+			<li>
+				<select name="data[way_id]" class="text">
+					<option value="0">请选择</option>
+                    <{foreach from=$setting[$type['way']] item=item key=key}>
+                         <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                     <{/foreach}>
+				</select>
+			</li>
+			<li><input name="data[area]" type="text"><i>㎡</i></li>
+		</ul>
+		<div class="form-circular">立即<br />提交</div>
+	</form>
+</div>
+<script>
+	$(document).on('click','.form-circular',function(){
+		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;    //手机正则表达式
+		var fater = $(this).parents("form");
+		fater.find('p').remove();
+		var fname = fater.find("input").eq(0);
+		var fphone = fater.find("input").eq(1);
+		if( fname.val() == '' || fname.val() == null ){
+			fater.find('ul').append("<p>*姓名不能为空</p>");
+			return;	
+		}
+		if( fphone.val() == '' || fphone.val() == null ){
+			fater.find('ul').append("<p>*手机号不能为空</p>");
+			return;		
+		}else if(!myreg.test(fphone.val())){
+			fater.find('ul').append("<p>*请添写正确的11位手机号码</p>");	
+			return;	
+		}	
+		var request = $.ajax({
+		  url: "/index.php?tender-save.html",
+		  method: "POST",
+		  data: {
+		  	"data[name]" : fname.val(),
+			"data[mobile]": fphone.val()
+			},
+		  dataType: "json"
+		});
+		request.done(function( msg ) {
+			layer.alert(msg.message['0'],{
+				skin: 'layui-layer-lan'
+			    ,closeBtn: 0
+			    ,anim: 0 //动画类型
+			});
+		});
+	})
+</script>

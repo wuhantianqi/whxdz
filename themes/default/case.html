@@ -1,0 +1,46 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+    <!--<div class="crumbs">
+        <ul class="margin">
+            <li>您当前的位置:</li>
+            <li><a href="<{link ctl='index'}>" >首页</a></li>
+            <li>>案例效果图</li>
+        </ul>
+    </div>-->
+    <div class="clear"></div>
+    <div class="site-banner" style="background:url(%THEME%/images/banner-xgt.jpg) no-repeat center;"></div>
+    <{widget id="tenders/templateform"}>
+    <div class="case-content margin">
+    	<div class="case-classification">
+    		<ul>
+                <{foreach $attr_values as $v}>
+                <li><a href="javascript:;"><{$v.title}>:<a><a href="<{$v.link}>">不限</a><{foreach $v.values as $vv}><a href="<{$vv.link}>"><{$vv.title}></a><{/foreach}></li>
+                <{/foreach}>
+    		</ul>
+    	</div>
+    	<div class="case-list">
+    		<ul>
+                <{foreach $case as $item}>
+                    <li>
+                        <span>
+                            <a href="<{link ctl='case:detail' arg0=$item.case_id}>" target="_blank" >
+                                <img src="<{$pager.img}>/<{$item.photo}>_thumb.jpg" >
+                            </a>
+                        </span>
+                        <span>
+                            <{foreach $item.allphotos as $v}>
+                            <{if $v@iteration < 5}>
+                            <p><a href="<{link ctl='case:detail' arg0=$item.case_id}>"><img src="<{$pager.img}>/<{$v.photo}>_small.jpg" alt="<{$item.title}>"></a></p>
+                            <{/if}>
+                            <{/foreach}> 
+                        </span>
+                        <span><b><i></i><{$item.photos}>张</b><{$item.title}></span>
+                    </li>
+                <{/foreach}> 
+    		</ul>
+    	</div>
+        <div class="site-page page">
+            <{$pager.pagebar}>
+        </div>
+    </div>
+<{include file="block/footer.html"}>

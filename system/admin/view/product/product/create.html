@@ -1,0 +1,66 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+        <th><{$MOD.title}></th>
+        <td align="right"><{link ctl="product/product:index" priv="hidden" class="button"}></td>
+        <td width="15"></td>
+      </tr>
+    </table>
+</div>
+<div class="page-data"><form action="?product/product-create.html" mini-form="product-form" method="post" ENCTYPE="multipart/form-data">
+<table width="100%" border="0" cellspacing="0" class="table-data form">
+<tr><th><span class="red">*</span>产品名称：</th><td><input type="text" name="data[product_name]" value="<{$detail.product_name|default:''}>" class="input w-300"/></td></tr>
+<tr><th class="w-100"><span class="red">*</span>分类：</th>
+    <td>
+        <select name="data[cat_id]" class="input w-150"><option value="0">请选择..</option><{widget id='product/cate' selected=$detail.cat_id}></select>
+    </td>
+</tr>
+<tr><th class="w-100"><span class="red">*</span>品牌：</th>
+    <td>
+        <select name="data[brand_id]" class="input w-150">
+            <option value="0">请选择..</option>
+            <{widget id='product/brand' cat_id=$detail.cat_id selected=$detail.brand_id}>
+        </select>
+    </td>
+</tr>
+<{*tr><th><span class="red">*</span>市场价格：</th><td><input type="text" name="data[price]" value="<{$detail.price|default:''}>" class="input w-100"/></td></tr*}>
+<tr><th><span class="red">*</span>本站价格：</th><td><input type="text" name="data[my_price]" value="<{$detail.my_price|default:'面议'}>" class="input w-100"/></td></tr>
+<tr><th><span class="red">*</span>缩略图：</th><td><input type="text" name="data[face_pic]" value="<{$detail.face_pic}>" <{if $detail.face_pic}>photo="<{$pager.img}>/<{$detail.face_pic}>"<{/if}> class="input w-300" />&nbsp;&nbsp;&nbsp;<input type="file" name="data[face_pic]" class="input w-100" /></td></tr>
+<tr><th>内容：</th><td><textarea name="data[content]" kindeditor="full" style="width:800px;height:350px;"><{$detail.content}></textarea><br /></td></tr>   
+<tr><th>被预约数：</th><td><input type="text" name="data[yue_num]" value="<{$detail.yue_num|default:''}>" class="input w-100"/></td></tr>
+<tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>
+</form></div>
+
+<script type="text/javascript">
+(function(K, $){
+
+$("select[name='data[cat_id]']").live('change', function(){
+	var cat_id = $(this).val();
+	if(!cat_id){return false;}
+	$.getJSON("?product/brand-cate-"+cat_id+".html", function(ret){
+		if(ret.error){
+			Widget.MsgBox.error(ret.message.join(","));
+		}else if(ret.brand.length>0){
+			var html = "";
+			for(var i=0; i<ret.brand.length; i++){
+				html += '<option value="'+ret.brand[i].brand_id+'">'+ret.brand[i].brand_name+'</option>';
+			}
+			$("select[name='data[brand_id]']").html(html);		
+		}else{
+			$("select[name='data[brand_id]']").html('<option value="">--</option>');
+		}
+	});
+});
+})(window.KT, window.jQuery);
+</script>
+<script type="text/javascript" src="<{$pager.res}>/kindeditor/kindeditor.js"></script>
+<script type="text/javascript">
+(function(K, $){
+$("#page-data").tabs();
+var editor = KindEditor.create('textarea[kindeditor]', {uploadJson : '?magic/upload-editor.html', extraFileUploadParams:{OATOKEN:"<{$OATOKEN}>"}});
+})(window.KT, window.jQuery);
+</script> 
+<{include file="admin:common/footer.html"}>

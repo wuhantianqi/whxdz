@@ -1,0 +1,62 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+    <div class="crumbs">
+        <ul class="margin">
+            <li>您当前的位置:</li>
+            <li><a href="<{link ctl='index'}>" >首页</a></li>
+            <li>><a href="<{link ctl='manager'}>">施工员</a></li>
+            <li>><{$detail.name}></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="site-banner"><img src="%THEME%/images/banner-1.jpg" alt="设计师"></div>
+    <div class="site-content margin designer-detail">
+        <div class="site-content-right">
+            <div class="designer-detail-manager">
+                <h2>人气施工员</h2>
+                <ul>
+                    <{calldata mdl='manager/manager' order='hot' limit=5}>
+                    <li>
+                        <span>
+                            <a href="<{link ctl='manager:detail' arg0=$item.manager_id}>"><p><{$item.name}></p></a>
+                            <p>工地：<{$item.site_num}></p>
+                            <p>头衔：<{$item.cate.cate_name}></p> 
+                        </span>
+                        <a href="<{link ctl='manager:detail' arg0=$item.manager_id}>">
+                            <img src="<{$pager.img}>/<{$item.face_pic}>">
+                        </a>
+                    </li>
+                    <{/calldata}>
+                </ul>
+            </div>
+        </div>
+        <div class="site-content-left">
+            <div class="designer-detail-top">
+                <img src="<{$pager.img}>/<{$detail.face_pic}>" alt="">
+                <div class="designer-detail-introduce">
+                    <ul>
+                        <li><{$detail.name}></li>
+                        <li>职位：<{$detail.cate.cate_name}> <{widget id="attr/form" from="zx:manager" value=$attrvalues  tpl='simple.html'}></li>
+                        <li>服务口号：<{$detail.concept}></li>
+                    </ul>               
+                </div>
+            </div>
+            <div class="designer-detail-bottom">
+                <h2>在建工地<i></i></h2>
+                <ul>
+                    <{foreach $items as $item}>
+                    <li>
+                        <div class="opacity_img">
+                            <a href="<{link ctl='site:detail' arg0=$item.site_id}>">
+                                    <img src="<{$pager.img}>/<{$item.face_pic}>">
+                                <p class="bg"></p>
+                                <p class="text"><{$item.title}></p>
+                            </a>
+                        </div>
+                    </li>
+                    <{/foreach}>
+                </ul>
+            </div>
+        </div>
+    </div>
+<{include file="block/footer.html"}>

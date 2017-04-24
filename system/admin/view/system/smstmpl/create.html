@@ -1,0 +1,26 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+        <tr>
+            <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+            <th><{$MOD.title}></th>
+            <td align="right"><{link ctl="system/smstmpl:index" priv="hidden" class="button"}></td>
+            <td width="15"></td>
+        </tr>
+    </table>
+</div>
+<div class="page-data"><form action="?system/smstmpl-create.html" mini-form="smstmpl-form" method="post" >
+        <table width="100%" border="0" cellspacing="0" class="table-data form">
+             <tr><th><span class="red">*</span>标题：</th><td><input type="text" name="data[title]" value="<{$detail.title|default:''}>" class="input w-300"/></td></tr>
+            <tr><th><span class="red">*</span>KEY：</th><td><input type="text" name="data[key]" value="<{$detail.key|default:''}>" class="input w-300"/></td></tr>
+
+            <tr><th>可使用的标签：</th><td><textarea name="data[intro]" class="textarea"><{$detail.intro}></textarea><br />全局可以使用的标签{sitename}网站名称；{dateline}时间；</td></tr>
+<tr><th><span class="red">*</span>模板内容：</th><td><textarea name="data[tmpl]" class="textarea"><{$detail.tmpl}></textarea></td></tr>
+<tr><th>启用：</th><td>
+	<label><input type="radio" name="data[is_open]" checked="checked" value="1"/>是</label>&nbsp;&nbsp;
+	<label><input type="radio" name="data[is_open]" value="0"/>否</label></td></tr>
+    <tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>
+</form></div>
+
+<{include file="admin:common/footer.html"}>

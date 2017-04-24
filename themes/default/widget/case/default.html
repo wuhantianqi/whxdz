@@ -1,0 +1,16 @@
+<{foreach from=$data.data  item=item2 name=case}>
+<li>
+    <div class="case_photo"><a target="_blank" title="<{$item2.title}>" href="<{link ctl='case:detail' arg0=$item2.case_id}>"><img src="<{$pager.img}>/<{$item2.photo}>"  width="225" height="170"/></a></div>
+    <div class="case_rsp none"></div>
+    <div class="case_text none">
+       <a target="_blank" title="<{$item2.title}>" href="<{link ctl='case:detail' arg0=$item2.case_id}>"> 
+            <p>
+                <span><{$item2.title}></span>
+                <{widget id='attr/fromlimit' from='zx:case' value=$item2.attr tpl='caseindex.html'}>
+                <span class="case_like"><{$item2.likes}></span>
+                <span class="case_show"><{$item2.views}></span>                        	
+            </p>
+        </a>
+    </div>
+</li>
+<{/foreach}>

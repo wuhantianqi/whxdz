@@ -1,0 +1,68 @@
+<{include file="block/mobile_header.html"}>
+<!--头部开始-->
+<div class="mobile_top">
+    <div class="moblie_top_son">
+        <p><a href="<{link ctl='activity'}>" class="lt"><img src="<{$pager.themepath}>/images/mobile/mobile_top_icon.png" /></a>优惠信息<a id='share' href="javascript:void(0)" class="rt"><img src="<{$pager.themepath}>/images/mobile/back_bg.png" /></a></p>
+    </div>
+</div>
+<script type="text/javascript" src="http://openapi.baidu.com/widget/social/1.0/share.js">
+</script>
+<script type="text/javascript">
+    baidu.socShare.init({
+        "afterRender": function() {
+        },
+        "client_id": "ZVEpDSsmZ0qxa1gmgDAh1Fje",
+        "dom_id": "share",
+        "content": "<{$detail.title}>",
+        "theme": "native",
+        "animate": true,
+        "url": encodeURIComponent(location.href),
+        "pic_url": '<{$pager.img}>/<{$detail.photo}>'
+    });
+</script>
+<div class="cl45"></div>
+<!--头部结束-->
+<div>
+    <div class=" mobile_main">
+        <div class="sale_sub_top">
+            <p class="title"><{$detail.title}></p>
+        </div>
+        <div  class="html_contents"><{$detail.info}></div>
+        <div class="sale_sub_bottom">
+            <a href="<{link ctl='activity:yuyue' arg0=$detail.activity_id}>" class="bt title">立即报名</a>
+            <p>剩余时间：<font class="red jq_endtime" value='<{$detail.endtime}>'>46天8分钟45秒</font></p>
+            <script>
+                $(document).ready(function() {
+                    var dateTime = new Date();
+                    var difference = dateTime.getTime();
+                    setInterval(function() {
+                        $(".jq_endtime").each(function() {
+                            var obj = $(this);
+                            var endTime = new Date(parseInt(obj.attr('value')) * 1000);
+                            var nowTime = new Date();
+                            var nMS = endTime.getTime() - nowTime.getTime() + difference;
+                            var myD = Math.floor(nMS / (1000 * 60 * 60 * 24));
+                            var myH = Math.floor(nMS / (1000 * 60 * 60)) % 24;
+                            var myM = Math.floor(nMS / (1000 * 60)) % 60;
+                            var myS = Math.floor(nMS / 1000) % 60;
+                            if (myD >= 0) {
+                                if (myS % 3 == 0) {
+                                    obj.parent().parent().find(".home_tuan_time").addClass("currentred");
+                                } else {
+                                    obj.parent().parent().find(".home_tuan_time").removeClass("currentred");
+                                }
+                                var str = myD + "天" + myH + "小时" + myM + "分" + myS + "秒";
+                            } else {
+                                var str = "已结束！";
+                            }
+                            obj.html(str);
+                        });
+                    }, 1000);
+
+                });
+            </script>
+        </div>
+    </div>
+</div>
+<div class="cl45"></div>
+<{include file="block/mobile_footer.html"}>

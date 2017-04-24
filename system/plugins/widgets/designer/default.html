@@ -1,0 +1,5 @@
+<{foreach from=$data.data item=item}>
+<option value="<{$item.designer_id}>" <{if $item.designer_id == $data.selected}>selected="selected"<{/if}> >
+        <{$item.name}> 
+</option>
+<{/foreach}>

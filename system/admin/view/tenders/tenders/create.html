@@ -1,0 +1,121 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+        <th><{$MOD.title}></th>
+        <td align="right"><{link ctl="tenders/tenders:index" priv="hidden" class="button"}></td>
+        <td width="15"></td>
+      </tr>
+    </table>
+</div>
+<div class="page-data"><form action="?tenders/tenders-create.html" mini-form="tenders-form" method="post" >
+<table width="100%" border="0" cellspacing="0" class="table-data form">
+
+<tr><th>称呼：</th><td><input type="text" name="data[name]" value="<{$detail.name|default:''}>" class="input w-300"/></td></tr>
+<tr><th><span class="red">*</span>手机：</th><td><input type="text" name="data[mobile]" value="<{$detail.mobile|default:''}>" class="input w-300"/></td></tr>
+<tr><th>小区：</th>
+	<td>
+
+		<input type="text" name="data[home_name]" value=""  class="input w-300"/>
+       
+	</td>
+</tr>
+
+<tr>
+    <th>
+        装修类型：
+    </th>
+    <td>
+        <select name="data[type_id]" class="select w-100">
+            <option value="0">请选择</option>
+            <{foreach from=$setting[$type['type']] item=item key=key}>
+                 <option <{if $detail.type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+             <{/foreach}>
+        </select>
+    </td>
+</tr>
+
+<tr>
+    <th>
+        喜欢风格：
+    </th>
+    <td>
+        <select name="data[style_id]" class="select w-100">
+            <option value="0">请选择</option>
+            <{foreach from=$setting[$type['style']] item=item key=key}>
+                 <option <{if $detail.style_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+             <{/foreach}>
+        </select>
+    </td>
+</tr>
+<tr>
+    <th>
+        预算范围：
+    </th>
+    <td>
+        <select name="data[budget_id]" class="select w-100">
+            <option value="0">请选择</option>
+            <{foreach from=$setting[$type['budget']] item=item key=key}>
+                 <option <{if $detail.budget_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+             <{/foreach}>
+        </select>
+    </td>
+</tr>
+<tr>
+    <th>
+        服务需求：
+    </th>
+    <td>
+        <select name="data[service_id]" class="select w-100">
+            <option value="0">请选择</option>
+            <{foreach from=$setting[$type['service']] item=item key=key}>
+                 <option <{if $detail.service_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+             <{/foreach}>
+        </select>
+    </td>
+</tr>
+<tr>
+    <th>
+        空间户型：
+    </th>
+    <td>
+        <select name="data[house_type_id]" class="select w-100">
+            <option value="0">请选择</option>
+            <{foreach from=$setting[$type['house_type']] item=item key=key}>
+                 <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+             <{/foreach}>
+        </select>
+    </td>
+</tr>
+<tr>
+    <th>
+        装修方式：
+    </th>
+    <td>
+        <select name="data[way_id]" class="select w-100">
+            <option value="0">请选择</option>
+            <{foreach from=$setting[$type['way']] item=item key=key}>
+                 <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+             <{/foreach}>
+        </select>
+    </td>
+</tr>
+<tr><th>地址：</th><td><input type="text" name="data[addr]" value="<{$detail.addr|default:''}>" class="input w-300"/></td></tr>
+<tr><th>其他需求：</th><td><textarea name="data[demand]" class="textarea"><{$detail.demand}></textarea><br /></td></tr>
+<tr><th>开始时间：</th><td><input type="text" name="data[start_time]" value="<{$detail.start_time|default:''}>" class="input w-100" date="start_time" readonly/></td></tr>
+<tr><th>面积：</th><td><input type="text" name="data[area]" value="<{$detail.area|default:''}>" class="input w-100"/><span class="tip-comment">㎡</span></td></tr>
+
+<tr><th>是否审核：</th><td>
+<ul class="group-list">
+    <li><label><input type="radio" name="data[audit]" value="0" <{if $detail.audit ==0}> checked="checked"<{/if}>  ck="MOD-6">待审核</label></li>
+    <li><label><input type="radio" name="data[audit]" value="1" <{if $detail.audit ==1}> checked="checked"<{/if}>  ck="MOD-6">已审核</label></li>
+    <div class="clear-both"></div>
+</ul>
+
+</td></tr>
+    <tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>
+</form></div>
+
+<{include file="admin:common/footer.html"}>

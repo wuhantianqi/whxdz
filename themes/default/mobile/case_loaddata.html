@@ -1,0 +1,10 @@
+<{foreach $items  as $item}>
+<div class="case_show">
+    <p><a href="<{link ctl='case:detail' arg0=$item.case_id}>" class="title"><{$item.title}></a></p>
+    <a href="<{link ctl='case:detail' arg0=$item.case_id}>"><img width="280" src="<{$pager.img}>/<{$item.photo}>" /></a>
+    <p>合肥江湖信息科技有限公司是江湖家居装修装饰系统和我们站长我们的目标是协助你.. </p>
+    <p><a href="<{link ctl='case:detail' arg0=$item.case_id}>" class="like">喜欢</a>已有<font class="red"><{$item.views}></font>人浏览</p>
+    <hr />
+    <p><a href="<{link ctl='case:detail' arg0=$item.case_id}>" class="title">查看详情</a></p>
+</div>
+<{/foreach}>

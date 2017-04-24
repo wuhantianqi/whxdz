@@ -1,0 +1,30 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+	<!--<div class="crumbs">
+        <ul class="margin">
+            <li>您当前的位置:</li>
+            <li>首页</li>
+            <li>>设计师</li>
+        </ul>
+    </div>-->
+    <div class="clear"></div>
+    <div class="site-banner" style="background:url(%THEME%/images/banner-me.jpg) no-repeat center;"></div>
+    <div class="clear"></div>
+	<div class="company">
+		<div class="company-left">
+				<ul class="company_list">
+					<{foreach $items as $item}>
+					<li>
+						<a href="<{link ctl='about' arg0=$item.page}>"><{$item.title}></a>
+					</li>
+					<{/foreach}>
+				</ul>
+		</div>
+		<div class="company-right">
+			<h2><{$info.title}></h2>
+			<div class="company-article">
+				<{$info.content}>
+			</div>
+		</div>
+	</div>
+<{include file="block/footer.html"}>

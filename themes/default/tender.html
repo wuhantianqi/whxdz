@@ -1,0 +1,338 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+<div class="mainwd">
+	<div class="h20"></div>
+	<div class="sub_box">
+		<div class="tenders_list">
+			<div class="tenders_title hoverno">
+				<a href="#"><span class="tenders_ico tenders_ico1"></span>免费招标</a>
+				<a href="#"><span class="tenders_ico tenders_ico2"></span>免费量房</a>
+				<a href="#"><span class="tenders_ico tenders_ico3"></span>免费设计</a>
+				<a href="#" class="last"><span class="tenders_ico tenders_ico4"></span>在线报价</a>
+				<div class="cl"></div>
+			</div>
+			<div class="tenders_cont">
+				<img src="<{$pager.theme}>/default/images/tenders_bg1.jpg">
+				<div class="tenders_form">
+					<p class="tp">今日已有<font class="fontcl2">1940</font>业主申请，本月申请人数已达<font class="fontcl2">36596</font></p>
+					<form  action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1" class="lt">
+						<table class="tenders_bable">
+							<tr>
+								<td class="title"> 您的称呼 </td>
+								<td>
+									<input name="data[name]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 您的电话 </td>
+								<td>
+									<input name="data[mobile]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 装修方式 </td>
+								<td>
+									<select name="data[way_id]" class="text">
+										<option value="0">请选择</option>
+                                        <{foreach from=$setting[$type['way']] item=item key=key}>
+                                             <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 装修面积 </td>
+								<td>
+									<input name="data[area]" type="text" class="text area">
+									m² </td>
+							</tr>
+							<tr>
+								<td class="title"> 所在地址 </td>
+								<td>
+									<input name="data[addr]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 您的户型 </td>
+								<td>
+									<select name="data[house_type_id]" class="text">
+										<option value="0">请选择</option>
+                                         <{foreach from=$setting[$type['house_type']] item=item key=key}>
+                                             <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="submit" class="btn btn_sub_apply" value="立即申请">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="tenders_cont">
+				<img src="<{$pager.theme}>/default/images/tenders_bg2.jpg">
+				<div class="tenders_form">
+					<p class="tp">今日已有<font class="fontcl2">1940</font>业主申请，本月申请人数已达<font class="fontcl2">36596</font></p>
+					<form  action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1" class="lt">
+						<table class="tenders_bable">
+							<tr>
+								<td class="title"> 您的称呼 </td>
+								<td>
+									<input name="data[name]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 您的电话 </td>
+								<td>
+									<input name="data[mobile]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 装修方式 </td>
+								<td>
+									<select name="data[way_id]" class="text">
+										<option value="0">请选择</option>
+                                        <{foreach from=$setting[$type['way']] item=item key=key}>
+                                             <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 装修面积 </td>
+								<td>
+									<input name="data[area]" type="text" class="text area">
+									m² </td>
+							</tr>
+							<tr>
+								<td class="title"> 所在地址 </td>
+								<td>
+									<input name="data[addr]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 您的户型 </td>
+								<td>
+									<select name="data[house_type_id]" class="text">
+										<option value="0">请选择</option>
+                                         <{foreach from=$setting[$type['house_type']] item=item key=key}>
+                                             <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="submit" class="btn btn_sub_apply" value="立即申请">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="tenders_cont">
+				<img src="<{$pager.theme}>/default/images/tenders_bg3.jpg">
+				<div class="tenders_form">
+					<p class="tp">今日已有<font class="fontcl2">1940</font>业主申请，本月申请人数已达<font class="fontcl2">36596</font></p>
+					<form  action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1" class="lt">
+						<table class="tenders_bable">
+							<tr>
+								<td class="title"> 您的称呼 </td>
+								<td>
+									<input name="data[name]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 您的电话 </td>
+								<td>
+									<input name="data[mobile]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 装修方式 </td>
+								<td>
+									<select name="data[way_id]" class="text">
+										<option value="0">请选择</option>
+                                        <{foreach from=$setting[$type['way']] item=item key=key}>
+                                             <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 装修面积 </td>
+								<td>
+									<input name="data[area]" type="text" class="text area">
+									m² </td>
+							</tr>
+							<tr>
+								<td class="title"> 所在地址 </td>
+								<td>
+									<input name="data[addr]" type="text" class="text">
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 您的户型 </td>
+								<td>
+									<select name="data[house_type_id]" class="text">
+										<option value="0">请选择</option>
+                                         <{foreach from=$setting[$type['house_type']] item=item key=key}>
+                                             <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<input type="submit" class="btn btn_sub_apply" value="立即申请">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="tenders_cont ">
+				<img src="<{$pager.theme}>/default/images/tenders_bg4.jpg">
+				<div class="tenders_form tenders_quote">
+					<p class="tp">今日已有<font class="fontcl2">1940</font>业主申请，本月申请人数已达<font class="fontcl2">36596</font></p>
+					<form  action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1" class="lt">
+						<table class="tenders_bable">
+							<tr>
+								<td class="title"> 您的户型 </td>
+								<td>
+									<select name="data[house_type_id]" class="text">
+										<{foreach from=$setting[$type['house_type']] item=item key=key}>
+                                             <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+								<td class="title"> 卫生间 </td>
+								<td>
+									<select name="data[tnum]" class="text">
+										<option value=1>1间</option>
+										<option value=2>2间</option>
+										<option value=3>3间</option>
+									</select>
+								</td>
+								<td class="title"> 阳台 </td>
+								<td>
+									<select name="data[snum]" class="text">
+										<option value=1>1间</option>
+										<option value=2>2间</option>
+										<option value=3>3间</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<td class="title"> 装修风格 </td>
+								<td>
+									<select name="data[style_id]" class="text">
+										<{foreach from=$setting[$type['style']] item=item key=key}>
+                                             <option <{if $detail.style_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+								<td class="title">装修档次</td>
+								<td>
+									<select name="data[budget_id]" class="text">
+										<{foreach from=$setting[$type['budget']] item=item key=key}>
+                                             <option <{if $detail.budget_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                                         <{/foreach}>
+									</select>
+								</td>
+								<td class="title">装修总面积 </td>
+								<td>
+									<input name="data[area]" type="text" class="text area">
+m² </td>
+							</tr>
+							<tr>
+								<td class="title"> 您的称呼 </td>
+								<td>
+									<input name="data[name]" type="text" class="text">
+								</td>
+								<td class="title"> 您的电话 </td>
+								<td>
+									<input name="data[mobile]" type="text" class="text">
+								</td>
+								<td colspan="2"><span class="pointcl">（输入正确的手机号，我们将把计算结果发送到您的手机上)</span></td>
+							</tr>
+							<tr>
+								<td colspan="6" align="center">
+									<input type="submit" class="btn btn_sub_apply" value="立即申请">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="tenders_bottom">
+			<img src="<{$pager.theme}>/default/images/tenders_img.jpg" class="lt">
+			 <div class="index_order tenders_order rt">
+                    <h2>最新发布订单</h2>
+                    <p class="title"><span >发布时间</span>
+                        <span>业主</span>
+                        <span>装修方式</span>
+                        <span>户型</span>
+                        <span>预算</span></p>
+                    <div class="scroll_order">
+                        <ul>
+                            <{calldata mdl='tenders/tenders' limit=20}>
+                            <li>
+                                <span ><{$item.dateline|format:'Y-m-d'}></span>
+                                <span><{$item.name|cutstr:3:'**'}></span>
+                                <span><{$item.way_title}></span>
+                                <span><{$item.house_type_title}></span>
+                                <span><{$item.budget_title}></span>
+                            </li> 
+                            <{/calldata}>                          
+                        </ul>
+                    </div>
+                </div>
+				<div class="cl"></div>
+		</div>
+		<div class="tenders_bottom">
+			<h2 class="title">1分钟发布申请，3套设计方案免费PK</h2>
+			<ul class="ten_list">
+				<li>
+					<img src="<{$pager.theme}>/default/images/ten_circular1.png">
+					<p>专业设计师，精准测量尺寸</p>
+				</li>
+				<li>
+					<img src="<{$pager.theme}>/default/images/ten_circular2.png">
+					<p>现场沟通采光及空间布局方案</p>
+				</li>
+				<li>
+					<img src="<{$pager.theme}>/default/images/ten_circular3.png">
+					<p>专业设计师PK，比谁设计最满意 </p>
+				</li>
+			</ul>
+			<div class="cl"></div>
+		</div>
+		<div class="tenders_bottom">
+			<h2 class="title">3套预算方案对比，获取最合理的装修报价</h2>
+			<ul class="ten_list">
+				<li>
+					<img src="<{$pager.theme}>/default/images/ten_square1.png">
+					<p>3份报价对比，熟悉项目单价和内容</p>
+				</li>
+				<li>
+					<img src="<{$pager.theme}>/default/images/ten_square2.png">
+					<p>报价公开透明，避免价格陷阱</p>
+				</li>
+				<li>
+					<img src="<{$pager.theme}>/default/images/ten_square3.png">
+					<p>了解常用建材行情，拒绝恶意增项</p>
+				</li>
+			</ul>
+			<div class="cl"></div>
+		</div>
+		<div class="tenders_bottom">
+			<img src="<{$pager.theme}>/default/images/ten_bt.jpg">
+		</div>
+	</div>
+</div>
+<{include file="block/footer.html"}>

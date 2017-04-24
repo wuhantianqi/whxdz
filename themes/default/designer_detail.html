@@ -1,0 +1,71 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+    <!--<div class="crumbs">
+        <ul class="margin">
+            <li>您当前的位置:</li>
+            <li><a href="<{link ctl='index'}>" >首页</a></li>
+            <li>><a href="<{link ctl='designer'}>">设计师</a></li>
+            <li>><{$detail.name}></li>
+        </ul>
+    </div>-->
+    <div class="clear"></div>
+    <div class="site-banner" style="background:url(%THEME%/images/banner-sj.jpg) no-repeat center;"></div>
+    <div class="site-content margin designer-detail">
+        <div class="site-content-right">
+            <div class="designer-detail-manager">
+                <h2>人气设计师榜</h2>
+                <ul>
+                    <{calldata mdl='designer/designer' order='hot' limit=5}>
+                    <li>
+                        <span>
+                            <a href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="title"><p><{$item.name}></p></a>
+                            <p>案例: <{$item.case_num}></p>
+                            <p>关注<{$item.views}>人</p> 
+                        </span>
+                        <a href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="lt">
+                            <img src="<{$pager.img}>/<{$item.face_pic}>">
+                        </a>
+                    </li>
+                    <{/calldata}>
+                </ul>
+            </div>
+        </div>
+        <div class="site-content-left">
+            <div class="designer-detail-top">
+            	<img src="<{$pager.img}>/<{$detail.face_pic}>" alt="">
+                <div class="designer-detail-introduce">
+            		<ul>
+			    		<li><{$detail.name}></li>
+			    		<li>头衔：<{$detail.cate.cate_name}> <{widget id="attr/form" from="zx:designer" value=$attrvalues  tpl='case.html'}></li>
+			    		<li>毕业院校：<{$detail.school}></li>
+			    		<li>设计理念：<{$detail.concept}></li>
+			    		<li>所擅长风格：<{$detail.intro}></li>
+			    		<li>已有<{$detail.views}>人关注<b class="popupform">预约设计</b></li>
+			    	</ul>		    	
+                </div>
+            </div>
+            <div class="designer-detail-bottom">
+                <h2>最新设计作品<i></i></h2>
+                <ul>
+                    <{foreach $items as $item}>
+                    <li>
+                        <div class="opacity_img">
+                            <a href="<{link ctl='case:detail' arg0=$item.case_id}>">
+                                <img src="<{$pager.img}>/<{$item.photo}>_thumb.jpg" width="100%" height="100%">
+                                <p class="bg"></p>
+                                <p class="text"><{$item.title}></p>
+                            </a>
+                        </div>
+                    </li>
+                    <{/foreach}>
+                	<li>
+                        <a href="<{link ctl='case:detail' arg0=$item.case_id}>">
+                            <img src="<{$pager.img}>/<{$item.photo}>_thumb.jpg">
+                        <p><{$item.title}></p>
+                        </a>
+                	</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+<{include file="block/footer.html"}>

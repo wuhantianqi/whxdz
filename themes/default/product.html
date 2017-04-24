@@ -1,0 +1,66 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+<div class="bread_nav">
+	<div class="mainwd"> 您当前的位置：<a href="<{link ctl='index'}>" >首页</a> &gt;平价材料</div>
+	</div>
+</div>
+<div class="mainwd">
+	<div class="h20"></div>
+	<div class="material_banner">
+		<{widget id=adv name='平价材料列表banner广告' limit=3}>
+	</div>
+	<div class="sub_box material_choose hoverno">
+		<div class="title">
+            <a style="margin-right:5px;">分类：</a>
+            <{foreach $cate_list as $v}>
+            <{if $v.parent_id == 0}>
+			 <a href="<{link ctl='product' arg0=$v.cat_id arg1=$pager.brand_id arg2=1}>" <{if $top_cate.cat_id == $v.cat_id}>class="current"<{/if}>><{$v.cat_name}></a>
+            <{/if}>
+            <{/foreach}>
+		</div>
+        <{if $pager.has_children}>
+		<div class="material_son">
+			<{foreach $cate_list as $v}>
+            <{if $v.parent_id==$top_cate.cat_id}><a href="<{link ctl='product' arg0=$v.cat_id arg1=$pager.brand_id arg2=1}>"<{if $pager.cat_id == $v.cat_id}> class="current"<{/if}>><{$v.cat_name}></a><{/if}>
+            <{/foreach}>
+		</div>
+        <{/if}>
+        <{if $brand_list}>
+        <div class="title">
+            <a style="margin-right:5px;">品牌：</a>
+            <{foreach $brand_list as $v}>
+            <a href="<{link ctl='product' arg0=$pager.cat_id arg1=$v.brand_id arg2=1}>" <{if $pager.brand_id == $v.brand_id}> class="current"<{/if}>><{$v.brand_name}></a>
+            <{/foreach}>
+        </div>
+        <{/if}>        
+	</div>
+	<div class="sub_box">
+		<ul class="index_material sub_material">
+            <{foreach $items as $item}>
+			 <li>
+                <div class="opacity_img">
+                    <a href="<{link ctl='product:detail' arg0=$item.product_id}>" target="_blank" >
+                        <img src="<{$pager.img}>/<{$item.face_pic}>" >
+                    </a>
+                    <div class="opacity_yuyue">
+                        <p class="bg"></p>
+                        <p class="text"><a href="<{link ctl='product:yuyue' arg0=$item.product_id}>" mini-load="预约产品优惠">预约优惠</a>
+                        </p>
+                    </div>
+                </div>
+                <p class="title">
+                   <a href="<{link ctl='product:detail' arg0=$item.product_id}>"><{$item.product_name}></a>
+                </p>
+				<p class="price">
+					<span class="lt fontcl2">￥<{$item.my_price}></span>
+					<span class="rt graycl"><a href="<{link ctl='product:yuyue' arg0=$item.product_id}>" mini-load="预约优惠">马上预约</a></span>
+				</p>
+                <p class="cl"></p>
+            </li>
+            <{/foreach}>
+		</ul>
+		<div class="cl"></div>
+		<{if $pager.pagebar}><div class="page hoverno"><{$pager.pagebar}></div><{/if}>
+	</div>
+</div>
+<{include file="block/footer.html"}>

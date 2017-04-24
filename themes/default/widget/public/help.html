@@ -1,0 +1,16 @@
+<ul>
+    <{foreach from=$data.cate_list item=item}>
+    <li class="menu_li">
+        <ul>            
+            <{if $item.from == 'help' && $item.parent_id != 0}>
+            <li class="title"><{$item.title}></li>
+                <{foreach from=$data.content_list item=it}>
+                <{if $it.cat_id == $item.cat_id}>
+                <li><a href="<{link ctl='help' arg0=$it.page}>" target="_blank" ><{$it.title}></a></li>
+                <{/if}>
+                <{/foreach}>
+            <{/if}>            
+        </ul>
+    </li>
+    <{/foreach}>
+</ul>

@@ -1,0 +1,34 @@
+<div class="designer_infor">
+    <{foreach  from=$data item=item name=d}>
+        <{if $smarty.foreach.d.index<1}>
+        <div class="infor_lt left">
+            <a target="_blank" title="<{$item.name}>" class="img" href="<{link ctl='designer:detail' arg0=$item.designer_id}>"><img height="140" width="140" src="<{$pager.img}>/<{$item.face_pic}>_small.jpg"/></a>
+            <p><a target="_blank" title="<{$item.name}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="bold"><{$item.name}></a><{widget id='attr/fromlimit' from='zx:designer' attr=1  value=$item.attr html='span'}></p>
+            <p><{$item.concept}></p>
+            <p><a mini-load='我要设计' href="<{link ctl='designer:yuyue' arg0=$item.designer_id}>" class="button">免费预约</a></p>
+        </div>
+        <div class="infor_rt right">
+            <ul>
+                <{calldata  mdl='case/case' designer_id=$item.designer_id limit=4}>
+                <li><a target="_blank" title='<{$item.title}>' href="<{link ctl='case:detail' arg0=$item.case_id}>"><img src="<{$pager.img}>/<{$item.photo}>_small.jpg" width="100" height="75"/></a></li>
+                <{/calldata}>
+            </ul>
+        </div>
+        <{/if}>
+    <{/foreach}>
+</div>
+<div class="designer_li">
+    <ul>
+    <{foreach  from=$data item=item name=d}>
+        <{if $smarty.foreach.d.index>=1}>
+        <li>
+             <a target="_blank" title="<{$item.name}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="a_img">
+                <img height="70" width="70" src="<{$pager.img}>/<{$item.face_pic}>_small.jpg"  />
+             </a>
+            <span><a target="_blank" title="<{$item.name}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" ><{$item.name|cutstr:9:''}></a></span>
+            <{widget id='attr/fromlimit' from='zx:designer' attr=2  value=$item.attr html='span'}>
+        </li>
+        <{/if}>
+    <{/foreach}>
+    </ul>
+</div> 

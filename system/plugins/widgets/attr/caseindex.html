@@ -1,0 +1,6 @@
+<{foreach $data.attrs as $attr}>
+<span><{$attr.title}>：<{foreach $attr.values as $k=>$v}>
+<{if in_array($v.attr_value_id, $data.value)}><{$v.title}><{/if}>
+<{/foreach}>
+</span>
+<{/foreach}>

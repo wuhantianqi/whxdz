@@ -1,0 +1,10 @@
+<{foreach from=$items item=item}>   
+<div class="building_list news_list <{if $item@index %2==0}>pink<{/if}>">
+    <div class="news_list_lt lt">
+        <p><a  class="title"itle="<{$item.title}>" href="<{link ctl='article:detail' arg0=$item.article_id}>">
+                <{$item.title}></a></p>
+        <p class="time">发布时间 : <{$item.dateline|format}></p>
+    </div>
+
+</div>
+<{/foreach}>

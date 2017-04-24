@@ -1,0 +1,48 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+        <tr>
+            <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+            <th><{$MOD.title}></th>
+            <td align="right"><{link ctl="case/case:index" priv="hidden" class="button"}></td>
+            <td width="15"></td>
+        </tr>
+    </table>
+</div>
+<div class="page-data"><form action="?case/case-create.html" mini-form="case-form" method="post" ENCTYPE="multipart/form-data">
+<table width="100%" border="0" cellspacing="0" class="table-data form" id="table-info">
+    <tr><th><span class="red">*</span>标题：</th><td><input type="text" name="data[title]" value="<{$detail.title|default:''}>" class="input w-400"/></td></tr>
+    <tr><th>小区名称：</th><td><input type="text" name="data[home_name]" value="<{$detail.home_name}>" class="input w-400"/></td></tr>
+    <tr>
+        <th>设计师：</th>
+        <td>
+            <select name="data[designer_id]"><{widget id="designer/index" selected=$detail.designer_id}></select>
+        </td>    
+    </tr>
+    <{widget id="attr/form" from="zx:case"}>
+    <tr><th>合同价格：</th><td><input type="text" name="data[price]" value="<{$detail.price}>" class="input w-200"/></td></tr>
+    <tr><th>设计思路：</th><td><textarea name="data[intro]" class="textarea"><{$detail.intro}></textarea><br /></td></tr>
+    <tr><th>浏览量：</th><td><input type="text" name="data[views]" value="<{$detail.views|default:'0'}>" class="input w-50"/></td></tr>
+    <tr><th>排序：</th><td><input type="text" name="data[orderby]" value="<{$detail.orderby|default:'50'}>" class="input w-50"/></td></tr>
+    <tr><th>审核：</th><td>
+    	<label><input type="radio" name="data[audit]" checked="checked" value="1"/>是</label>&nbsp;&nbsp;
+    	<label><input type="radio" name="data[audit]" value="0"/>否</label></td>
+    </tr>
+    <tr><th>业主性别：</th>
+        <td>
+        	<label><input type="radio" name="data[sex]" <{if $detail.sex}>checked="checked"<{/if}> value="1"/>女</label>&nbsp;&nbsp;
+        	<label><input type="radio" name="data[sex]" <{if empty($detail.sex)}>checked="checked"<{/if}> value="0"/>男</label>
+        </td>
+    </tr>
+    <tr><th>业主称呼：</th><td><input type="text" name="data[name]" value="<{$detail.name}>" class="input w-100"/></td></tr>
+    <tr><th>业主心声：</th><td><textarea name="data[dianping]" class="textarea"><{$detail.dianping}></textarea><br /></td></tr>
+    <tr><th>seo_title：</th><td><input type="text" name="data[seo_title]" value="<{$detail.seo_title|default:''}>" class="input w-500"/></td></tr>
+    <tr><th>seo_keywords：</th><td><input type="text" name="data[seo_keywords]" value="<{$detail.seo_keywords|default:''}>" class="input w-500"/></td></tr>
+    <tr><th>seo_description：</th><td><textarea name="data[seo_description]" class="textarea"><{$detail.seo_description}></textarea><br /></td></tr>
+    <tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>
+
+
+</form></div>
+
+<{include file="admin:common/footer.html"}>

@@ -1,0 +1,57 @@
+<{include file="block/mobile_header.html"}>
+		<!--头部开始-->
+		<div class="mobile_top">
+			<div class="moblie_top_son tuanzhuang_top">
+				  <p><a href="<{link ctl='index'}>" class="lt"><img src="<{$pager.themepath}>/images/mobile/mobile_top_icon.png" /></a>小区团装</p>
+			</div>
+		</div>
+		<div class="cl45"></div>
+		<!--头部结束-->
+		<div class=" case_sub_main">
+            <form action="<{link ctl='tuan'}>" method="post" class="tuanzhuang">
+                <input type="text" name="SO[title]"  value="<{$so_title|default:'请输入您要查询的小区名称'}>"  onfocus="if (this.value=='请输入您要查询的小区名称'){ this.value=''};this.style.color='#666666';" onblur="if (this.value==''){this.value='请输入您要查询的小区名称'};this.style.color='#666666';" class="txt" />
+                <input type="submit" value=" " class="bt" />
+			</form>
+             <{foreach from=$items item=item}>
+            
+			<div class="building_list tuanzhuang_list">
+                <a class="lt" title="<{$item.home_name}><{$item.title}>" href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>"><img width="80" height='82' src="<{$pager.img}>/<{$item.face_pic}>_small.jpg" /></a>
+				<div class="building_list_rt  lt">
+					<p><a title="<{$item.home_name}><{$item.title}>" href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>"class="title"><{$item.title|cutstr:21:''}></a></p>
+					<p>立省：<font class="red">￥<{$item.youhui}></font></p>
+					<p><span class="red"><{$item.sign_num}></span>人已参团<a title="<{$item.home_name}><{$item.title}>" href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>" class="bt">我要参团</a></p>
+				</div>
+				<a title="<{$item.home_name}><{$item.title}>" href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>" class="rt">></a>
+			</div>
+             <{/foreach}>  
+            
+        </div>
+	      <div id="jq_loding" style=" height: 20px; text-align: center; "></div>
+		<div class="cl45"></div>
+    <script>
+        var num = 1;
+        var nextpage = '<{$nextpage}>';
+        var lock  = 0;
+        $(document).ready(function(){       
+            $(window).scroll(function(){              
+              if(!lock && $(window).scrollTop() == $(document).height() - $(window).height()){
+                  lock = 1;
+                  num++;
+                  var link = nextpage.replace('{page}',num);
+                  $("#jq_loding").html('正在加载中...');
+                  $.get(link,function(data){
+                      if(data != 0){
+                          $("#jq_loding").html('');
+                          $(".content_main").append(data);              
+                          lock = 0;
+                      }else{
+
+                          $("#jq_loding").html('没有数据了.....');
+                      }
+                  },'html');
+              }           
+          });
+
+    });
+   </script>
+<{include file="block/mobile_footer.html"}>

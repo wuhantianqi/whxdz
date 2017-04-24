@@ -1,0 +1,23 @@
+<{if $data.attr}>
+<{foreach $data.attrs as $attr}>
+<{if $data.attr == $attr.attr_id}>
+<<{$data.html}>>
+<{if $data.title}><{$attr.title}>:<{/if}>
+    <{foreach $attr.values as $k=>$v}>	
+        <{if in_array($v.attr_value_id, $data.value)}><{$v.title}><{/if}>
+    <{/foreach}>
+</<{$data.html}>>   
+<{/if}>
+<{/foreach}>
+<{else}>
+<{foreach $data.attrs as $attr}>
+<<{$data.html}>>
+<{if $attr@index<$data.limit}>
+<{if $data.title}><{$attr.title}>:<{/if}>
+    <{foreach $attr.values as $k=>$v}>	
+        <{if in_array($v.attr_value_id, $data.value)}><{$v.title}><{/if}>
+    <{/foreach}>
+<{/if}>    
+</<{$data.html}>>   
+<{/foreach}>
+<{/if}>

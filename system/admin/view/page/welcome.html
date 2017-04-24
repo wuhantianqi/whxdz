@@ -1,0 +1,65 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+	<table width="100%" align="center" cellpadding="0" cellspacing="0" >
+		<tr>
+			<td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+			<th><{$CONFIG.site.title}> - 管理平台首页</th>
+			<td class="right"></td>
+			<td width="15"></td>
+		</tr>
+	</table>
+</div>
+<div class="page-data">
+<table width="100%" border="0" cellspacing="0" class="table-data table">
+<tr><th colspan="6" class="left">统计信息</th></tr>
+<tr>
+    <td>预约设计师</td>
+    <td ><a href="?designer/yuyue.html" class="red"><{$counts.designer}></a></td>
+    <td>我要装修</td>
+    <td ><a class="red" href="?tenders/tenders.html"><{$counts.tenders}></a></td>
+    <td>工地预约</td>
+    <td ><a class="red" href="?site/yuyue.html"><{$counts.site}></a></td>
+</tr>
+<tr>
+    <td>团装报名</td>
+    <td ><a href="?tuan/yuyue.html" class="red"><{$counts.tuan}></a></td>
+    <td>活动报名</td>
+    <td ><a class="red" href="?activity/yuyue.html"><{$counts.activity}></a></td>
+    <td>产品申请</td>
+    <td ><a class="red" href="?product/yuyue.html"><{$counts.product}></a></td>
+</tr>
+<tr>
+    <td>套餐装修</td>
+    <td colspan="5" ><a href="?decorate/yuyue.html" class="red"><{$counts.package}></a></td> 
+</tr>
+</table>
+<div class="space15"></div>
+<table width="100%" border="0" cellspacing="0" class="table-data table">
+<tr><th colspan="15" class="left">系统信息</th></tr>
+<tr>
+	<td class="w-150 left">系统版本：</td>
+	<td class="left" colspan="10"><{$sysinfo.version}></td>
+</tr>
+<tr>
+	<td class="w-150 left">服务器操作系统：</td><td class="left"><{$sysinfo.server_os}></td>
+	<td class="w-150 left">服务器域名/IP：</td><td class="left"><{$sysinfo.server_domain}></td>
+	<td class="w-150 left">服务器环境：</td><td class="left"><{$sysinfo.web_server}></td>
+</tr>
+<tr>
+	<td class="w-150 left">PHP 版本：</td><td class="left"><{$sysinfo.php_version}></td>
+	<td class="w-150 left">Mysql 版本：</td><td class="left"><{$sysinfo.mysql_version}></td>
+	<td class="w-150 left">GD 版本：</td><td class="left"><{$sysinfo.gd_version}></td>
+</tr>
+<tr>
+	<td class="w-150 left">文件上传限制：</td><td class="left"><{$sysinfo.upload_max_filesize}></td>
+	<td class="w-150 left">最大占用内存：</td><td class="left"><{$sysinfo.memory_limit}></td>
+	<td class="w-150 left">最大执行时间：</td><td class="left"><{$sysinfo.max_execution_time}></td>
+</tr>
+<tr>
+	<td class="w-150 left">安全模式：</td><td class="left"><{$sysinfo.safe_mode}></td>
+	<td class="w-150 left">Zlib支持：</td><td class="left"><{$sysinfo.zlib}></td>
+	<td class="w-150 left">Curl支持：</td><td class="left"><{$sysinfo.curl}></td>
+</tr>
+</table>
+</div>
+<{include file="admin:common/footer.html"}>

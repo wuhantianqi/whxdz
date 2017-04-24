@@ -1,0 +1,9 @@
+<{foreach $data.attrs as $attr}>
+<{if $attr@index < 3}>
+<span><font class="ico case_ico<{$attr@index+4}>"></font><{$attr.title}>:
+<{foreach $attr.values as $k=>$v}>
+<{if in_array($v.attr_value_id, $data.value)}><{$v.title}><{/if}>
+<{/foreach}>
+</span>
+<{/if}>
+<{/foreach}>

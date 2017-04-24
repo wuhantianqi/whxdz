@@ -1,0 +1,22 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+    <!--<div class="crumbs">
+        <ul class="margin">
+            <li>您当前的位置:</li>
+            <li>首页</li>
+            <li>>设计师</li>
+        </ul>
+    </div>-->
+    <div class="clear"></div>
+	<div class="article-detail">
+		<h2 class="article-detail-title"><{$detail.title}></h2>
+		<span class="article-detail-xtitle">
+			<p>浏览量：<font class="fontcl2"><{$detail.views}></font>人</p>
+			发布时间：<{$detail.dateline|format:'Y-m-d H:i:s'}>
+		</span>
+		<div class="article-detail-content">
+			<{$detail.content}>
+		</div>
+		<div class="cl"></div>
+	</div>
+<{include file="block/footer.html"}>

@@ -1,0 +1,150 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+        <tr>
+            <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+            <th><{$MOD.title}></th>
+            <td align="right"></td>
+            <td width="15"></td>
+        </tr>
+    </table>
+</div>
+<div class="page-data">
+    <h4 class="tip-notice">推广成果趋势图</h4>
+<form action="?tongji/tongji-qushi.html" id="SO-form" method="post">
+    <table width="100%" border="0" cellspacing="0" class="table-data form">
+        <tr>
+            <th>年：</th>
+            <td>
+               <input type="text" name="SO[year]" year="year"  value="<{$SO.year|default:''}>" class="input w-100"  />
+            </td>
+    
+            <th>月：</th>
+            <td>
+               <input type="text" name="SO[month]" month="month" value="<{$SO.month|default:''}>" class="input w-100"  />
+            </td>
+        </tr> 
+        
+          <tr>
+            <th>模块</th>
+            <td>
+                <select class="select" name="SO[mdl]">
+                    <option value="">请选择</option>
+                    <{foreach from=$mdl item=item key=key}>
+                    <option value="<{$key}>" <{if $SO.mdl == $key}>selected="selected"<{/if}>><{$item}></option>
+                    <{/foreach}>
+                </select>
+            </td>
+     
+            <th>类型</th>
+            <td>
+                <select class="select" name="SO[type]">
+                    <option value="">请选择</option>
+                    <{foreach from=$type item=item key=key}>
+                    <option value="<{$key}>" <{if $SO.type == $key}>selected="selected"<{/if}>><{$item}></option>
+                    <{/foreach}>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <th>来源</th>
+            <td>
+                <select class="select" name="SO[source]">
+                    <option value="">请选择</option>
+                    <{foreach from=$source item=item key=key}>
+                    <option value="<{$key}>" <{if $SO.source == $key}>selected="selected"<{/if}> ><{$item}></option>
+                    <{/foreach}>
+                </select>
+            </td>
+            <td colspan="2"><input type="submit" class="bt-big" value="搜 索" /></td>
+        </tr>
+
+    </table>
+</form>
+</div>
+<script src="<{$pager.res}>/highcharts/highcharts.js"></script>
+<script src="<{$pager.res}>/highcharts/modules/exporting.js"></script>
+
+<h4 class="tip-notice">月汇总</h4>
+<div id="container1"></div>
+		<script type="text/javascript">
+$(function () {
+        $('#container1').highcharts({
+            title: {
+                text: '<{$SO.year|default:''}>年月份趋势图',
+                x: -20 //center
+            },
+   
+            xAxis: {
+                categories: [<{foreach $items1 as $item}> "<{$item.month}>月" <{if !$item@last}>,<{/if}> <{/foreach}>]
+            },
+            yAxis: {
+                title: {
+                    text: '次数'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '次'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: '月趋势',
+                data: [<{foreach $items1 as $item}> <{$item.num}><{if !$item@last}>,<{/if}> <{/foreach}>]
+            }]
+        });
+    });
+    
+
+		</script>
+<h4 class="tip-notice">日汇总</h4>
+<div id="container2"></div>
+		<script type="text/javascript">
+$(function () {
+        $('#container2').highcharts({
+            title: {
+                text: '<{$SO.year|default:''}>年<{$SO.month|default:''}>月日趋势图',
+                x: -20 //center
+            },
+       
+            xAxis: {
+                categories: [<{foreach $items2 as $item}> "<{$item.day}>" <{if !$item@last}>,<{/if}> <{/foreach}>]
+            },
+            yAxis: {
+                title: {
+                    text: '次数'
+                },
+                plotLines: [{
+                    value: 0,
+                    width: 1,
+                    color: '#808080'
+                }]
+            },
+            tooltip: {
+                valueSuffix: '次'
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'middle',
+                borderWidth: 0
+            },
+            series: [{
+                name: '日趋势',
+                data: [<{foreach $items2 as $item}> <{$item.num}><{if !$item@last}>,<{/if}> <{/foreach}>]
+            }]
+        });
+    });
+    
+
+		</script>
+<{include file="admin:common/footer.html"}>

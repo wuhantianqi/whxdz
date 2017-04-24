@@ -1,0 +1,27 @@
+<{assign var="min_ititle" value="立即下载优惠券"}>
+<{include file="block/mini-header.html"}>
+<form id="coupon-download-form">
+<input type="hidden" name="coupon_id" value="<{$coupon.coupon_id}>" />
+<table width="100%" border="0" cellspacing="0" cellpadding="0" class="booking">
+	<tr><th><span class="red"> * </span>联系人：</th><td><input name="data[contact]" type="text" class="input w-200" value="" placeholder="请输入联系人"/></td></tr>
+	<tr><th><span class="red"> * </span>手机号：</th><td><input name="data[mobile]" type="text" class="input w-200" value="" placeholder="请输入手机号码"/></td></tr>
+	<tr><th><span class="red"> * </span>验证码：</th>
+        <td>
+            <input type="text" class="input" name="verifycode" style="width:60px;"/> 
+            <label style="display:inline-block;">
+                <img verify="#image-verify" id="image-verify" src="/index.php?magic-verify-<{$smarty.now}>.png" title="点击刷新验证码" style="width:120px;height:35px;" height="32" align="AbsBottom"/>
+            </label>
+        </td>
+    </tr>
+	<tr><th></th>
+        <td class="left"><a action="<{link ctl='mall/coupon:download'}>" mini-submit="#coupon-download-form" class="yellow_btn" style="margin-left:0px;">立即下载</a>
+        </td>
+    </tr>
+</table>
+</form>
+<script type="text/javascript">
+(function(K, $){
+    //$("[mini-submit]").click(function(){alert("test")});
+})(window.KT, window.jQuery);
+</script>
+<{include file="block/mini-footer.html"}>

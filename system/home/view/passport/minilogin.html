@@ -1,0 +1,58 @@
+<{assign var="min_ititle" value="立即登录"}>
+<{include file="block/mini-header.html"}>
+<div style="padding-bottom:50px;">
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+	<tr><td colspan="5">&nbsp;</td></tr>
+	<tr>
+		<td width="50%" align="right" valign="top">
+            <form id="login-form">
+			<table width="100%" brder="0" cellspacing="0" cellpadding="0" class="minform" style="border-right:1px solid #ddd;">
+				<tr>
+					<th>用户名：</th>
+					<td><input name="account[uname]" type="text" class="input w-200" value="" placeholder="邮箱/用户名"/></td>
+				</tr>
+				<tr>
+					<th>密 码：</th>
+					<td><input name="account[passwd]" type="password" class="input w-200" value="" placeholder="请输入登录密码"/></td>
+				</tr>
+                <tr>
+                    <th>验 证 码:</th>
+                    <td>
+                        <input type="text" class="input w-50" name="verifycode"/> 
+                        <label style="display:inline-block;">
+                            <img verify="#pass-verify" id="pass-verify" title="点击刷新验证码" src="<{$pager.url}>/index.php?magic-verify&_=<{$smarty.now}>" style="width:120px;height:35px;" height="32" align="AbsBottom"/>
+                        </label>
+                    </td>
+                </tr>
+				<tr><th></th>
+					<td><label><input name="account[remlogin]" type="checkbox" value="1" />&nbsp;&nbsp;自动登录</label>
+					<a href="<{link ctl='passport:forgot'}>" style="margin-left:50px;">忘记密码？</a></td>
+				</tr>
+				<tr><th></th>
+					<td><input type="button" action="<{link ctl='passport:login'}>" mini-submit="#login-form" id="login_btn" value="登 录" class="btn" /></td>
+				</tr>
+			</table>
+            </form>
+		</td>
+		<td width="45%" align="center">
+			<div style="color:#888;">
+				还没有<{$CONFIG.site.title}>帐号<br /><br />
+				<a class="btn_blue" href="<{link ctl='passport:signup'}>">注 册</a>
+			</div>
+		</td>
+	</tr>
+</table>
+</div>
+<script type="text/javascript">
+(function(K, $){
+$("[verify]").click(function(){$($(this).attr("verify")).attr("src", "<{$pager.url}>/index.php?magic-verify&_"+Math.random());});
+$("#login-form input.input").keydown(function(event){
+    if(event.keyCode == 13){
+        event.stopPropagation();event.preventDefault();
+        $("#login-btn").trigger("click");
+        return false;
+    }
+});
+})(window.KT, window.jQuery);
+</script>
+<{include file="block/mini-header.html"}>

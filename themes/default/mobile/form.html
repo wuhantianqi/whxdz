@@ -1,0 +1,166 @@
+<script type="text/javascript"  src="<{$pager.theme}>/default/js/jquery-3.1.1.js"></script>
+<script type="text/javascript"  src="<{$pager.theme}>/default/js/layer_mobile/layer.js"></script>
+<style>
+.free-design-body h2{
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+.mfsj-name, .mfsj-tel, .mfsj-area {
+    font-size: 16px;
+    color: #000;
+    padding: 10px 15px;
+    line-height: 20px;
+}
+.mfsj-from input, .mfsj-from select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    font-size: 14px;
+    display: block;
+    background: #fff;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+.mfsj-from input, .mfsj-from select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    outline: 0;
+    font-size: 14px;
+    display: block;
+    background: #fff;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.mfsj-from .row {
+    position: relative;
+    display: block;
+    height: 2.5rem;
+    margin-bottom: 10px;
+    width: 100%;
+    border: 1px solid #e3e3e3;
+}
+.mfsj-from .mfsj-form-arrow {
+    position: relative;
+}
+.mfsj-from .zxd-form-agree {
+    margin-bottom: 1.25rem;
+    font-size: 14px;
+}
+.mfsj-from .zxd-form-agree input[type=checkbox]:checked, .zxd-bottom .zxd-form .zxd-form-agree input[type=checkbox]:checked {
+    border: 1px solid #ea4505;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAGXRFW…vcHvIrEpItHg5Nnx8DYC+4Qb98ACxeDqokcqAcunbaAAIMAAwavAhk3J6QAAAAAElFTkSuQmCC) center no-repeat;
+    background-size: 15px;
+}
+.mfsj-from .zxd-form-agree input[type=checkbox], .zxd-form .zxd-form-agree input[type=checkbox] {
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 0 7px 0 0;
+    padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #ccc;
+    outline: 0;
+    border-radius: 3px;
+}
+.checkbox{
+    float: left;
+    width: 15px;
+    height: 15px;
+    margin: 0 7px 0 0;
+    padding: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    border: 1px solid #ccc;
+    outline: 0;
+    border-radius: 3px;
+}
+.mfsj-from .zxd-form-agree.mfsj-form-agree input[type=checkbox]:checked {
+    border: 1px solid #ddd;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAIAAAC0Ujn1AAAAGXRFW…TD4VAvLiiAYP/jxUxWr5NsCloE++Lp6yS7FB1wlGgAvwQYAFSOl9K82s+BAAAAAElFTkSuQmCC) no-repeat center;
+    background-size: 15px;
+}
+.mfsj-from .zxd-form-agree.mfsj-form-agree a {
+    text-decoration: underline;
+    color: #666;
+}
+.mfsj-from .mfsj-submit {
+    display: block;
+    height: 2.1rem;
+    line-height: 2.1rem;
+    text-align: center;
+    background-color: #ea4504;
+    color: #fff;
+    border: 0!important;
+    font-size: 16px;
+    width: 100%;
+}
+.free-design .free-design-gift-box:nth-child(1) {
+    float: left;
+    padding: 20px 19px 20px 10px;
+}
+
+</style>
+<div class="free-design-body">
+  <h2>免费申请</h2>
+  <form class="mfsj-from">
+     <input class="row mfsj-name mfsj-from-fixed" name="data[name]" type="text" placeholder="您的称呼">
+     <input class="row mfsj-tel mfsj-from-fixed" id="phone" name="data[mobile]" type="tel" placeholder="手机号码">
+     <div class="mfsj-form-arrow">
+          <input class="row mfsj-area" type="text" id="area" name="data[addr]" readonly="true" placeholder="小区地址">
+     </div>
+     <div class="zxd-form-agree mfsj-form-agree">
+         <!-- <input type="checkbox" checked="checked"> -->
+         <img class="checkbox" src="<{$pager.themepath}>/images/mobile/quren.png" alt="">
+         我已阅读并接受<a href="" target="_blank">《装修常见问题条款》</a>
+     </div>
+     <div class="row mfsj-submit">立即申请</div>
+     <input name="ptag" type="hidden" id="ptag" value="2_1_1_1069" readonly="readonly">
+ </form>
+</div>
+<script>
+    var lock = 0;
+    $(document).on('click', '.mfsj-submit', function(){
+        var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/; 
+ 
+        if( $('.mfsj-name').val() == '' || $('.mfsj-name').val() == null ){
+            layer.open({
+                content: "请填写姓名"
+                ,btn: '我知道了'
+            });
+            return 
+        }
+        if( $('#phone').val() == '' || $('#phone').val() == null ){
+            layer.open({
+                content: "请填写手机号码"
+                ,btn: '我知道了'
+            });
+            return
+        }else if( !myreg.test($("#phone").val()) ){
+            layer.open({
+                content: "请填写有效的手机号码"
+                ,btn: '我知道了'
+            });
+            return
+        }
+        if (lock == 0) {    
+            lock = 1;
+            $.post("/index.php?ctl=tender&act=save", {
+                "data[name]" : $("input[name='data[name]']").val(),
+                "data[mobile]" : $("input[name='data[mobile]']").val(),
+            } ,function(ret){
+                if(!ret.error){
+                    lock = 0 ;
+                    layer.open({
+                        content: ret.message
+                        ,btn: '我知道了'
+                    });
+                }
+            },'json');
+        }
+    });
+</script>

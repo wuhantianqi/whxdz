@@ -1,0 +1,39 @@
+<!-- 底部缩放表单 -->
+<div class="bottom-form">
+	<div class="dform">
+		<div class="form-ren">
+			<div>
+				<p class="arrow">
+					<span><i></i><i></i></span>
+					<span><i></i><i></i></span>
+				</p>
+			</div>
+		</div>
+		<div class="form-content">
+			<form  action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1">
+				<ul>
+					<li><input name="data[name]" type="text" placeholder="请输入您的称呼"></li>
+					<li><input name="data[mobile]" type="text" placeholder="请输入您的联系方式"></li>
+					<li>
+						<select name="data[house_type_id]" class="text">
+							<option value="0">请选择</option>
+                             <{foreach from=$setting[$type['house_type']] item=item key=key}>
+                                 <option <{if $detail.house_type_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                             <{/foreach}>
+						</select>
+					</li>
+					<li>
+						<select name="data[way_id]" class="text">
+							<option value="0">请选择</option>
+                            <{foreach from=$setting[$type['way']] item=item key=key}>
+                                 <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                             <{/foreach}>
+						</select>
+					</li>
+					<li><input name="data[area]" type="text" placeholder="请输入房屋面积"><i>㎡</i></li>
+				</ul>
+				<div class="form-circular">立即<br />提交</div>
+			</form>
+		</div>
+	</div>
+</div> 

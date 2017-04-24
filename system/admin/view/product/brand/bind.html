@@ -1,0 +1,30 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+      <tr>
+        <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+        <th><{$MOD.title}></th>
+        <td align="right"><{link ctl="product/brand:index" priv="hidden" class="button"}></td>
+        <td width="15"></td>
+      </tr>
+    </table>
+</div>
+<div class="page-data"><form action="?product/brand-bind-<{$detail.cat_id}>.html" mini-form="brand-form" method="post" >
+<table width="100%" border="0" cellspacing="0" class="table-data form">
+
+<tr><th><span class="red">*</span>品牌选择：</th>
+    <td>
+        <{foreach from=$brands  item=item}>
+        <label>
+            <input type="checkbox" name="data[<{$item.brand_id}>]" <{if in_array($item.brand_id,$brand_ids)}> checked="checked" <{/if}> value="<{$item.brand_id}>"/> <{$item.brand_name}>
+        </label>
+        <{/foreach}>
+    </td>
+</tr>
+
+
+<tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="提交数据" /></td></tr>
+</table>
+</form></div>
+
+<{include file="admin:common/footer.html"}>

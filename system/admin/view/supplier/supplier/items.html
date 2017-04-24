@@ -1,0 +1,41 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+	<table width="100%" align="center" cellpadding="0" cellspacing="0" >
+		<tr>
+			<td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+			<th><{$MOD.title}></th>
+			<td align="right"><{link ctl="supplier/supplier:create" class="button" title="添加"}>&nbsp;&nbsp;&nbsp;<{link ctl="supplier/supplier:so" load="mini:搜索内容" width="mini:500" class="button" title="搜索"}></td>
+			<td width="15"></td>
+		</tr>
+	</table>
+</div>
+<div class="page-data">	
+	<form id="items-form">
+    <table width="100%" border="0" cellspacing="0" class="table-data table">
+    <tr><th class="w-100">ID</th><th>供应商名称</th><th>联系人</th><th>职位</th><th>电话</th><th>手机</th><th>地址</th><th>供应产品描述</th><th class="w-150">操作</th></tr>
+    <{foreach $items as $item}>
+    <tr><td><label><input type="checkbox" value="<{$item.supplier_id}>" name="supplier_id[]" CK="PRI"/><{$item.supplier_id}><label></td>
+<td><{$item.supplier_name}></td>
+<td><{$item.name}></td>
+<td><{$item.position}></td>
+<td><{$item.tel}></td>
+<td><{$item.mobile}></td>
+<td><{$item.addr}></td>
+<td><{$item.product}></td>
+<td><{link ctl="supplier/supplier:edit" args=$item.supplier_id title="修改" class="button"}><{link ctl="supplier/supplier:delete" args=$item.supplier_id act="mini:删除" confirm="mini:确定要删除吗？" title="删除" class="button"}></td></tr>
+    <{foreachelse}>
+     <tr><td colspan="20"><p class="text-align tip-notice">没有数据</p></td></tr>
+    <{/foreach}>
+    </table>
+	</form>
+	<div class="page-bar">
+		<table>
+			<tr>
+			<td class="w-100"><label><input type="checkbox" CKA="PRI"/>&nbsp;&nbsp;全选</label></td>
+			<td colspan="10" class="left"><{link ctl="supplier/supplier:delete" type="button" submit="mini:#items-form" confirm="mini:确定要批量删除选中的内容吗?" priv="hide" value="批量删除"}></td>
+			<td class="page-list"><{$pager.pagebar}></td>
+		</tr>
+		</table>
+	</div>
+</div>
+<{include file="admin:common/footer.html"}>

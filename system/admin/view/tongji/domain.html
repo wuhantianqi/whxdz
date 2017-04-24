@@ -1,0 +1,92 @@
+<{include file="admin:common/header.html"}>
+<div class="page-title">
+    <table width="100%" align="center" cellpadding="0" cellspacing="0" >
+        <tr>
+            <td width="30" align="right"><img src="<{$pager.url}>/images/main-h5-ico.gif" alt="" /></td>
+            <th><{$MOD.title}></th>
+            <td align="right"></td>
+            <td width="15"></td>
+        </tr>
+    </table>
+</div>
+<div class="page-data">
+<h4 class="tip-notice">来源域名分析</h4>
+<form action="?tongji/tongji-domain.html" id="SO-form" method="post">
+    <table width="100%" border="0" cellspacing="0" class="table-data form">
+        <tr>
+            <th>时间：</th>
+            <td>
+                <input type="text" name="SO[bg_time]" value="<{$SO.bg_time|default:''}>" class="input w-100" date="bg_time" readonly/>~
+                <input type="text" name="SO[end_time]" value="<{$SO.end_time|default:''}>" class="input w-100" date="end_time" readonly/>
+            </td>
+        </tr> 
+        <tr><th class="clear-th-bottom"></th><td class="clear-td-bottom" colspan="10"><input type="submit" class="bt-big" value="搜 索" /></td></tr>
+    </table>
+</form>
+</div>
+<script src="<{$pager.res}>/highcharts/highcharts.js"></script>
+<script src="<{$pager.res}>/highcharts/modules/exporting.js"></script>
+<div id="container1"></div>
+
+
+		<script type="text/javascript">
+$(function () {
+        $('#container1').highcharts({
+            chart: {
+                type: 'bar'
+            },
+            title: {
+                text: '来源域名分析'
+            },
+    
+            xAxis: {
+                categories: [<{foreach $domain as $item}> "<{$item.source_domain}>" <{if !$item@last}>,<{/if}> <{/foreach}>],
+                title: {
+                    text: null
+                }
+            },
+            yAxis: {
+                min: 0,
+                title: {
+                    text: '预约数',
+                    align: 'high'
+                },
+                labels: {
+                    overflow: '预约数'
+                }
+            },
+            tooltip: {
+                valueSuffix: ' '
+            },
+            plotOptions: {
+                bar: {
+                    dataLabels: {
+                        enabled: true
+                    }
+                }
+            },
+            legend: {
+                layout: 'vertical',
+                align: 'right',
+                verticalAlign: 'top',
+                x: -40,
+                y: 100,
+                floating: true,
+                borderWidth: 1,
+                backgroundColor: (Highcharts.theme && Highcharts.theme.legendBackgroundColor || '#FFFFFF'),
+                shadow: true
+            },
+            credits: {
+                enabled: false
+            },
+            series: [{
+                name: '预约数',
+                data: [<{foreach $domain as $item}> <{$item.num}> <{if !$item@last}>,<{/if}> <{/foreach}>]
+            }]
+        });
+    });
+    
+
+		</script>
+
+<{include file="admin:common/footer.html"}>

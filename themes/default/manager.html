@@ -1,0 +1,62 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+    <!--<div class="crumbs">
+        <ul class="margin">
+            <li>您当前的位置:</li>
+            <li><a href="<{link ctl='index'}>" >首页</a></li>
+            <li>>项目经理</li>
+        </ul>
+    </div>-->
+    <div class="clear"></div>
+    <div class="site-banner"><img src="%THEME%/images/banner-sj.jpg" alt="设计师"></div>
+    <{widget id="tenders/templateform"}>
+    <div class="site-content margin">
+        <div class="site-content-right">
+            <div class="site-form">
+                <h2>我们深信团队的力量</h2>
+                <img src="%THEME%/images/sheji-bd.png" alt="">
+                <form action="/index.php?tender-save.html" method="post" mini-form="tender1" id="form">
+                    <p><i></i><input name="data[name]" type="text" placeholder="请输入您的称呼"></p>
+                    <p><i></i><input name="data[mobile]" type="text" placeholder="请输入您的联系方式"></p>
+                    <p class="submit-i">立即预约</p>
+                </form>
+            </div>
+            <div class="clear"></div>
+            <div class="site-advertisement"><img src="%THEME%/images/site-1.png" alt=""></div>
+            <div class="designer-manager">
+                <h2>人气项目经理</h2>
+                <ul>
+                    <{calldata mdl='manager/manager' order='hot' limit=5}>
+                    <li>
+                        <a href="<{link ctl='designer:detail' arg0=$item.designer_id}>">
+                            <img src="<{$pager.img}>/<{$item.face_pic}>">
+                        </a>
+                        <dl>
+                            <dd><a href="<{link ctl='designer:detail' arg0=$item.designer_id}>"><{$item.name}></a></dd>
+                            <dd>案例：<span><{$item.case_num}></span></dd>
+                            <dd>关注<span><{$item.views}></span>人</dd>
+                        </dl>
+                    </li>     
+                    <{/calldata}>
+                </ul>
+            </div>
+        </div>
+        <div class="site-content-left">
+            <div class="designer-case-list">
+                <ul>
+                    <{foreach $items as $item}>
+                    <li>
+                        <span><a href="<{link ctl='manager:detail' arg0=$item.manager_id}>" target="_blank" >
+                        <img src="<{$pager.img}>/<{$item.face_pic}>" >
+                        </a></span>
+                        <span><a href="<{link ctl='manager:detail' arg0=$item.manager_id}>" target="_blank"  class="fontcl2"><{$item.name}></a></span>
+                    </li>
+                    <{/foreach}>
+                </ul>
+            </div>
+            <div class="site-page">
+                <{$pager.pagebar}>
+            </div>
+        </div>
+    </div>
+<{include file="block/footer.html"}>

@@ -1,0 +1,71 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+    <div class="crumbs">
+        <ul class="margin">
+            <li>您当前的位置:</li>
+            <li><a href="<{link ctl='index'}>" >首页</a></li>
+            <li>><a href="<{link ctl='case'}>" target="_blank">案例展示 </a></li>
+            <li>><{$detail.title}></li>
+        </ul>
+    </div>
+    <div class="clear"></div>
+    <div class="case-detail-content margin">
+    	<div class="case-detail-top">
+    		<h2><{$detail.title}></h2>
+    		<!--<ul>
+    			<li>设计师：<{$designer_list[$detail.designer_id].name}><i></i></li>
+    			<li><{$detail.likes}>人喜欢<i></i></li>
+    		</ul>-->
+    	</div>
+    	<div class="case-detail-bottom">       
+            <div class="focusimg">
+            </div> 
+            <div class="focustool">
+                <div class="ftoollist margin">
+                    <ul>
+                        <{foreach $photos as $p}>                
+                            <li>
+                            <img  src="<{$pager.img}>/<{$p.photo}>_small.jpg" data-big="<{$pager.img}>/<{$p.photo}>" >
+                            </li>
+                        <{/foreach}>
+                    </ul>
+                </div>
+                
+                <p class="btn_pre"></p>
+                <p class="btn_next"></p>
+            </div>
+    	</div>
+    	<div class="case-detail-explain">
+    		<p>设计说明</p>
+    		<{$detail.intro}>
+    	</div>
+    	<div class="case-detail-comment">
+    		<div class="case-detail-comment-form">
+                <form>
+                    <input type="hidden" value="<{link ctl='case:comment' http='empty' arg0=$detail.case_id}>">
+        			<ul>
+        				<li>
+        					<p>用户评论</p>
+        					<p><input type="text" name="data[nickname]"></p>
+        					<p>昵称<b>(建议16字以内)</b></p>
+        				</li>
+        				<li><textarea name="data[content]" class="text" placeholder=" 随便说点什么..."></textarea></li>
+        				<li><bottom class="anlisubmit">评论</bottom></li>
+                        <!-- <li><input type="submit" value="提交"></li> -->
+        			</ul>
+                </form>
+    		</div>
+    		<div class="case-detail-comment-wenzi">
+    			<ul>
+    				<li>
+    					<h2><b><{$pager.count}></b>评论</h2>
+                        <{foreach $items as $c}>
+                        <p><b><{$c.nickname}></b> <{$c.dateline|format:'Y-m-d'}></p>
+                        <p><{$c.content}></p>
+                        <{/foreach}>
+    				</li>
+    			</ul>
+    		</div>
+    	</div>
+    </div>
+<{include file="block/footer.html"}>

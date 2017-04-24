@@ -1,0 +1,13 @@
+<ul>    
+    <{foreach  $data.case  as  $item}>
+    <li>
+        <a target='_blank' title='<{$item.title}>' href="<{link ctl='case:detail' arg0=$item.case_id}>"><img src="<{$pager.img}>/<{$item.photo}>_small.jpg" width="100" height="80"/></a>
+        <div class="business_tuijian_case_b_r lt">
+           <p> <a target='_blank' title='<{$item.title}>' href="<{link ctl='case:detail' arg0=$item.case_id}>"class="black6"><{$item.title|cutstr:18:'..'}></a></p>
+           <p><i>设计师&nbsp;:&nbsp;</i><a title="<{$item.title}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="redcolor"><{$data.designer[$item.designer_id].name}></a></p>
+           <span><a target='_blank' title='<{$item.title}>' href="<{link ctl='case:detail' arg0=$item.case_id}>" style=" color: white; ">去看看</a></span>
+        </div>
+
+    </li>
+    <{/foreach}>
+</ul>

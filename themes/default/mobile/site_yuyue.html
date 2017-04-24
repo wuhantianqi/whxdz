@@ -1,0 +1,58 @@
+<{include file="block/mobile_header.html"}>
+<!--头部开始-->
+<div class="mobile_top">
+    <p><a href="">立即预约</a></p><a href="/"><img src="<{$pager.themepath}>/images/mobile/m-logo.png" /></a>
+</div>
+<div class="cl50"></div>
+<!--头部结束-->
+<div class="enroll_main content_main">
+    <!--装修报名开始-->
+    <form id='tenders_form' class="jq_from">
+        <p>预约参观"<{$detail.title}>"</p>
+        <p><span class="red">*</span>您的姓名</p>
+        <input   name="data[contact]" type="text" />
+        <p><span class="red">*</span>您的联系方式</p>
+        <input type="text"  name="data[mobile]"/>
+
+        <p id='showErr' style="display: none;text-align: center;"> <font id="showTxt" style=" color: red; font-size: 14px;"></font> </p>
+        <input type="button" id='tender_submit' value="立刻申请" class="bt">
+    </form>
+    <div class="jq_ok " style="display: none;">
+        <p><span class="red">恭喜您预约"<{$detail.title}>"成功!!!</span>稍后您的专职装修管家将与您联系，为您讲解装修流程和相关注意事 项，装修过程中遇到的任何问题都可 以咨询您的专职装修管家。服务热线:<{$CONFIG.site.phone}></p>
+        <input type="button" value="我知道了" id='wozhidao' class="bt">
+    </div>
+    <!--装修报名结束-->
+</div>
+
+<script type="text/javascript">
+    var lock = 0;
+    (function(K, $) {
+        function showmsg(message) {
+            $("#showErr").show();
+            $('#showTxt').html(message);
+        }
+        $("#tender_submit").click(function() {
+            if (lock == 0) {
+                lock = 1;
+                $.post("<{link ctl='site:yuyue' arg0=$detail.site_id http='base'}>", $("#tenders_form").serialize(), function(ret) {
+                    if (ret.error) {
+                        lock = 0;
+                        showmsg(ret.message);
+                    } else {
+                        $(".jq_ok").show();
+                        $(".jq_from").hide();
+                    }
+                }, 'json');
+            }
+
+        });
+
+        $("#wozhidao").click(function() {
+            window.location = '<{link ctl="site"}>';
+        });
+
+
+    })(window.KT, window.jQuery);
+</script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<script type="text/javascript"  src="<{$pager.theme}>/default/js/jquery-3.1.1.js"></script>
+<style>
+  *{
+    margin: 0px;
+    padding: 0px;
+  }
+  ul,li{
+    list-style: none;
+  }
+  .yuyue_box{
+    width: 100%;
+    overflow: hidden;
+  }
+  .yuyue_box h2{
+    width: 100%;
+    height: 70px;
+    text-align: center;
+    line-height: 70px;
+  }
+  .yuyue_box h2 b{
+    color: #ff0000;
+  }
+  .yuyue_box ul{
+    width:530px;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  .yuyue_box ul li{
+    float:left;
+    color: #ccc;
+  }
+  .yuyue_box ul li:first-child{
+    width:326px;
+    /*margin-top: 15px;*/
+  }
+  .yuyue_box ul li:first-child input{
+    width: 100%;
+    height: 36px;
+    margin-top:15px;
+    text-indent: 10px;
+    color: #999;
+  }
+  .yuyue_box ul li:nth-child(2) input{
+    margin-left: 20px;
+    width: 177px;
+    height: 56px;
+    background-color: #ff0000;
+    text-align: center;
+    line-height: 56px;
+    border:none;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 27px;
+  }
+  .yuyue_box ul li:last-child{
+    font-size: 14px;
+    color: #999;
+    margin-top: 15px;
+  }
+  .yuyue_box ul li:last-child b{
+    color: #ff0000;
+    font-weight: none;
+  }
+  .yuyue_box ul li p{
+    color: red;
+    font-size: 12px;
+  }
+</style>
+<form action="<{link ctl='package:yuyue' arg0=$detail.package_id}>" method="post" id="form">
+    <div  class="yuyue_box">
+        <h2>我要<b><{$detail.title}></b></h2>
+        <ul>
+           <li> 
+              <input name="data[contact]" placeholder="请输入您的姓名" type="text">
+              <input name="data[mobile]" placeholder="请输入您的手机号" type="text">
+              
+           </li>
+           <li><input type="submit" value="立刻申请"/></li>
+           <li>不想等待？您也可以直接联系我们: <b><{$CONFIG.site.phone}></b></li>
+        </ul>
+    </div>
+</form>
+<script>
+  $(document).on('submit','#form',function(){
+    $(this).find('ul').find('p').remove();
+    var name = $("input[name='data[contact]']");
+    var phone = $("input[name='data[mobile]']");
+    var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;    //手机正则表达式
+    if( name.val() == '' || name.val() == null ){
+      name.after("<p>*姓名不能为空</p>");
+      return false;
+    }
+    if( (phone.val() == '' || phone.val() == null)){
+      phone.after("<p>*手机号不能为空</p>");
+      return false;
+    }else if(!myreg.test(phone.val())){
+      phone.after("<p>*请添写正确的11位手机号码</p>");
+      return false;
+    }  
+  })
+</script>
+

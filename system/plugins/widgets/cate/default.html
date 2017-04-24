@@ -1,0 +1,6 @@
+<{if $data.selected == 0 }><option value=0 >请选择</option><{/if}>
+<{foreach from=$data.data item=item}>
+<option value="<{$item.cate_id}>" <{if $item.cate_id == $data.selected}>selected="selected"<{/if}> >
+        <{$item.cate_name}> 
+</option>
+<{/foreach}>

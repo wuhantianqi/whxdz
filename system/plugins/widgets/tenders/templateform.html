@@ -1,0 +1,86 @@
+<style>
+	.templateform{
+		width: 100%;
+		overflow: hidden;
+		margin: 0 auto;
+		padding: 5px 0;
+	}
+	.templateform .templateform-form{
+		width: 1200px;
+		height: 100px;
+		margin: 0 auto;
+		background-color: #fff;
+		position: relative;
+		box-shadow: 0px 0px 10px #ccc;
+		background-image: url(/themes/default/images/only.png);
+	}
+	.templateform .templateform-form ul{
+		position: absolute;
+		top:0px;
+		left: 357px;
+	}
+	.templateform .templateform-form ul li{
+		float: left;
+	}
+	.templateform .templateform-form ul li:first-child{
+		width: 157px;
+	}
+	.templateform .templateform-form ul li:first-child input{
+		width: 155px;
+	    height: 28px;
+	    margin-top: 15px;
+	    border: none;
+	}
+	.templateform .templateform-form ul li:first-child input:last-child{
+	    margin-top: 16px;
+	}
+	.templateform .templateform-form ul li:nth-child(2){
+		width: 130px;
+	    margin-left: 12px;
+	    padding-top: 14px;
+	}
+	.templateform .templateform-form ul li:nth-child(2) select{
+		width: 115px;
+	    height: 30px;
+	    border: none;
+	}
+	.templateform .templateform-form ul li:nth-child(2) input{
+		width: 82px;
+	    height: 28px;
+	    margin-top: 15px;
+	    border: none;
+	    text-indent: 5px;
+	}
+	.templateform .templateform-form ul li:last-child{
+		width: 100px;
+    	height: 100px;
+    	margin-left: 16px;
+    	cursor: pointer;
+    	background-image: url(/themes/default/images/only-00.png);
+	}
+	.templateform .templateform-form ul li:hover:last-child{
+		background-image: url(/themes/default/images/only-0.png);
+	}
+</style>
+<div class="templateform">
+	<div class="templateform-form">
+		<form action="/index.php?tender-save.html" method="post" id="form">
+			<ul>
+				<li>
+					<input type="text" name="data[name]" placeholder="请输入您的称呼">
+					<input type="text" name="data[mobile]" placeholder="请输入您的联系方式">						
+				</li>
+				<li>
+					<select name="data[way_id]">
+						<option value="0">装修需求</option>
+                        <{foreach from=$setting[$type['way']] item=item key=key}>
+                        <option <{if $detail.way_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                        <{/foreach}>
+					</select>
+					<input type="text" name="data[area]" placeholder="装修面积">
+				</li>
+				<li class="submit-i"></li>
+			</ul>
+		</form>
+	</div>
+</div>

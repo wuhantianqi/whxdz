@@ -1,0 +1,11 @@
+<{foreach $items as $item}>
+<div class="case_show sale_list">
+    <p><a href="<{link ctl='activity:detail' arg0=$item.activity_id}>" class="title bg"><{$item.title}></a></p>
+    <p>活动时间：<{$item.sj}></p>
+    <a href="<{link ctl='activity:detail' arg0=$item.activity_id}>"><img width="280" height="200" src="<{$pager.img}>/<{$item.thumb}>"   /></a>
+    <p><{$item.intro|cutstr:200:'..'}></p>
+
+    <hr />
+    <p><a href="<{link ctl='activity:detail' arg0=$item.activity_id}>" class="title">查看详情</a></p>
+</div>
+<{/foreach}>

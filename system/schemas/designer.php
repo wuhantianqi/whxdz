@@ -1,0 +1,173 @@
+<?php
+/**
+ * Copy Right IJH.CC
+ * Each engineer has a duty to keep the code elegant
+ * $Id$
+ */
+
+if(!defined('__CORE_DIR')){
+    exit("Access Denied");
+}
+
+return array (
+  'designer_id' => 
+  array (
+    'field' => 'designer_id',
+    'label' => 'ID',
+    'pk' => true,
+    'add' => false,
+    'edit' => false,
+    'html' => false,
+    'empty' => false,
+    'show' => false,
+    'list' => true,
+    'type' => 'int',
+    'comment' => '',
+    'default' => '',
+    'SO' => false,
+  ),
+  'name' => 
+  array (
+    'field' => 'name',
+    'label' => '名称',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => false,
+    'empty' => false,
+    'show' => false,
+    'list' => true,
+    'type' => 'text',
+    'comment' => '',
+    'default' => '',
+    'SO' => 'like',
+  ),
+'cate_id' => 
+  array (
+    'field' => 'cate_id',
+    'label' => '头衔',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => false,
+    'empty' => false,
+    'show' => true,
+    'list' => true,
+    'type' => 'int',
+    'comment' => '',
+    'default' => '',
+    'SO' => '=',
+  ),
+'team_id' => 
+  array (
+    'field' => 'team_id',
+    'label' => '团队',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => false,
+    'empty' => true,
+    'show' => true,
+    'list' => true,
+    'type' => 'int',
+    'comment' => '',
+    'default' => '',
+    'SO' => '=',
+  ),
+  'face_pic' => 
+  array (
+    'field' => 'face_pic',
+    'label' => '头像',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => false,
+    'empty' => false,
+    'show' => false,
+    'list' => true,
+    'type' => 'photo',
+    'comment' => '',
+    'default' => '',
+    'SO' => false,
+  ),
+    'intro' => 
+  array (
+    'field' => 'intro',
+    'label' => '个人简介',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => true,
+    'empty' => false,
+    'show' => false,
+    'list' => false,
+    'type' => 'editor',
+    'comment' => '',
+    'default' => '',
+    'SO' => false,
+  ),
+  'school' => 
+  array (
+    'field' => 'school',
+    'label' => '毕业院校',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => false,
+    'empty' => false,
+    'show' => false,
+    'list' => true,
+    'type' => 'text',
+    'comment' => '',
+    'default' => '',
+    'SO' => false,
+  ),
+  'model_case' => 
+  array (
+    'field' => 'model_case',
+    'label' => '代表作',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => false,
+    'empty' => false,
+    'show' => false,
+    'list' => false,
+    'type' => 'textarea',
+    'comment' => '',
+    'default' => '',
+    'SO' => false,
+  ),
+  'concept' => 
+  array (
+    'field' => 'concept',
+    'label' => '设计理念',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => false,
+    'empty' => false,
+    'show' => false,
+    'list' => false,
+    'type' => 'textarea',
+    'comment' => '',
+    'default' => '',
+    'SO' => false,
+  ),
+    'views' => 
+  array (
+    'field' => 'views',
+    'label' => '浏览量',
+    'pk' => false,
+    'add' => true,
+    'edit' => true,
+    'html' => false,
+    'empty' => true,
+    'show' => false,
+    'list' => false,
+    'type' => 'number',
+    'comment' => '',
+    'default' => '',
+    'SO' => false,
+  ),
+);

@@ -1,0 +1,12 @@
+<{foreach from=$items item=item}>
+
+<div class="building_list tuanzhuang_list">
+    <a class="lt" title="<{$item.home_name}><{$item.title}>" href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>"><img width="80" height='82' src="<{$pager.img}>/<{$item.face_pic}>_small.jpg" /></a>
+    <div class="building_list_rt  lt">
+        <p><a title="<{$item.home_name}><{$item.title}>" href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>"class="title"><{$item.title|cutstr:21:''}></a></p>
+        <p>立省：<font class="red">￥<{$item.youhui}></font></p>
+        <p><span class="red"><{$item.sign_num}></span>人已参团<a title="<{$item.home_name}><{$item.title}>" href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>" class="bt">我要参团</a></p>
+    </div>
+    <a title="<{$item.home_name}><{$item.title}>" href="<{link ctl='tuan:detail' arg0=$item.tuan_id}>" class="rt">></a>
+</div>
+<{/foreach}>  

@@ -1,0 +1,78 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+<div class="bread_nav">
+	<div class="mainwd">
+		您当前的位置：<a href="<{link ctl='index'}>" >首页</a> &gt;在建工地
+	</div>
+</div>
+<div class="mainwd">
+	<div class="h20"></div>
+	<div class="sub_left">
+		<div class="sub_box sub_search">
+            <form action="<{link ctl='site:index'}>">
+                <input name="s" type="text" class="text lt" placeholder="请输入关键字">
+                <input type="submit" class="btn rt" value="搜 索">
+            </form>
+			<p class="tui">推荐团装小区： <{calldata mdl='site/site' order='hot' limit=4 noext=true}><a href="<{link ctl='site:detail' arg0=$item.site_id}>" target="_blank"><{$item.title}></a><{/calldata}></p>
+		</div>
+		<div class="sub_box ">
+			 <ul class="index_site sub_site">
+                <{foreach $items as $item}>
+                    <li>
+                        <div class="opacity_img">
+                            <a href="<{link ctl='site:detail' arg0=$item.site_id}>" target="_blank" >
+                                <img src="<{$pager.img}>/<{$item.face_pic}>" >
+                            </a>
+                            <div class="opacity_yuyue">
+                                <p class="bg"></p>
+                                <p class="text"><a href="<{link ctl='site:yuyue' arg0=$item.site_id}>" mini-load="预约参观工地">预约参观</a>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="title">
+                            <a href="<{link ctl='site:detail' arg0=$item.site_id}>" target="_blank" class="lt"> <{$item.title}> </a>
+                            <span class="rt"><{if $item.status_title}><{$item.status_title}><{else}>未开工<{/if}></span>
+                        </p>
+                        <p class="cl"></p>
+                        <div class="list">
+                            <{widget id="attr/form" from="zx:case" value=$item.attr  tpl='simple2.html'}>
+                            <font><{$manager_list[$item.manager_id].name}></font>
+                        </div>
+                    </li>
+                    <{/foreach}>
+					</ul>                  
+				<div class="cl"></div>
+				<div class="page hoverno">
+					<{$pager.pagebar}>
+				</div>
+		</div>
+	</div>
+	<div class="sub_right">
+        <div class="sub_tenders">
+            <h2>快速发布招标</h2>
+            <p class="graycl">三套设计方案供您选择</p>
+            <form action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1">
+                <input name="data[name]" type="text" class="text"  placeholder="您的称呼">
+                <input name="data[mobile]" class="text"  placeholder="您的电话">
+                <input name="data[addr]" class="text"  placeholder="您所在的小区">
+                <div class="cl"></div>
+                <input type="submit" class="btn_sub_apply btn" value="立即申请 "> 
+            </form>
+        </div>
+        <div class="sub_box">
+            <h2 class="sub_title">
+            家装套系
+            </h2>
+            <div class="sub_series opacity_chose">
+                <{calldata mdl='decorate/package' limit=3}><a href="<{link ctl='taocan' arg0=$item.package_id}>" target="_blank" ><img src="<{$pager.img}>/<{$item.face_pic}>"></a><{/calldata}>
+            </div>
+        </div>
+        <div class="sub_box">
+            <div class="sub_ad opacity_chose">
+                <{widget id=adv name='全站列表页右侧边栏广告' limit=1}>
+            </div>
+        </div>
+    </div>
+	<div class="cl"></div>
+</div>
+<{include file="block/footer.html"}>

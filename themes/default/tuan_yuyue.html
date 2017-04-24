@@ -1,0 +1,15 @@
+    <form action="<{link ctl='tuan:yuyue' arg0=$detail.tuan_id}>" mini-form="sign-form" method="post" >
+        <div  class="yuyue_box">
+            <h2>我要报名<font class="red" style="font-size: 18px;">“<{$detail.home_name}>”</font>团装活动</h2>
+            <dl>
+               <dt> 
+                    <input class="yuyue_input" name="data[contact]" id="pop_name_txt" onfocus="if (this.value=='请输入您的姓名'){ this.value=''};this.style.color='#666666';" onblur="if (this.value==''){this.value='请输入您的姓名'};this.style.color='#666666';" value="请输入您的姓名" type="text">
+                    <span id="tips_1" class="yuyue_tips"></span>
+                    <input class="yuyue_input" name="data[mobile]" id="pop_phone_txt" onfocus="if (this.value=='请输入您的手机号'){ this.value=''};this.style.color='#666666';" onblur="if (this.value==''){this.value='请输入您的手机号'};this.style.color='#666666';" value="请输入您的手机号" type="text">
+                    <span id="tips_2" class="yuyue_tips"></span>
+               </dt>
+               <dd><input type="submit" class="yuyue_sub_green" value="立刻申请"/></dd>
+            </dl>
+            <div class="yuyue_bottom"><span>不想等待？您也可以直接联系我们</span><span class="yuyue_tel"><{$CONFIG.site.phone}></span></div>
+        </div>
+    </form>

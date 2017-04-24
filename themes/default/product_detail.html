@@ -1,0 +1,84 @@
+<{include file="block/sheader.html"}>
+    <{include file="block/header.html"}>
+<div class="bread_nav">
+	<div class="mainwd"> 您当前的位置：<a href="<{link ctl='index'}>" >首页</a> &gt;<a href="<{link ctl='product'}>">平价材料</a> &gt; <{$detail.product_name}> </div>
+</div>
+<div class="mainwd">
+	<div class="h20"></div>
+	<div class="sub_left">
+		<div class="sub_box">
+			<div class="tuan_detail">
+				<h1><{$detail.product_name}></h1>
+				<div class="lt">
+					<div class="pic">
+						<img src="<{$pager.img}>/<{$detail.face_pic}>">
+					</div>
+				</div>
+				<div class="tuan_detail_text material_detail_text lt">
+					<div class="text">
+					<p class="price"><span class="lt">超值抢购价：<font class="fontcl2">￥<{$detail.my_price}></font></span>
+					<span class="rt graycl"><a href="<{link ctl='product:yuyue' arg0=$detail.product_id}>" mini-load="预约优惠<{$detail.product_name}>">马上预约</a></span>
+					</p>
+					<p class="cl"></p>
+					<p>品牌：<{$brand.brand_name}></p>
+					<p>分类：<{$cate.cate_name}></p>
+					<p>已售出：<font class="fontcl2"><{$detail.yue_num}></font>件</p>
+					</div>
+					<a href="<{link ctl='product:yuyue' arg0=$detail.product_id}>" mini-load="预约购买<{$detail.product_name}>" class="btn btn_main">预约购买</a>
+				</div>
+				<div class="cl"></div>
+			</div>
+			<div class="sub_detail">
+				<h2 class="sub_intro_tit">商品详情</h2>
+				<div class="article">
+					<{$detail.content}>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="sub_right">
+        <div class="sub_tenders">
+            <h2>快速发布招标</h2>
+            <p class="graycl">三套设计方案供您选择</p>
+            <form action="<{link ctl='tender:save' http='empty'}>" method="post" mini-form="tender1">
+                <input name="data[name]" type="text" class="text"  placeholder="您的称呼">
+                <input name="data[mobile]" class="text"  placeholder="您的电话">
+                <input name="data[addr]" class="text"  placeholder="您所在的小区">
+                <div class="cl"></div>
+                <input type="submit" class="btn_sub_apply btn" value="立即申请 "> 
+            </form>
+        </div>
+		<div class="sub_box">
+			<h2 class="sub_title"> 推荐材料 </h2>
+			<ul class="index_material sub_material_right">
+				<{calldata mdl='product/product' order='hot' limit=2}>
+				<li>
+					<div class="opacity_img">
+						<a href="<{link ctl='product:detail' arg0=$item.product_id}>" target="_blank" >
+						<img src="<{$pager.img}>/<{$item.face_pic}>" >
+						</a>
+						<div class="opacity_yuyue">
+							<p class="bg"></p>
+							<p class="text"><a href="<{link ctl='product:yuyue' arg0=$item.product_id}>" mini-load="预约购买<{$item.title}>">预约优惠</a>
+							</p>
+						</div>
+					</div>
+					<p class="title">
+						<a href="<{link ctl='product:detail' arg0=$item.product_id}>"><{$item.product_name}></a>
+					</p>
+					<p class="price"><span class="lt fontcl2">￥<{$item.my_price}></span><del class="rt graycl">原价：￥<{$item.price}></del></p>
+					<p class="cl"></p>
+				</li>
+				<{/calldata}>
+			</ul>
+			<div class="cl"></div>
+		</div>
+        <div class="sub_box">
+            <div class="sub_ad opacity_chose">
+                <{widget id=adv name='材料详情页右侧边栏广告' limit=1}>
+            </div>
+        </div>
+	</div>
+	<div class="cl"></div>
+</div>
+<{include file="block/footer.html"}>

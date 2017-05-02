@@ -26,7 +26,7 @@
                 <h2>装饰知识</h2>
                 <ul>
                     <{calldata mdl='article/handler' order='hot' limit=8}>
-                    <li><b><{$iteration}></b><a href="<{link ctl='article:detail' arg0=$item.article_id}>"><{$item.title|cutstr:35}></a></li>
+                    <li><b><{$iteration}>.</b><a href="<{link ctl='article:detail' arg0=$item.article_id}>"><{$item.title|cutstr:35}></a></li>
                     <{/calldata}>
                 </ul>
             </div>
@@ -43,7 +43,7 @@
                     <{foreach $items as $item}>
                     <li>
                         <div class="article-list-img">
-                            <a href="<{link ctl='article:detail' arg0=$item.article_id}>"><img src="http://192.168.0.101/attachs/<{$item.thumb}>" alt=""></a>
+                            <a href="<{link ctl='article:detail' arg0=$item.article_id}>"><img src="/attachs/<{$item.thumb}>" alt=""></a>
                         </div>
                         <div class="article-list-wenzi">
                             <h2><a href="<{link ctl='article:detail' arg0=$item.article_id}>"><{$item.title}></a></h2>

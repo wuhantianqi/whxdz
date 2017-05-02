@@ -1,22 +1,20 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2017-04-15 12:06:17
+<?php /* Smarty version Smarty-3.1.8, created on 2017-05-02 11:17:43
          compiled from "D:\phpStudy\WWW\whxdz\themes\default\index.html" */ ?>
-<?php /*%%SmartyHeaderCode:1191358ef5358834568-50538840%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:230555907fa575551e9-89685691%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
     'c903f002c59ebabf72a157b76082c0fd4cf40089' => 
     array (
       0 => 'D:\\phpStudy\\WWW\\whxdz\\themes\\default\\index.html',
-      1 => 1492229174,
+      1 => 1493693349,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1191358ef5358834568-50538840',
+  'nocache_hash' => '230555907fa575551e9-89685691',
   'function' => 
   array (
   ),
-  'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_58ef53588ad702_18547488',
   'variables' => 
   array (
     'items' => 0,
@@ -24,8 +22,10 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'pager' => 0,
   ),
   'has_nocache_code' => false,
+  'version' => 'Smarty-3.1.8',
+  'unifunc' => 'content_5907fa57666927_16667687',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_58ef53588ad702_18547488')) {function content_58ef53588ad702_18547488($_smarty_tpl) {?><?php if (!is_callable('smarty_block_calldata')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\block.calldata.php';
+<?php if ($_valid && !is_callable('content_5907fa57666927_16667687')) {function content_5907fa57666927_16667687($_smarty_tpl) {?><?php if (!is_callable('smarty_block_calldata')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\block.calldata.php';
 if (!is_callable('smarty_function_link')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\function.link.php';
 if (!is_callable('smarty_modifier_cutstr')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\modifier.cutstr.php';
 if (!is_callable('smarty_modifier_format')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\modifier.format.php';

@@ -29,7 +29,7 @@
 .site-content{
 	width: 1200px;
 	overflow: hidden;
-	margin-top: 0px;
+	margin-top: 30px;
 }
 .site-content-right{
 	width: 285px;
@@ -485,7 +485,7 @@
 	position: absolute;
     top: 12px;
     left: 2px;
-	background-image: url(../images/z1-2.png);
+	background: rgba（0,0,0,0.5)
 	background-position: 20px -40px;
 }
 .designer-case-list{

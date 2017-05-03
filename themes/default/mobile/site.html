@@ -11,7 +11,7 @@
     <div class="building_list ">
         <a  class="lt" title="<{$item.title}>" href="<{link ctl='site:detail' arg0=$item.site_id}>"><img width="80"  height="80" src="<{$pager.img}>/<{$item.face_pic}>"  /></a>
         <div class="building_list_rt  lt">
-            <p><a title="<{$item.title}>" href="<{link ctl='site:detail' arg0=$item.site_id}>" class="title"><{$item.title}></a></p>
+            <p><a title="<{$item.title}>" href="<{link ctl='site:detail' arg0=$item.site_id}>" class="title"><{$item.title|cutstr:48:''}></a></p>
             <p>进度：<span class="bg"><{$status[$item.status]}></span></p>
             <p>设计师：<a title='<{$designer_list[$item.designer_id].name}>' href="<{link ctl='designer:detail' arg0=$item.designer_id}>"><{$designer_list[$item.designer_id].name|cutstr:9:''}></a><span class="yellow"><a title="<{$item.title}>" style="color: #fe8007;"  href="<{link ctl='site:detail' arg0=$item.site_id}>">我要参观 ></a></span></p>
         </div>

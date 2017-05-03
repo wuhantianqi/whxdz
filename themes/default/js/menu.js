@@ -131,11 +131,14 @@ $(document).ready(function(){
 	})	
 	/* 底部表单切换 */
 	$(document).on('click','.form-ren div',function(){
+		var wheight = $(window).height();
+		var bwheight =$('.bottom-form').height();
+		var x = parseInt(wheight-bwheight);
 		var bheight = $('.bottom-form').position().top;
-		if( bheight <= 524){
+		if( bheight <= x){
 			$('.bottom-form').animate({
 				"bottom":'-370px'
-			},800)
+			},800)		
 		}else{
 			$('.bottom-form').animate({
 				"bottom":'0px'

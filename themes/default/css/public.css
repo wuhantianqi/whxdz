@@ -344,16 +344,32 @@ hr {
 .footer .footer-centent ul li:nth-child(5) p b{
 	font-size: 16px;
 }
-.footer .footer-centent ul li:nth-child(5) p:last-child{
+/*.footer .footer-centent ul li:nth-child(5) p:last-child{
 	width: 125px;
 	height: 30px;
 	margin: 0 auto;
 	border-radius: 10px;
-    margin-top: 20px;
+    	margin-top: 20px;
 	background-color: #eb0000;
 	text-align: center;
 	line-height: 30px;
 	color: #fff;
+}*/
+.footer .footer-centent ul li p input{
+	border: none;
+	outline-style: none;
+	width: 125px;
+	height: 30px;
+	margin: 0 auto;
+	border-radius: 10px;
+  cursor: pointer;
+	background-color: #eb0000;
+	text-align: center;
+	line-height: 30px;
+	color: #fff;
+
+
+
 }
 .footer .footer-bottom{
 	width: 100%;
@@ -417,6 +433,8 @@ hr {
     transform: none;
 }
 .dform .form-ren .arrow{
+    -webkit-animation: arrow 0.8s cubic-bezier(0.30,2.0,0.80,2.1) infinite;
+    -o-animation: arrow 0.8s cubic-bezier(0.30,2.0,0.80,2.1) infinite;
     animation: arrow 0.8s cubic-bezier(0.30,2.0,0.80,2.1) infinite;
 }
 .dform .form-ren .arrow span{

@@ -17,7 +17,7 @@ ul li{ list-style:none;}
 .cl{ clear:both;}
 .none{ display:none;}
 .txt{ font-family:"微软雅黑"; font-size:12px; color:#666; }
-.title{ font-family:"微软雅黑"; font-size:14px; color:#666; font-weight:bold;}
+.title{ font-family:"微软雅黑"; font-size:14px; color:#666; }
 .cl50{ 
     height:42px;
 }
@@ -91,6 +91,7 @@ ul li{ list-style:none;}
 
 .mobile_main{
     overflow: hidden;
+    margin: 0 0.25rem;
 }
 .mobile_banner{height:150px;width:100%;position:relative;margin:0 auto; overflow:hidden;}
 /*头部样式*/
@@ -171,7 +172,7 @@ ul li{ list-style:none;}
     vertical-align: -0.12rem;
     background: url(../images/mobile/mweb.png) no-repeat;
     background-size: 6.6rem;
-    vertical-align: -8px;
+    vertical-align: -0.15rem;
 }
 .tablelist li a i.rj {
     background-position: 0rem -1.6rem;
@@ -650,7 +651,9 @@ index.css?v=201610132053:1867
 /*隐藏分页样式*/
 
 /*装修报名样式*/
-.content_main{ background:#eeeeee; margin:0px 1%; padding:5px;}
+.content_main{ background:#eeeeee; margin:0px 1%; 
+    /*padding:5px;*/
+}
 .enroll_main p{ 
     font-size: 14px;
     margin: 10px 0px;
@@ -744,61 +747,68 @@ index.css?v=201610132053:1867
 /*我的列表页样式*/
 
 /*我的详情页样式*/
-.mine_sub_top{ border-bottom:1px dashed #e3e3e3; padding:10px 0px; min-height:80px; overflow:hidden; min-width:320px;}
+.mine_sub_top{ border-bottom:1px dashed #e3e3e3; padding:0.25rem 0px; min-height:2.0rem; overflow:hidden; min-width:8.0rem;}
 /*.mine_sub_top_lt{ margin-left:20px;}*/
 .mine_sub_top_lt img{
-    width: 200px;
-    height: 200px;
+    width: 5.0rem;
+    height: 5.0rem;
 }
 .mine_sub_top_rt{ 
-    margin-left:20px; 
-    width: 37%;
+    margin-left:0.5rem; 
+    width: 40%;
     /*max-width:230px;*/
 }
 .mine_sub_top_rt p.title{ margin:0px;}
 .mine_sub_top_rt p{
     line-height: 0.7rem;
 }
-.mine_sub_top_rt p span{ display:inline-block; padding:2px 8px; background:#df0a12; color:#fff;}
-.mine_sub_top_rt p.add{ background:url(../images/mobile/add_img.png) no-repeat; padding-left:20px;}
+.mine_sub_top_rt p span{ display:inline-block; padding:0.04rem 0.1rem; border-radius: 0.125rem; background:#df0a12; color:#fff;}
+.mine_sub_top_rt p.add{ background:url(../images/mobile/add_img.png) no-repeat left 0.125rem; padding-left:0.5rem;}
 /*我的详情页样式*/
 
 /*看工地列表页样式*/
 .building_list{
     width:100%; 
-    margin:10px 0px; 
+    margin:0.25rem 0px; 
     border-bottom:1px dashed #e3e3e3; 
     /*max-height:200px;*/
     overflow: hidden;
-    padding-bottom: 10px;
+    padding-bottom: 0.25rem;
 }
 .building_list a.lt{ 
-    width: 200px;
-    display:inline-block; border:1px solid #e3e3e3; margin-right:10px;
+    width: 5.0rem;
+    display:inline-block; 
+    border:1px solid #e3e3e3; 
+    margin-right:0.25rem;
 }
 .building_list a.lt img{
-    width: 200px;
-    height: 200px;
+    width: 5.0rem;
+    height: 3.5rem;
 }
 .building_list_rt{ 
     border:none; 
-    width: 39%;
+    width: 40%;
     /*max-width:200px; */
     overflow:hidden;
 }
-.building_list_rt p{ margin-bottom:5px; line-height: 0.6rem;}
-.building_list_rt p span.bg{ display:inline-block; padding:2px 8px; background:#df0a12; color:#fff;}
+.building_list_rt p{ margin-bottom:0.125rem; line-height: 0.45rem;}
+.building_list_rt p span.bg{ display:inline-block; padding:0.04rem 0.1rem; border-radius: 0.125rem; background:#df0a12; color:#fff;}
 .building_list_rt p span.yellow{ 
     color: #fe8007;
-    margin-top: 10px;
+    margin-top: 0.25rem;
     display: block;
+}
+#wrap730 {
+    font-size: 14px;
 }
 .building_list a.rt{ font-size:18px; font-weight:bold; margin-top:40px;}
 .building_list a.rt:hover{ text-decoration:none;}
 /*看工地列表页样式*/
-
+#jq_loding{
+    font-size: 14px;
+}
 /*看工地详情页样式*/
-.mine_sub_top_rt a.bt{ display:inline-block; width:90px; height:28px; background:#fe8007; color:#fff; text-align:center; line-height:28px;border-radius:5px; margin-top: 5px;}
+.mine_sub_top_rt a.bt{ display:inline-block; width:2.25rem; height:0.7rem; background:#fe8007; color:#fff; text-align:center; line-height:0.7rem;border-radius:0.125rem; margin-top: 0.125rem;}
 .mine_sub_top_rt a.bt:hover{ text-decoration:none;}
 /*看工地详情页样式*/
 
@@ -856,7 +866,7 @@ form.tuanzhuang input.bt{ background:url(../images/mobile/search_bg.png) no-repe
 /*优惠信息详情页面样式*/
 .sale_sub_top{ margin-bottom:10px;}
 .sale_sub_bottom a.bt{ display:block; height:35px; background:#ff6d00; width:100%; border-radius:5px; text-align:center; color:#fff; line-height:35px;}
-.sale_sub_bottom p{ background:url(../images/mobile/time.png) 0px center no-repeat; padding-left:20px; margin:5px 0px;}
+.sale_sub_bottom p{ background:url(../images/mobile/time.png) 0px center no-repeat; padding-left:20px; margin:10px 10px;}
 /*优惠信息详情页面样式*/
 
 /*资讯分类页面样式*/

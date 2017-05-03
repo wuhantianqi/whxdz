@@ -75,8 +75,7 @@ hr {
 }
 .top-nav .nav{
 	width: 1200px;
-	height: auto;
-	color: #888;
+	height: auto;	
 }
 .top-nav .nav ul{
 	float: right;
@@ -84,6 +83,9 @@ hr {
 .top-nav .nav ul li{
 	float: left;
 	margin-left:30px;
+}
+.top-nav .nav ul li a{
+	color: #888;
 }
 .top-nav .nav ul li i{
 	width: 20px;

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2017-05-02 11:17:43
+<?php /* Smarty version Smarty-3.1.8, created on 2017-05-02 13:42:40
          compiled from "D:\phpStudy\WWW\whxdz\themes\default\block\vice-nav.html" */ ?>
-<?php /*%%SmartyHeaderCode:175715907fa57722150-55699812%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:2671359081c5038e925-37208120%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,15 +11,15 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '175715907fa57722150-55699812',
+  'nocache_hash' => '2671359081c5038e925-37208120',
   'function' => 
   array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5907fa57750f62_38491587',
+  'unifunc' => 'content_59081c503add26_16535375',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5907fa57750f62_38491587')) {function content_5907fa57750f62_38491587($_smarty_tpl) {?><?php if (!is_callable('smarty_function_link')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\function.link.php';
+<?php if ($_valid && !is_callable('content_59081c503add26_16535375')) {function content_59081c503add26_16535375($_smarty_tpl) {?><?php if (!is_callable('smarty_function_link')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\function.link.php';
 ?>    <div class="vice-menu">
         <ul>
            <li><a href="<?php echo smarty_function_link(array('ctl'=>'about:about'),$_smarty_tpl);?>

@@ -1,6 +1,6 @@
-<?php /* Smarty version Smarty-3.1.8, created on 2017-05-02 11:17:43
+<?php /* Smarty version Smarty-3.1.8, created on 2017-05-02 13:42:40
          compiled from "widget:tenders/bottomform.html" */ ?>
-<?php /*%%SmartyHeaderCode:209115907fa579b25f4-32216096%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
+<?php /*%%SmartyHeaderCode:1853159081c5070d270-59438931%%*/if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
@@ -11,7 +11,7 @@ $_valid = $_smarty_tpl->decodeProperties(array (
       2 => 'widget',
     ),
   ),
-  'nocache_hash' => '209115907fa579b25f4-32216096',
+  'nocache_hash' => '1853159081c5070d270-59438931',
   'function' => 
   array (
   ),
@@ -25,9 +25,9 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => 'Smarty-3.1.8',
-  'unifunc' => 'content_5907fa57a2b788_37277624',
+  'unifunc' => 'content_59081c507381f1_99557157',
 ),false); /*/%%SmartyHeaderCode%%*/?>
-<?php if ($_valid && !is_callable('content_5907fa57a2b788_37277624')) {function content_5907fa57a2b788_37277624($_smarty_tpl) {?><?php if (!is_callable('smarty_function_link')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\function.link.php';
+<?php if ($_valid && !is_callable('content_59081c507381f1_99557157')) {function content_59081c507381f1_99557157($_smarty_tpl) {?><?php if (!is_callable('smarty_function_link')) include 'D:\\phpStudy\\WWW\\whxdz\\system\\plugins/smarty\\function.link.php';
 ?><!-- 底部缩放表单 -->
 <div class="bottom-form">
 	<div class="dform">

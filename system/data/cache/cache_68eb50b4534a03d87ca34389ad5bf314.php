@@ -1,5 +1,0 @@
-<?php exit("Access Denied");?>
-note:System cache file, DO NOT modify me!
-hash:68eb50b4534a03d87ca34389ad5bf314:system_config_access
-time:0
-data:YTo3OntzOjY6ImRlbnlpcCI7czoxNzoiMTI3LjAuMC45DQo4LjIwLioiO3M6MTI6Im1vYmlsZV9jb3VudCI7czoxOiIyIjtzOjExOiJtb2JpbGVfdGltZSI7czoxOiIwIjtzOjEzOiJ0ZW5kZXJzX2NvdW50IjtzOjI6IjIwIjtzOjEyOiJ0ZW5kZXJzX3RpbWUiO3M6MToiMCI7czo2OiJjbG9zZWQiO3M6MToiMCI7czoxMzoiY2xvc2VkX3JlYXNvbiI7czoyNToi572R56uZ5q2j5Zyo5Y2H57qn5LitLi4uLiI7fQ==

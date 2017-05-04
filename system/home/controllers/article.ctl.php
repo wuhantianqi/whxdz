@@ -59,7 +59,7 @@ class Ctl_Article extends Ctl
         $this->pagedata['pager'] = $pager;
         $this->pagedata['cat_id'] = $cat_id;
         $this->pagedata['leftcats'] = $leftcats;
-        K::M('helper/seo')->init('article',array('cate'=>empty($cate['title']) ? '' : $cate['title']));
+        K::M('helper/seo')->init('pctopt',array());
         $this->tmpl = 'article.html';
     }
     

@@ -21,8 +21,8 @@ $(document).ready(function(){
 		animation: 'fade',
 		autoplay: true,
 		arrows: false,
-		// speed: 0,               
-		// delay: 5000, 
+		// speed: 0,
+		// delay: 5000,
 		});
 	/*首页banner图其它图片3秒后再加载*/
 	// var indexImages = ['%THEME%/images/banner-z1.jpg','%THEME%/images/banner-z2.jpg','%THEME%/images/banner-z3.jpg','%THEME%/images/banner-z4.jpg'];

@@ -21,6 +21,7 @@ class Ctl_About extends Ctl {
             $items =  K::M('article/view')->items(array('from'=>'about','closed'=>0),array('article_id'=>'ASC'),1,50); 
             $this->pagedata['page'] = $page;
             $this->pagedata['items'] = $items;
+
              K::M('helper/seo')->init('about',array('title'=>  $this->pagedata['info']['title']));
             $this->tmpl = 'about.html';
         }

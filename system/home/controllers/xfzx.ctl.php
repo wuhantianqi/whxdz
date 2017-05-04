@@ -8,6 +8,7 @@ class Ctl_Xfzx extends Ctl {
 
     public function index($page = 1)
     {
+          K::M('helper/seo')->init('pcnewhome',array());
         $this->tmpl = 'xfzx.html';
     }
 

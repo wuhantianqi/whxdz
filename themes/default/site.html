@@ -25,13 +25,7 @@
             <div class="site-advertisement"><img src="%THEME%/images/site-1.png" alt=""></div>
             <div class="project-manager site-set">
                 <h2>家装套系</h2>
-                <ul>   
-                    <{calldata mdl='decorate/package' limit=3}>
-                    <li>
-                        <a href="<{link ctl='taocan' arg0=$item.package_id}>" target="_blank" ><img src="<{$pager.img}>/<{$item.face_pic}>"></a>
-                    </li>
-                    <{/calldata}>
-                </ul>
+                <{widget id="adv" name="家装套系广告位" limit="3"}>
             </div>
         </div>
         <div class="site-content-left">

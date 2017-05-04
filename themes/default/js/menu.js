@@ -115,7 +115,7 @@ $(document).ready(function(){
 		  shadeClose: true,
 		  shade: 0.5,
 		  area: ['980px', '370px'],
-		  content: 'http://192.168.0.101/index.php?tender-eject.html' //iframe的url
+		  content: 'http://www.whxdz.com/index.php?tender-eject.html' //iframe的url
 		}); 
 	})
 	/*首页三重礼弹出框*/
@@ -126,7 +126,7 @@ $(document).ready(function(){
 		  shadeClose: true,
 		  shade: 0.5,
 		  area: ['600px', '270px'],
-		  content: 'http://192.168.0.101/index.php?package-yuyue-'+$(this).data("id")+'.html' //iframe的url
+		  content: 'http://www.whxdz.com/index.php?package-yuyue-'+$(this).data("id")+'.html' //iframe的url
 		}); 
 	})	
 	/* 底部表单切换 */
@@ -236,7 +236,7 @@ $(document).ready(function(){
 			    ,closeBtn: 0
 			    ,anim: 0 //动画类型
 			};
-		submitf( datas,layers, $(this).parents('form').find('input[type="hidden"]').val() )
+		submitf( datas,layers, $(this).parents('form').find('input[type="hidden"]').val() );
 	})
 	/* 案例图喜欢 */
 	$(document).on( "click", '.like', function(){

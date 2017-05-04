@@ -25,20 +25,7 @@
             <div class="site-advertisement"><img src="%THEME%/images/site-1.png" alt=""></div>
             <div class="designer-manager">
                 <h2>人气项目经理</h2>
-                <ul>
-                    <{calldata mdl='manager/manager' order='hot' limit=5}>
-                    <li>
-                        <a href="<{link ctl='designer:detail' arg0=$item.designer_id}>">
-                            <img src="<{$pager.img}>/<{$item.face_pic}>">
-                        </a>
-                        <dl>
-                            <dd><a href="<{link ctl='designer:detail' arg0=$item.designer_id}>"><{$item.name}></a></dd>
-                            <dd>案例：<span><{$item.case_num}></span></dd>
-                            <dd>关注<span><{$item.views}></span>人</dd>
-                        </dl>
-                    </li>     
-                    <{/calldata}>
-                </ul>
+                <{widget id="adv" name="家装套系广告位" limit="3"}>
             </div>
         </div>
         <div class="site-content-left">

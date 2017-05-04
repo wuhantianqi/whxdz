@@ -678,7 +678,7 @@ index.css?v=201610132053:1867
 .enroll_main select{
     font-size: 14px;
 }
-.enroll_main input,.enroll_main select{height:30px;}
+.enroll_main input,.enroll_main select{height:30px;font-size: 12px}
 .enroll_main select{ margin-bottom:10px;}
 .enroll_main input.bt{ margin-top:10px; background:#fe8007; border-radius:5px; color:#fff; font-size:14px; font-weight:bold; border:none; height:35px;}
 .touchblur{

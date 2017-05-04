@@ -493,7 +493,7 @@
 	position: absolute;
     top: 12px;
     left: 2px;
-	background: rgba（0,0,0,0.5)
+	background-color: rgba(0,0,0,.5);
 	background-position: 20px -40px;
 }
 .designer-case-list{
@@ -746,7 +746,7 @@
 	margin-bottom: 50px;
 }
 .case-classification ul{
-	width: 1198;
+	width: 1198px;
 	overflow: hidden;
 	padding:15px 20px;
 	border: 1px solid #ccc;
@@ -1397,7 +1397,13 @@
 }
 /* 畅享活动 */
 .activity_banner{
-	overflow: hidden;
+	width: 100%;
+
+}
+.activity_banner a img{
+	width: 100%;
+	height: 100%;
+
 }
 .activity_box h2{
 	background-color: #ff0000;

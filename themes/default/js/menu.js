@@ -16,16 +16,46 @@ $(document).ready(function(){
 			$('.top-menu').removeClass('fixed-menu')
 		}
 	});
-	/*首页banner图切换*/
-	$('.index-banner').unslider({
-		animation: 'fade',
-		autoplay: true,
-		arrows: false,
-		// speed: 0,
-		// delay: 5000,
-		});
-	/*首页banner图其它图片3秒后再加载*/
-	// var indexImages = ['%THEME%/images/banner-z1.jpg','%THEME%/images/banner-z2.jpg','%THEME%/images/banner-z3.jpg','%THEME%/images/banner-z4.jpg'];
+	/*首页banner图切换start*/	
+	var istart = 0;    //初始值
+	var itime = null   //存储两个定时器
+	var fobj = $(".index-bannerx");       			//获取父元素
+	var aleng = $(".index-bannerx a").length -1;       //获取图片个数
+	$(".index-bannerx a").eq(aleng).css("opacity","1");    //默认显示最后一张
+	if( aleng > 2 ){                               //添加元素
+		fobj.append("<div class='index-banner-span'></div>");
+		for (var i = 0; i <= aleng; i++) {
+			$('.index-banner-span').append("<span></span>");
+		}
+	}
+	$(document).on("click",'.index-banner-span span',function(){
+		istart = $(this).index();
+		indexg( );
+	})
+	/**
+	 * 按钮切换
+	 * @param  number nub 传入指定切换数字
+	 * @return mixed
+	 */
+	function indexg( ){
+		if( istart > aleng){
+			istart = 0;
+		}
+		$('.index-banner-span span').removeClass('onn');
+		$('.index-banner-span span').eq(istart).addClass('onn');
+		$('.index-bannerx a').css("opacity","0");
+		$('.index-bannerx a').eq( istart ).animate({
+			opacity:1
+		},1000);
+		istart++
+	}
+	itime = window.setInterval(indexg,2500); 
+	$(".index-bannerx").mousemove(function(event) {
+		clearInterval(itime);
+	}).mouseout(function(event) {
+		itime = window.setInterval(indexg,2500); 
+	});
+	/*首页banner图切换end*/	
 
 	/* 效果图图片切换 */
 	var gheight = 600;                         //固定高度

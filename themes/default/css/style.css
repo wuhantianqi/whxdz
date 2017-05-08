@@ -1,89 +1,57 @@
 /*首页样式*/
-.unslider{
-	position: relative;
-	height: 600px;
+.index-bannerx{
 	width: 100%;
-	margin: 0;
-
+	height: 600px;
+	overflow: hidden;
+	position: relative;
+}
+.index-bannerx a{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	opacity: 0;
+	display: block;
+	text-align: center;
+}
+.index-bannerx a img{
+	position:absolute;
+	left: 50%;
+	top:50%;
+	margin-left: -960px;
+	margin-top: -300px;
 }
 
-.index-banner{
-	width:1903px;
-	height:100%;
-	margin: 0 auto;
+.index-bannerx .index-banner-span{
+	position: absolute;
+	width: 100%;
+	height: 20px;
+	left: 0;
+	bottom: 10px;
+	text-align: center;
+	overflow: hidden;
+}
+.index-bannerx .index-banner-span span{
+	display:inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	background-color: #fff;
+	line-height: 20px;
+	margin: 0px 10px;
+	vertical-align: middle;
+	cursor: pointer;
 	box-sizing: border-box;
 }
-.index-banner ul{
-	position: relative;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    border: none;
-    width: 100%;
-    height:100%;
-}
-.index-banner ul li a img{
-	width:  100%;
-	height: 100%;
-}
-
-.unslider li, .unslider ol, .unslider ul {
-	list-style: none;
-    margin: 0;
-    padding: 0;
-    border: none;
-}
-.index-banner ul li{
-	position: absolute;
-    left: 0;
-    top: 0;
-    right: 0;
-    z-index: 8;
-}
-
-.unslider .unslider-nav{
-    position: absolute;
-    bottom: 5px;
-    left: 0;
-    right: 0;
-    top: auto;
-    margin: 0;
-    z-index: 888;
-}
-.unslider .unslider-nav ol{
-    list-style: none;
-    text-align: center;
-}
-.unslider .unslider-nav ol li{
-    display: inline-block;
-    float: none;
-    width: 6px;
-    height: 6px;
-    margin: 0 4px;
-    padding: 3px;
-    background: transparent;
-    border-radius: 6px;
-    overflow: hidden;
-    text-indent: -999em;
-    border: 1px solid #fff;
-    cursor: pointer;
-    opacity: .4;
-    font-size: 14px;
-}
-.unslider .unslider-nav ol li.unslider-active{
-    background: #fff;
-    cursor: default;
-    opacity: 1;
-    border: 1px solid red;
+.onn{
+	border: 3px solid rgb(255,95,46);
 }
 
 
 
 
 
-
-
-
+/*************************************************************************************/
 .index-content{
 	width: 1200px;
 	height: auto;

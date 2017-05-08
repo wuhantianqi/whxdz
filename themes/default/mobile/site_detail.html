@@ -1,19 +1,16 @@
 <{include file="block/mobile_header.html"}>
         <!--头部开始-->
-        <div class="mobile_top">
-            <p><a href="tel:13971172755">13971172755</a></p>
-            <a class='llogo' href="/"><i class="back"></i>鑫大众首页</a>
-        </div>
+
         <div class="cl50"></div>
         <!--头部结束-->
         <div class="case_sub_main">
             <div class="mine_sub_top">
                 <div class="mine_sub_top_lt lt">
-                    <img src="<{$pager.img}>/<{$detail.face_pic}>"/>
+                    <img class="mine_sub_two" src="<{$pager.img}>/<{$detail.face_pic}>"/>
                 </div>
                 <div class="mine_sub_top_rt lt">
-                    <p class="title"><a href="<{link ctl='site:detail' arg0=$detail.site_id}>"><{$detail.title}></a></p>
-                    <p>进度：<span><{$status[$detail.status]}></span></p>
+                    <p class="title"><a href="<{link ctl='site:detail' arg0=$detail.site_id}>"><{$detail.title|cutstr:20:'..'}></a></p>
+                    <!--<p>进度：<span><{$status[$detail.status]}></span></p>-->
                     <p class="add"><{$detail.addr}></p>
 					<p>设计师：<a href="<{link ctl='designer:detail' arg0=$detail.designer_id}>"><{$designer.name}></a></p>
 					<a href="<{link ctl='site:yuyue' arg0=$detail.site_id}>"  class="bt title">预约参观>></a>
@@ -28,5 +25,5 @@
             </div>
                 <{/foreach}>
         </div>
-        <div class="cl50"></div>
+
  <{include file="block/mobile_footer.html"}>

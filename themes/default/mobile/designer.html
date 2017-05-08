@@ -1,26 +1,23 @@
 <{include file="block/mobile_header.html"}>
 <!--头部开始-->
-    <div class="mobile_top">
-        <p><a href="tel:13971172755">13971172755</a></p>
-        <a class='llogo' href="/"><i class="back"></i>鑫大众首页</a>
-    </div>
+
     <div class="cl50"></div>
 		<!--头部结束-->
 		<div class=" case_sub_main">
               <{foreach from=$items  item=item}>
 			<div class="building_list">
                 <a title="<{$item.name}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="lt"><img  src="<{$pager.img}>/<{$item.face_pic}>_small.jpg" /></a>
-				<div class=" designer_list_rt building_list_rt  lt">
+	     			<div class=" designer_list_rt building_list_rt  lt">
 					<p><a title="<{$item.name}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="title"><{$item.name}></a><span><a itle="<{$item.name}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="red_bg">博客</a><a href="<{link ctl='designer:yuyue' arg0=$item.designer_id}>">预约</a></span></p>
 					<p>头衔：<{$item.cate.cate_name}></p>
-					<p>设计理念/风格：<{$item.concept|cutstr:35:'..'}></p>
-          <p>个人简介：<{$item.intro|cutstr:35:'..'}> <a  href="<{link ctl='designer:detail' arg0=$item.designer_id}>">></a></p>
+					<p>设计理念：<{$item.concept|cutstr:30:'..'}></p>
+
 				</div>
 			</div>
             <{/foreach}>
 		</div>
+    </div>
 	   <div id="jq_loding" style=" height: 20px; text-align: center; "></div>
-		<div class="cl45"></div>
     <script>
         var num = 1;
         var nextpage = '<{$nextpage}>';
@@ -35,6 +32,7 @@
                   $.get(link,function(data){
                       if(data != ''){
                           $("#jq_loding").html('');
+
                           $(".case_sub_main").append(data);              
                           lock = 0;
                       }else{

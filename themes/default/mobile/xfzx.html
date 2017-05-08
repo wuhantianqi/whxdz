@@ -2,28 +2,30 @@
 <!--头部开始-->
 <div class="content">
     <div class="zh-m-head">
-      <img src="<{$pager.themepath}>/images/mobile/mxf_banner.jpg" />
-      <img src="<{$pager.themepath}>/images/mobile/mzx_lc.jpg" />
+      <img src="<{$pager.themepath}>/images/mobile/m_xf_banner.jpg" />
+      <img src="<{$pager.themepath}>/images/mobile/m_xf_00.jpg" />
     </div>
     <div class="zh-m-form" id="zh-m-form">
-      <h1>免费获取设计报价方案</h1>
+      <h1>开启更省心装修之旅</h1>
       <p class="zh-m-under-title">您的信息将完全保密，请准确填写</p>
-      <form class="tenders" action="<{link ctl='mobile/tenders:save'}>" mini-form="tenders" method="post">
+      <form class="tenders" id="tenders_form">
         <input type="hidden" name="data[from]" value="TZB" />
-        <input type="text" name="data[contact]"  placeholder="您的姓名" />
+        <input type="text" name="data[name]"  placeholder="您的姓名" />
         <input type="text" name="data[mobile]"  placeholder="联系方式" />
         <input type="text" name="data[house_mj]"  placeholder="装修面积" />
         <input type="text"  placeholder="请输入小区名称" />
-        <input type="submit"  value="立即免费获取 " />
+        <input type="button" class="tender_submit" id="tender_submit"  value="立即免费获取 " />
       </form>
 <!--      <p>已有<span class="strong">1260</span>人预约设计服务</p> -->
       <p>申请成功后，装修管家会在2小时内向您致电</p>
     </div>
     <div class="zh-m-content">
-      <img src="<{$pager.themepath}>/images/mobile/mxf_03.jpg" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/mxf_04.jpg" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/mxf_05.jpg" alt="免费设计与报价"/>
+      <img src="<{$pager.themepath}>/images/mobile/m_xf_01.jpg" alt="鑫大众"/>
+      <img src="<{$pager.themepath}>/images/mobile/m_xf_02.jpg" alt="鑫大众"/>
+      <img src="<{$pager.themepath}>/images/mobile/m_xf_03.jpg" alt="鑫大众"/>
     </div>
-    <div class="site-info">武汉市鑫大众装饰设计工程有限公司<br>装修咨询热线：15207187756<br>地址：江岸区二七路航天双城A座1405-1407
+
+    <div class="site-info">
+         武汉鑫大众装饰设计工程有限公司</br>装修热线：15207187756</br>地址：江岸区二七路航天双城A座1405-1407
     </div>
 <{include file="block/mobile_footer.html"}>	

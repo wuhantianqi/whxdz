@@ -2,42 +2,28 @@
 <!--头部开始-->
 <div class="content">
     <div class="zh-m-head">
-      <img src="<{$pager.themepath}>/images/mobile/img_01.jpg" />
-      <img src="<{$pager.themepath}>/images/mobile/img_02.jpg" />
-      <div class="num">
-                <span class="item1 animated infinite pulse">1</span>
-                <span class="item2 animated infinite pulse">0</span>
-                <span class="item3 animated infinite pulse">8</span>
-            </div>
+      <img src="<{$pager.themepath}>/images/mobile/m_sj_banner.png" />
     </div>
-    <div class="zh-m-form" id="zh-m-form">
+    <div class="zh-m-form" id="zh-m-form" >
       <h1>免费获取设计报价方案</h1>
       <p class="zh-m-under-title">您的信息将完全保密，请准确填写</p>
-      <form class="tenders" action="<{link ctl='mobile/tenders:save'}>" mini-form="tenders" method="post">
+      <form class="tenders" id="tenders_form">
         <input type="hidden" name="data[from]" value="TZB" />
-        <input type="text" name="data[contact]"  placeholder="您的姓名" />
+        <input type="text" name="data[name]"  placeholder="您的姓名" />
         <input type="text" name="data[mobile]"  placeholder="联系方式" />
         <input type="text" name="data[house_mj]"  placeholder="装修面积" />
         <input type="text"  placeholder="请输入小区名称" />
-        <input type="submit"  value="立即免费获取 " />
+        <input type="button" class="tender_submit" id="tender_submit"  value="立即免费获取 " />
       </form>
 <!--      <p>已有<span class="strong">1260</span>人预约设计服务</p> -->
       <p>申请成功后，装修管家会在2小时内向您致电</p>
     </div>
     <div class="zh-m-content">
-      <img src="<{$pager.themepath}>/images/mobile/design-1.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-2.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-3.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-4.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-5.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-6.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-7.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-8.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-9.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-10.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-11.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-12.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-13.png" alt="免费设计与报价"/>
-      <img src="<{$pager.themepath}>/images/mobile/design-14.png" alt="免费设计与报价"/>
+      <img src="<{$pager.themepath}>/images/mobile/m_sj_01.png" alt="免费设计与报价"/>
+      <img src="<{$pager.themepath}>/images/mobile/m_sj_02.png" alt="免费设计与报价"/>
+      <img src="<{$pager.themepath}>/images/mobile/m_sj_03.png" alt="免费设计与报价"/>
+      <img src="<{$pager.themepath}>/images/mobile/m_sj_04.png" alt="免费设计与报价"/>
+      <img src="<{$pager.themepath}>/images/mobile/m_sj_05.png" alt="免费设计与报价"/>
+	  <img src="<{$pager.themepath}>/images/mobile/m_sj_06.png" alt="免费设计与报价"/>
     </div>
 <{include file="block/mobile_footer.html"}>	

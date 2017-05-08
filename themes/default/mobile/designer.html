@@ -11,7 +11,6 @@
 					<p><a title="<{$item.name}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="title"><{$item.name}></a><span><a itle="<{$item.name}>" href="<{link ctl='designer:detail' arg0=$item.designer_id}>" class="red_bg">博客</a><a href="<{link ctl='designer:yuyue' arg0=$item.designer_id}>">预约</a></span></p>
 					<p>头衔：<{$item.cate.cate_name}></p>
 					<p>设计理念：<{$item.concept|cutstr:30:'..'}></p>
-                        <div></div>
 				</div>
 			</div>
             <{/foreach}>
@@ -41,7 +40,6 @@
                   },'html');
               }           
           });
-
     });
    </script>
 <{include file="block/mobile_footer.html"}>	

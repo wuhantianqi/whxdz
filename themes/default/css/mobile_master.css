@@ -706,7 +706,7 @@ index.css?v=201610132053:1867
 /*案例列表页样式*/
 
 /*案例详情页样式*/
-.case_sub_main{margin:0px 0.25rem;}
+.case_sub_main{margin:0px 0.25rem;margin-top: 40px;}
 .case_sub_title{ height:60px; background:#434343;}
 .case_sub_title p{ margin:0px; line-height:56px; }
 .case_sub_title p span{color:#fff; font-size:14px;}
@@ -930,6 +930,26 @@ form.tuanzhuang input.bt{ background:url(../images/mobile/search_bg.png) no-repe
 .html_contents{ 
     margin-bottom:5px;
 }
+    .build_over{
+        overflow: hidden;
+    }
+    .build_img{
+        width: 30%;
+    }
+    .buld_list{
+        width: 70%;
+        box-sizing: border-box;
+        padding-left: 3%;
+    }
+    .buld_list p span{
+        font-size: 12px;
+    }
+    .build_float{
+        float: left;
+    }
+
+
+
 /* 全屋设计 新房装修 旧房翻新 */
 .content {
     max-width: 640px;

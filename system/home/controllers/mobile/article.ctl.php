@@ -21,9 +21,10 @@ class Ctl_Mobile_Article extends Ctl_Mobile {
         $this->pagedata['nextpage'] = $this->mklink('article:loaddata',  array('page' => '{page}'), array(),false);
         $this->pagedata['items'] = $items;
         $this->pagedata['pager'] = $pager;
+        K::M('helper/seo')->init('mmoreleran',array());
         $this->tmpl = 'mobile/article.html';
     }
-    
+
     public function loaddata($page=1)
     {
         $filter = $pager = array();
@@ -36,7 +37,7 @@ class Ctl_Mobile_Article extends Ctl_Mobile {
         $items = K::M('article/view')->items($filter, $orderby, $page, $limit, $count);
         $this->pagedata['items'] = $items;
         $this->pagedata['pager'] = $pager;
-        $this->tmpl = 'mobile/article.html';
+        $this->tmpl = 'mobile/article-loaddata.html';
     }
     
     public function detail($article_id){

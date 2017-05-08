@@ -19,7 +19,7 @@ class Ctl_Mobile_Activity extends Ctl_Mobile {
         $this->pagedata['nextpage'] = $this->mklink('activity:loaddata',  array('page' => '{page}'), array(),false);
         $this->pagedata['items'] = $items;
         $this->pagedata['pager'] = $pager;
-       
+
         $this->tmpl = 'mobile/activity.html';
     }
     

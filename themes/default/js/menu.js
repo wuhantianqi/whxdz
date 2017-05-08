@@ -130,22 +130,22 @@ $(document).ready(function(){
 		}); 
 	})	
 	/* 底部表单切换 */
-	$(document).on('click','.form-ren div',function(){
-		var wheight = $(window).height();
-		var bwheight =$('.bottom-form').height();
-		var x = parseInt(wheight-bwheight);
-		var bheight = $('.bottom-form').position().top;
-		if( bheight <= x){
-			$('.bottom-form').animate({
-				"bottom":'-370px'
-			},800)		
-		}else{
-			$('.bottom-form').animate({
-				"bottom":'0px'
-			},1000)
-		}
-		$(this).toggleClass("arrow-rotate-down");
-	})
+		$(document).on('click','.form-ren div',function(){
+			var wheight = $(window).height();
+			var bwheight =$('.bottom-form').height();
+			var x = parseInt(wheight-bwheight);
+			var bheight = $('.bottom-form').position().top;
+			if( bheight <= x){
+				$('.bottom-form').animate({
+					"bottom":'-370px'
+				},800)		
+			}else{
+				$('.bottom-form').animate({
+					"bottom":'0px'
+				},1000)
+			}
+			$(this).toggleClass("arrow-rotate-down");
+		})
 	/*首页直接表单提交*/
 	$(document).on('click','.submit-i',function(){
 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;    //手机正则表达式

@@ -748,12 +748,13 @@ index.css?v=201610132053:1867
         height:1.01875rem;
     }
     .enroll_main form label select{
-        margin-left: 2.4rem;
-        width: 73%;
-        height:auto;
+        height: 100%;
+        width: 70%;
+        position: absolute;
+        right: 0;
+        top:0;
         border:none;
-     margin-top: 8px;
-        box-sizing: border-box;
+
     }
     .enroll_main form .se{
         border: 1px solid rgb(190,190,190);

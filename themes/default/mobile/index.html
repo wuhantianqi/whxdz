@@ -5,6 +5,7 @@
     <title><{$seo_sub_title}><{if $seo_title}><{$seo_title}><{elseif $SEO.title}><{$SEO.title}><{else}><{$CONFIG.site.title}><{/if}></title>
     <meta name="keywords" content="<{if $seo_keywords}><{$seo_keywords}><{elseif $SEO.keywords}><{$SEO.keywords}><{/if}>" />
     <meta name="description" content="<{if $seo_description}><{$seo_description}><{elseif $SEO.description}><{$SEO.description}><{/if}>" />
+    <meta name="viewport" content="initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width">
     <script type="text/javascript"  src="<{$pager.res}>/script/lib-flexible-master/build/flexible_css.js"></script>
     <script type="text/javascript"  src="<{$pager.res}>/script/lib-flexible-master/build/flexible.js"></script>
     <script type="text/javascript"  src="<{$pager.res}>/script/kt.j.js"></script>
@@ -119,6 +120,7 @@
             </li> -->
         </ul>
     </div>
+    <div class="kong"></div>
     <!--首页列表选项结束-->
     <!-- 表格列表start -->
     <section>
@@ -128,9 +130,10 @@
             <li><a href="<{link ctl='site'}>"><i class="xz"></i><span>在建工地</span></a></li>
             <li><a href="<{link ctl='activity:detail' arg0=1}>"><i class="xw"></i><span>优惠活动</span></a></li>
             <li><a href="<{link ctl='zxlc'}>"><i class="dk"></i><span>装修流程</span></a></li>
-            <li><a href="<{link ctl='threezx'}>"><i class="mb"></i><span>快学装修</span></a></li>
+            <li><a href="<{link ctl='article'}>"><i class="mb"></i><span>快学装修</span></a></li>
         </ul>
     </section>
+    <div class="kong"></div>
     <!-- 抢免费设计名额开始 -->
     <div class="free-design" id="free-design">
         <header>
@@ -175,16 +178,18 @@
            </div>
         </div>
     </div>
+    <div class="kong"></div>
     <!-- 抢免费设计名额结束 -->
     <!-- 设计师列表start -->
     <section>
     <ul class="index-designer">
-        <li><img src="<{$pager.themepath}>/images/mobile/m_sj_xc.png" alt="设计师徐灿"></li>
-        <li><img src="<{$pager.themepath}>/images/mobile/m_sj_zx.png" alt="设计师邹茜"></li>
-        <li><img src="<{$pager.themepath}>/images/mobile/m_sj_cs.png" alt="设计师陈珊"></li>
-        <li><img src="<{$pager.themepath}>/images/mobile/m_sj_hz.png" alt="设计师胡珍"></li>
+        <li><a href="<{link ctl='designer:detail' arg0=2}>"><img src="<{$pager.themepath}>/images/mobile/m_sj_xc.png" alt="设计师徐灿"></a></li>
+        <li><a href="<{link ctl='designer:detail' arg0=4}>"><img src="<{$pager.themepath}>/images/mobile/m_sj_zx.png" alt="设计师邹茜"></a></li>
+        <li><a href="<{link ctl='designer:detail' arg0=5}>"><img src="<{$pager.themepath}>/images/mobile/m_sj_cs.png" alt="设计师陈珊"></a></li>
+        <li><a href="<{link ctl='designer:detail' arg0=6}>"><img src="<{$pager.themepath}>/images/mobile/m_sj_hz.png" alt="设计师胡珍"></a></li>
     </ul>
     </section>
+    <div class="kong"></div>
     <!-- 设计师列表end -->
     <!--首页经典案例开始-->
     <div class="mobile_main_case">
@@ -199,6 +204,7 @@
         </div>
         <{/calldata}>
     </div>
+    <div class="kong"></div>
 <!--     <ul class="mobile_main_wen">
         <li>背景墙</li>
         <li>吧台</li>
@@ -245,6 +251,42 @@
             </li>
         </ul>
     </div> -->
+    <!-- 装修经验start -->
+    <div class="mobile_ggw">
+        <div class="mobile_case-title">
+            <h2>装修经验<b>更多></b></h2>
+        </div>
+        <ul class="mobile_experience">
+            <li><a href="<{link ctl='article:detail' arg0=29}>">收放</a></li>
+            <li><a href="<{link ctl='article:detail' arg0=35}>">设计</a></li>
+            <li><a href="<{link ctl='article:detail' arg0=31}>">预算</a></li>
+            <li><a href="<{link ctl='article:detail' arg0=28}>">合同</a></li>
+        </ul>
+    </div>
+    <div class="kong"></div>
+
+    <!-- 装修经验end -->
+    <!-- 文章列表start -->
+    <div class="mobile-rticle">
+        <div class="mobile_case-title">
+            <h2>热点文章<b>更多></b></h2>
+        </div>
+        <ul>
+            <{foreach from=$items item=item}>
+            <li>
+                <a href="<{link ctl='article:detail' arg0=$item.article_id}>">
+                    <img src="<{$pager.img}>/<{$item.thumb}>" alt="<{$item.title}>">
+                </a>
+                <a href="<{link ctl='article:detail' arg0=$item.article_id}>">
+                    <span>
+                        <p><{$item.title|cutstr:36:'..'}></p>
+                        <p><{$item.desc|cutstr:90:'..'}></p>
+                    </span>
+                </a>
+            </li>
+            <{/foreach}>
+        </ul>
+    </div>
     <!-- 文章列表end -->
 </div> 
 <{include file="block/mobile_footer.html"}>

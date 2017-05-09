@@ -5,12 +5,14 @@
     <{foreach from=$items item=item}>
     <div class="building_list news_list <{if $item@index %2==0}>pink<{/if}> build_over">
         <div class="build_img build_float">
-            <img src="<{$pager.img}>/<{$item.thumb}>" alt="">
+            <a href="<{link ctl='article:detail' arg0=$item.article_id}>"><img src="<{$pager.img}>/<{$item.thumb}>" alt=""></a>
         </div>
         <div class="news_list_lt lt build_float buld_list">
             <p><a  class="title" title="<{$item.title}>" href="<{link ctl='article:detail' arg0=$item.article_id}>">
                 <{$item.title|cutstr:29:'..'}></a></p>
-            <p class="time">发布时间 : <{$item.dateline|format}></p>
+            <p><a  class="title" title="<{$item.desc}>" href="<{link ctl='article:detail' arg0=$item.article_id}>">
+                <{$item.desc|cutstr:29:'..'}></a></p>
+            <!--<p class="time">发布时间 : <{$item.dateline|format}></p>-->
         </div>
 
     </div>

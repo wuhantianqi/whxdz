@@ -3,35 +3,50 @@
 
         <div class="cl50"></div>
 		<!--头部结束-->
-		<div class="enroll_main content_main">
-			<!--装修报名开始-->
-            <form id='tenders_form' class="jq_from">
-				<p class="tenders-name"><span class="red">*</span>您的姓名</p>
-				<input   name="data[name]" type="text" />
-				<p><span class="red">*</span>您的联系方式</p>
-				<input type="text"  name="data[mobile]"/>
-				<p>房屋面积（m²）</p>
-				<input type="text" name="data[area]" />
-				<p>您的装修预算</p>
-					<select name="data[budget_id]">
-                        <option value="0">请选择</option>
-                        <{foreach from=$setting[$type['budget']] item=item key=key}>
-                        <option <{if $detail.budget_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
-                        <{/foreach}>
-                    </select>
-				<p>您的地址</p>
-				   <input type="text" name="data[addr]"  />
-				<p>备注</p>
-				 <textarea name="data[demand]" rows="5"></textarea>
-                 <p id='showErr' style="display: none;text-align: center;"><font id="showTxt" style=" color: red; font-size: 14px;"></font></p>
-				<input type="button" id='tender_submit' value="立刻申请" class="bt">
-			</form>
-             <div class="jq_ok " style="display: none;">
-                <p><span class="red">提交成功!!!</span>稍后您的专职装修管家将与您联系，为您讲解装修流程和相关注意事 项，装修过程中遇到的任何问题都可 以咨询您的专职装修管家。服务热线:<{$CONFIG.site.phone}></p>
-                <input type="button" value="我知道了" id='wozhidao' class="bt">
-        </div>
-			<!--装修报名结束-->
-		</div>
+<div class="enroll_main content_main">
+    <!--装修报名开始-->
+    <form id='tenders_form' class="jq_from">
+
+        <label>
+            <p class="tenders-name">您的姓名:</p>
+            <input   name="data[name]" type="text" placeholder="您的姓名"/>
+        </label>
+        <label>
+            <p>您的电话:</p>
+            <input type="text"  name="data[mobile]" placeholder="您的电话"/>
+        </label>
+        <label>
+            <p>房屋面积:</p>
+            <input type="text" name="data[area]" placeholder="房屋面积"/>
+            <span>（m²）</span>
+        </label>
+        <label>
+            <p>装修预算:</p>
+            <select name="data[budget_id]">
+                <!--<option value="0">装修预算:</option>-->
+                <{foreach from=$setting[$type['budget']] item=item key=key}>
+                <option <{if $detail.budget_id == $key}> selected="selected" <{/if}> value="<{$key}>"><{$item}></option>
+                <{/foreach}>
+            </select>
+        </label>
+        <label>
+            <p>您的地址:</p>
+            <input type="text" name="data[addr]"  placeholder="小区名字"/>
+        </label>
+        <label>
+            <p>备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注:</p>
+            <textarea name="data[demand]" rows="5"></textarea>
+            <p id='showErr' style="display: block;text-align: center;"><font id="showTxt" style=" color: red; font-size: 14px;"></font></p>
+        </label>
+        <input type="button" id='tender_submit' value="立刻申请" class="bt" name="x">
+    </form>
+    <div class="jq_ok " style="display: none;">
+        <p><span class="red">提交成功!!!</span>稍后您的专职装修管家将与您联系，为您讲解装修流程和相关注意事 项，装修过程中遇到的任何问题都可 以咨询您的专职装修管家。服务热线:<{$CONFIG.site.phone}></p>
+        <input type="button" value="我知道了" id='wozhidao' class="bt">
+
+    </div>
+        <img class="touchblur" src="<{$pager.themepath}>/images/mobile/img_my.jpg">
+</div>
        
         <script type="text/javascript">
             var lock = 0;
@@ -63,5 +78,4 @@
                
             })(window.KT, window.jQuery);
         </script>
-	</body>
-</html>
+<{include file="block/mobile_footer.html"}>

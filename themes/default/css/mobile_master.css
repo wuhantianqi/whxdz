@@ -728,6 +728,7 @@ index.css?v=201610132053:1867
         height:1.01875rem;
         display: block;
         margin-top: 20px;
+
     }
     .enroll_main form label p:not([id='showErr']) {
         position: absolute;
@@ -742,16 +743,25 @@ index.css?v=201610132053:1867
         top: 10px;
     }
     .enroll_main form label input{
-        padding-left:2.2rem;
+        padding-left:2.4rem;
         box-sizing: border-box;
-        height:1.01875rem
+        height:1.01875rem;
     }
     .enroll_main form label select{
-        padding-left: 2rem;
-        height:1.01875rem
+        margin-left: 2.4rem;
+        width: 73%;
+        height:auto;
+        border:none;
+     margin-top: 8px;
+        box-sizing: border-box;
+    }
+    .enroll_main form .se{
+        border: 1px solid rgb(190,190,190);
+        box-sizing: border-box;
+        margin-bottom: 10px;
     }
     .enroll_main form label textarea{
-        padding-left: 2.2rem;
+        padding-left: 2.4rem;
         padding-top: 0.25rem;
         box-sizing: border-box;
         font-size: 16px;
@@ -760,7 +770,7 @@ index.css?v=201610132053:1867
     .enroll_main form input[name="x"] {
         margin-top: 100px;
     }
-.enroll_main input,.enroll_main select,.enroll_main textarea{ width:100%;  background:#fff; border:1px solid #bebebe; color:#666;}
+.enroll_main input,.enroll_main select,.enroll_main textarea{ width:100%;  background:#fff; border:1px solid #bebebe; color:#666;border-radius: 5px;}
 .enroll_main select{
     font-size: 16px;
 }

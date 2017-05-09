@@ -70,12 +70,13 @@ hr {
 	width: 100%;
 	height: 34px;
 	line-height: 34px;
-	background-color: #fff;
+	background-color: #333;
 	border-bottom: solid 1px #e3e1e1;
 }
 .top-nav .nav{
 	width: 1200px;
-	height: auto;	
+	height: auto;
+	color: #ccc;
 }
 .top-nav .nav ul{
 	float: right;
@@ -83,9 +84,6 @@ hr {
 .top-nav .nav ul li{
 	float: left;
 	margin-left:30px;
-}
-.top-nav .nav ul li a{
-	color: #888;
 }
 .top-nav .nav ul li i{
 	width: 20px;
@@ -104,7 +102,7 @@ hr {
 }
 .top-nav .nav ul li em{
 	font-size: 14px;
-	color: #eb0000;
+	color: #ccc;
 }
 .top-nav .nav p i{
 	width: 20px;
@@ -143,7 +141,7 @@ hr {
     margin: 0 auto;
     height: 3px;
     display: block;
-    background-color: #eb0000;
+    background-color: #9dc815;
     position: absolute;
     top: 46px;
     left: 29px;
@@ -154,11 +152,11 @@ hr {
     -webkit-transform: translateX(-35px);
 }
 .top-menu .menu ul li a{
-	color: #555;
+	color: #333;
 	text-decoration: none;
 }
 .top-menu .menu ul li:hover a{
-	color: #eb0000;
+	color: #9dc815;
 }
 .top-menu .menu h1{
 	/*width: 230px;*/
@@ -172,7 +170,7 @@ hr {
 }
 /* 下拉固定导航 */
 .fixed-menu{
-	background-color:#c50505;
+	background-color:#9dc815;
 	height: 46px;
 	position: fixed;
 	top: 0px;
@@ -226,7 +224,7 @@ hr {
 	text-decoration: none;
 }
 .vice-menu ul li:hover a{
-	color: #eb0000;
+	color: #9dc815;
 }
 /*尾部公共部分*/
 .footer{
@@ -237,7 +235,7 @@ hr {
 .footer .footer-top{
 	width: 100%;
 	height: 85px;
-	border-top:1px solid #eb0000;
+	border-top:1px solid #9dc815;
 	border-bottom:1px solid #ccc;
 }
 .footer .footer-top .footer-ico-list {
@@ -334,11 +332,11 @@ hr {
 .footer .footer-centent ul li:nth-child(5){
 	border-right: 1px solid #e3e1e1;
 	width: 325px;
-	height: auto;
+	height: 145px;
 	text-align: center;
 }
 .footer .footer-centent ul li:nth-child(5) p{
-	color: #eb0000;
+	color: #9dc815;
 	margin-top: 24px;
 }
 .footer .footer-centent ul li:nth-child(5) p b{
@@ -349,28 +347,12 @@ hr {
 	height: 30px;
 	margin: 0 auto;
 	border-radius: 10px;
-    	margin-top: 20px;
-	background-color: #eb0000;
+    margin-top: 20px;
+	background-color: #9dc815;
 	text-align: center;
 	line-height: 30px;
 	color: #fff;
 }*/
-.footer .footer-centent ul li p input{
-	border: none;
-	outline-style: none;
-	width: 125px;
-	height: 30px;
-	margin: 0 auto;
-	border-radius: 10px;
-  cursor: pointer;
-	background-color: #eb0000;
-	text-align: center;
-	line-height: 30px;
-	color: #fff;
-
-
-
-}
 .footer .footer-bottom{
 	width: 100%;
 	height: 118px;
@@ -390,7 +372,7 @@ hr {
     width: 100%;
     left: 0px;
     padding-bottom: 36px;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0,0,0,0.6);
     z-index: 999
 }
 .dform{
@@ -433,8 +415,6 @@ hr {
     transform: none;
 }
 .dform .form-ren .arrow{
-    -webkit-animation: arrow 0.8s cubic-bezier(0.30,2.0,0.80,2.1) infinite;
-    -o-animation: arrow 0.8s cubic-bezier(0.30,2.0,0.80,2.1) infinite;
     animation: arrow 0.8s cubic-bezier(0.30,2.0,0.80,2.1) infinite;
 }
 .dform .form-ren .arrow span{
@@ -591,15 +571,110 @@ hr {
 	margin-left: 20px;
 	border:1px solid #ccc;
 	text-align: center;
-	color:#ccc;
 }
 .page a.curris{
-	background-color: #eb0000;
+	background-color: #9dc815;
 }
 .page a.prev,.page a.next{
 	width: 65px
 }
-
+/* 悬浮框start */
+.izl-rmenu{
+	       margin-right: 0;
+	       width: 82px;
+	       position: fixed;
+	       right: 2px;
+	       top: 65%;
+	       -webkit-box-shadow: #DDD 0px 1px 5px;
+	       -moz-box-shadow: #DDD 0px 1px 5px;
+	       box-shadow: #DDD 0px 1px 5px;
+	       z-index:999;
+}
+.izl-rmenu .consult{    
+	background-image: url(../images/consult_icon.gif);
+    background-repeat: no-repeat;
+    background-position: center -77px;
+    display: block;
+    height: 76px;
+    width: 82px;
+}
+.izl-rmenu .consult .phone {
+    background-color: rgb(247,247,255);
+    position: absolute;
+    width: 160px;
+    left: -160px;
+    top: 0px;
+    line-height: 73px;
+    color: #000;
+    font-size: 18px;
+    text-align: center;
+    display: none;
+    box-shadow: #DDD -1px 1px 4px;
+}
+.izl-rmenu a.consult:hover .phone{display:inline !important;}
+.izl-rmenu .cart {
+    background-image: url(../images/consult_icon.gif);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    display: block;
+    height: 16px;
+    width: 16px;
+    font-size: 12px;
+    line-height: 16px;
+    color: #45BDFF;
+    text-align: center;
+    padding-top: 15px;
+    padding-right: 18px;
+    padding-bottom: 47px;
+    padding-left: 48px;
+}
+.izl-rmenu a.cart:hover .pic{display:block;}
+.izl-rmenu .btn_top {
+    background-image: url(../images/float_top.gif);
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: block;
+    height: 39px;
+    width: 82px;
+    -webkit-transition: all 0s ease-in-out;
+    -moz-transition: all 0s ease-in-out;
+    -o-transition: all 0s ease-in-out;
+    transition: all 0s ease-in-out;
+}
+.izl-rmenu .btn_top:hover {
+	background-image: url(../images/float_top.gif);
+	background-repeat: no-repeat;
+	background-position: center bottom;
+}
+.izl-rmenu .cart .pic {
+	display:none;
+    position: absolute;
+    left: -160px;
+    top: 65px;
+    width: 152px;
+    height: 133px;
+    background:url(../images/wx.jpg);
+}
+#udesk-feedback-tab {
+    position: fixed;
+    right: 2px;
+    top: 65%;
+    margin-top: -76px;
+    -webkit-box-shadow: #DDD 0px -1px 5px;
+    -moz-box-shadow: #DDD 0px -1px 5px;
+    box-shadow: #DDD 0px -1px 5px;
+    z-index: 10000;
+    cursor: pointer;
+    background-image: url(../images/consult_icon.gif);
+    background-repeat: no-repeat;
+    background-position: center top;
+    display: block;
+    height: 76px;
+    width: 82px;
+    background-color: #FFF!important;
+    z-index:999;
+}
+/* 悬浮框end */
 
 
 

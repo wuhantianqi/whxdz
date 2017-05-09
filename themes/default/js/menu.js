@@ -19,9 +19,9 @@ $(document).ready(function(){
 	/*首页banner图切换start*/	
 	var istart = 0;    //初始值
 	var itime = null   //存储两个定时器
-	var fobj = $(".index-bannerx");       			//获取父元素
-	var aleng = $(".index-bannerx a").length -1;       //获取图片个数
-	$(".index-bannerx a").eq(aleng).css("opacity","1");    //默认显示最后一张
+	var fobj = $(".index-banner");       			//获取父元素
+	var aleng = $(".index-banner a").length -1;       //获取图片个数
+	$(".index-banner a").eq(aleng).css("opacity","1");    //默认显示最后一张
 	if( aleng > 2 ){                               //添加元素
 		fobj.append("<div class='index-banner-span'></div>");
 		for (var i = 0; i <= aleng; i++) {
@@ -41,22 +41,32 @@ $(document).ready(function(){
 		if( istart > aleng){
 			istart = 0;
 		}
-		$('.index-banner-span span').removeClass('onn');
-		$('.index-banner-span span').eq(istart).addClass('onn');
-		$('.index-bannerx a').css("opacity","0");
-		$('.index-bannerx a').eq( istart ).animate({
+		$('.index-banner-span span').removeClass('on');
+		$('.index-banner-span span').eq(istart).addClass('on');
+		$('.index-banner a').css("opacity","0");
+		$('.index-banner a').eq( istart ).animate({
 			opacity:1
 		},1000);
 		istart++
 	}
 	itime = window.setInterval(indexg,2500); 
-	$(".index-bannerx").mousemove(function(event) {
+	$(".index-banner").mousemove(function(event) {
 		clearInterval(itime);
 	}).mouseout(function(event) {
 		itime = window.setInterval(indexg,2500); 
 	});
 	/*首页banner图切换end*/	
 
+	/*首页设计师切换*/
+	$(document).on('mouseover', '.left .signer_right', function ( ) {
+		$('.left .signer_all').hide();
+		$(this).siblings().show();
+	})
+	/*首页装修课堂切换*/
+	$(document).on('mouseover', '.index-article-left p', function(){
+		$('.index-article-right ul').hide();
+		$('.index-article-right ul').eq($(this).index()).show();
+	})
 	/* 效果图图片切换 */
 	var gheight = 600;                         //固定高度
 	var img = document.createElement('img');   //添加img标签
@@ -145,7 +155,7 @@ $(document).ready(function(){
 		  shadeClose: true,
 		  shade: 0.5,
 		  area: ['980px', '370px'],
-		  content: 'http://www.whxdz.com/index.php?tender-eject.html' //iframe的url
+		  content: '/index.php?tender-eject.html' //iframe的url
 		}); 
 	})
 	/*首页三重礼弹出框*/
@@ -156,26 +166,26 @@ $(document).ready(function(){
 		  shadeClose: true,
 		  shade: 0.5,
 		  area: ['600px', '270px'],
-		  content: 'http://www.whxdz.com/index.php?package-yuyue-'+$(this).data("id")+'.html' //iframe的url
+		  content: '/index.php?package-yuyue-'+$(this).data("id")+'.html' //iframe的url
 		}); 
 	})	
 	/* 底部表单切换 */
-		$(document).on('click','.form-ren div',function(){
-			var wheight = $(window).height();
-			var bwheight =$('.bottom-form').height();
-			var x = parseInt(wheight-bwheight);
-			var bheight = $('.bottom-form').position().top;
-			if( bheight <= x){
-				$('.bottom-form').animate({
-					"bottom":'-370px'
-				},800)		
-			}else{
-				$('.bottom-form').animate({
-					"bottom":'0px'
-				},1000)
-			}
-			$(this).toggleClass("arrow-rotate-down");
-		})
+	$(document).on('click','.form-ren div',function(){
+		var wheight = $(window).height();
+		var bwheight =$('.bottom-form').height();
+		var x = parseInt(wheight-bwheight);
+		var bheight = $('.bottom-form').position().top;
+		if( bheight <= x){
+			$('.bottom-form').animate({
+				"bottom":'-370px'
+			},800)
+		}else{
+			$('.bottom-form').animate({
+				"bottom":'0px'
+			},1000)
+		}
+		$(this).toggleClass("arrow-rotate-down");
+	})
 	/*首页直接表单提交*/
 	$(document).on('click','.submit-i',function(){
 		var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1})|(17[0-9]{1}))+\d{8})$/;    //手机正则表达式
@@ -266,7 +276,7 @@ $(document).ready(function(){
 			    ,closeBtn: 0
 			    ,anim: 0 //动画类型
 			};
-		submitf( datas,layers, $(this).parents('form').find('input[type="hidden"]').val() );
+		submitf( datas,layers, $(this).parents('form').find('input[type="hidden"]').val() )
 	})
 	/* 案例图喜欢 */
 	$(document).on( "click", '.like', function(){
@@ -323,7 +333,7 @@ $(document).ready(function(){
 	/* 客户信息 */
 	var frow = parseInt($("div.index-form-gun ul").height()) - 64;  //获取ul的高度
 	$("div.index-form-gun").myScroll({
-		speed:50, //数值越大，速度越慢
+		speed:40, //数值越大，速度越慢
 		rowHeight: frow
 	});
 	/* 业主心声 */
@@ -346,6 +356,19 @@ $(document).ready(function(){
 		})
 		$(this).parent().siblings().eq($(this).index()).css("display","block");
 	})
+	// 悬浮框start
+	$(".btn_top").hide();
+		$(".btn_top").on("click",function(){
+			$('html, body').animate({scrollTop: 0},300);return false;
+		})
+		$(window).bind('scroll resize',function(){
+			if($(window).scrollTop()<=300){
+				$(".btn_top").hide();
+			}else{
+				$(".btn_top").show();
+			}
+		})
+	// 悬浮框end
 
 
 

@@ -1,0 +1,37 @@
+
+
+
+ 
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>404-爱空间-互联网家装</title>
+<meta name="description"  content="爱空间-互联网家装，20天工期，699元/平，100%自有产业工人，8大主材品牌，环保辅材，包设计，包施工，包主材，18项精包服务，零增项，五不限，人性化设计" />
+<meta name="keywords"  content="爱空间，互联网家装，精装，零增项，五不限，人性化设计，包设计，包施工，包主材，科勒，大自然，马可波罗，博洛尼，西门子，多乐士，友邦吊顶，东方雨虹"/>
+<script type="text/javascript" src="/js/jquery-1.7.2.min.js"></script>
+<link href="/css/css.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <!--业务尚未开通-->
+    <div class="yes404">
+        <strong>抱歉，尚未开通此业务。</strong>
+        <p>即将跳转到首页，<span id="mes">3</span>秒......</p>
+    </div>
+    <script type="text/javascript"> 
+		var i = 3; 
+		var intervalid; 
+		intervalid = setInterval("fun()", 1000); 
+		function fun() { 
+		if (i == 0) { 
+		window.location.href = "/";
+		clearInterval(intervalid); 
+		} 
+		document.getElementById("mes").innerHTML = i; 
+		i--; 
+		} 
+</script> 
+</body>
+</html>

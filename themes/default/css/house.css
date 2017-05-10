@@ -234,7 +234,7 @@ font-size: 30px;text-transform: uppercase;width:158px;margin: 0 auto 0;text-alig
 .Reserve_1 p.Res_p7{ position:absolute; top:348px; left:915px;}
 .Reserve_1 p.Res_p8{ position:absolute; top:268px; left:1050px;}
 .Reserve_1 p b.Res_b{background:url(../images/68Package/y5.png) no-repeat;}
-.Reserve_1 a{ display:block; width:172px; height:46px; line-height:46px; font-size:32px; color:#9dc815;  text-align:center; position:absolute; bottom:55px; left:534px; background:url(../images/68Package/y7.png) no-repeat; }
+.Reserve_1 a{ display:block; width:172px; height:46px; line-height:46px; font-size:16px; color:#9dc815;  text-align:center; position:absolute; bottom:55px; left:534px; background:url(../images/68Package/y7.png) no-repeat; }
 .Reserve_1 a:hover{ background:#fff; background:url(../images/68Package/y8.png) no-repeat;}
 
 /*旧房CSS*/
